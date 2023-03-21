@@ -1,14 +1,13 @@
 from flask import Blueprint, jsonify, session, request
-from app.models import Product, db, Image, User
-from app.forms import ProductForm, ImageForm
+from app.models import  db, Image, User
 from flask_login import current_user
 from datetime import datetime
 
 
-product_routes = Blueprint('images', __name__)
+image_routes = Blueprint('images', __name__)
 
 # Get all products /api/product/
-@product_routes.route('/')
+@image_routes.route('/')
 def get_images():
     images = Image.query.all()
     return {'images': [image.to_dict() for image in images]}
