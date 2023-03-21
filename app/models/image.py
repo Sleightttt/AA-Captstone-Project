@@ -10,6 +10,7 @@ class Image(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(40), nullable=False)
     description = db.Column(db.String(255), nullable=False, unique=True)
+    url = db.Column(db.String(255), nullable=False)
     lat = db.Column(db.Float(), nullable=False)
     lng = db.Column(db.Float(), nullable=False)
     created_at = db.Column(db.DateTime, nullable=False)
@@ -35,8 +36,10 @@ class Image(db.Model):
             'lng': self.lng,
             'created_at': self.created_at,
             'updated_at': self.updated_at,
+            'url': self.url,
             # 'images': [image.to_dict() for image in self.images],
-            'owner_id': self.seller_id,
+            'owner_id': self.owner_id,
+
             # 'avg_rating':self.avg_rating(),
             # 'num_comments':len(self.comments)
         }

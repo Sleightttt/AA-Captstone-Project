@@ -1,0 +1,20 @@
+.login-container {
+  display: flex;
+  height: 900px;
+  background-size: cover; /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(https://images.unsplash.com/photo-1531966662811-c6501e46eda6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2515&q=80);
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 340px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+}

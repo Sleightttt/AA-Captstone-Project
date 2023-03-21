@@ -1,7 +1,222 @@
+html {
+  background-color: rgb(36, 36, 36);
+}
+
 .profile-dropdown {
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border: solid grey 2px;
+  position: relative;
+  right: 70px;
+  top: 40px;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 200px;
+  height: 200px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(211, 240, 255);
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+}
+
+.profile-dropdown > button {
+  color: rgb(0, 0, 0);
+  background: none;
+  margin: 5px 5px;
+  width: 80px;
+  border-radius: 10px;
+}
+
+.profile-dropdown > button:hover {
+  cursor: pointer;
+  background-color: rgb(184, 225, 245);
+}
+
+.profile-pic:hover {
+  cursor: pointer;
 }
 
 .hidden {
   display: none;
+}
+
+.navbar {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  display: inline-block;
+  background-color: rgb(36, 36, 36);
+}
+
+.nav-items {
+  /* border: solid red 2px; */
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0%;
+  margin-top: 0;
+}
+
+.nav-right {
+  /* border: solid #0004ff 2px; */
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 150px;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 40px;
+}
+.upload-icon {
+  color: white;
+}
+
+.nav-left {
+  /* border: solid rgb(13, 0, 255) 2px; */
+  display: flex;
+  margin-left: 80px;
+  list-style: none;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  align-items: center;
+}
+
+.you,
+.explore,
+.prints,
+.get-pro {
+  margin-left: 30px;
+  font-size: 17px;
+  font-weight: 100;
+}
+
+.profile-box {
+  height: 40px;
+  width: 40px;
+  display: flex;
+}
+
+.profile-box > button {
+  display: inline-block;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.profile-box > button:hover {
+  background-color: rgb(215, 215, 215);
+}
+
+.cart-box {
+  position: relative;
+  display: flex;
+}
+
+.nav-left:visited {
+  text-decoration: dotted;
+  color: white;
+}
+
+.nav-home {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-home:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.search-container {
+  display: flex;
+  /* border: solid red 2px; */
+  height: 35px;
+  width: 20%;
+
+  text-align: center;
+  align-items: flex-start;
+}
+
+.search-form-input {
+  border: solid rgb(0, 0, 0) 2px;
+  height: 35px;
+  width: 100%;
+
+  text-align: start;
+  font-size: 14px;
+  font-weight: 100;
+  padding-left: 15px;
+  background-color: rgb(215, 215, 215);
+}
+
+.search-form {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.logout-button {
+  color: rgb(0, 0, 0);
+  background: none;
+  margin: 5px 5px;
+  width: 80px;
+  border-radius: 10px;
+}
+
+.profile-button {
+  color: rgb(0, 0, 0);
+  background: none;
+  margin: 5px 5px;
+  width: 80px;
+  border-radius: 10px;
+}
+
+.profile-button:hover {
+  cursor: pointer;
+  background-color: rgb(184, 225, 245);
+}
+
+.logout-button:hover {
+  cursor: pointer;
+  background-color: rgb(184, 225, 245);
+}
+
+.surch {
+  display: flex;
+  position: relative;
+  right: 44px;
+  top: 3px;
+  height: 45px;
+  width: 45px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.surch:hover {
+  background-color: rgb(215, 215, 215);
 }

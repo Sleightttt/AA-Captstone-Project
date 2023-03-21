@@ -15,7 +15,8 @@ def seed_images():
             lng=round(randint(1, 300) / 100, 2),
             created_at=datetime.utcnow(),
             updated_at=datetime.utcnow(),
-            owner_id=users[randint(1, len(users)-1)].id
+            owner_id=users[randint(1, len(users)-1)].id,
+            url=f"This is the url for Image {i+1}"
         )
         db.session.add(image)
 
