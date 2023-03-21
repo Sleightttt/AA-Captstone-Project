@@ -97,10 +97,31 @@ html {
   font-weight: 100;
 }
 
+.you:hover,
+.explore:hover,
+.prints:hover,
+.get-pro:hover {
+  cursor: pointer;
+  color: rgb(192, 192, 192);
+}
+
 .profile-box {
   height: 40px;
   width: 40px;
   display: flex;
+}
+
+.profile-pic:hover {
+  cursor: pointer;
+}
+
+.upload-icon:hover {
+  cursor: pointer;
+  color: rgb(192, 192, 192);
+}
+.cart-box:hover {
+  cursor: pointer;
+  color: rgb(192, 192, 192);
 }
 
 .profile-box > button {
@@ -151,7 +172,7 @@ html {
   border: solid rgb(0, 0, 0) 2px;
   height: 35px;
   width: 100%;
-
+  border: none;
   text-align: start;
   font-size: 14px;
   font-weight: 100;
@@ -162,6 +183,7 @@ html {
 .search-form {
   display: flex;
   width: 100%;
+  border: none;
 }
 
 a {
@@ -176,7 +198,7 @@ a:visited {
 
 a:hover {
   text-decoration: none;
-  color: white;
+  color: rgb(185, 185, 185);
 }
 
 .logout-button {

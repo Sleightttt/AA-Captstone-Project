@@ -80,7 +80,7 @@ function Navigation({ isLoaded }) {
 
                     <div className="cart-box">
                       <NavLink exact to="/shopping-cart">
-                        <i className="fas fa-bell fa-lg"></i>
+                        <i className="cart-box  fas fa-bell fa-lg"></i>
                       </NavLink>
                     </div>
                     <div className="profile-box">

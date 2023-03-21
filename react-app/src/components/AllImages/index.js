@@ -23,23 +23,24 @@ const AllImages = () => {
 
   return (
     <>
-      <div className="all-products-container">
+      <div className="all-images-container">
         <div></div>
-        <div className="products-container">
+        <div className="images-container">
           {allProducts[0].map((product) => (
             <div
-              className="product-card"
+              className="image-card"
               key={product.id}
-              onClick={() => history.push(`/products/${product.id}`)}
+              onClick={() => history.push(`/images/${product.id}`)}
             >
               {/* <Link to={`/products/${product.id}`}> */}
               <div>
                 {images.allImages.length > 0 ? (
                   <img
                     style={{
-                      width: "100%",
+                      width: "200px",
                       height: "250px",
                       borderRadius: "7px",
+                      margin: "2px",
                     }}
                     src={product.images[0].url}
                     alt={product.name}
@@ -47,21 +48,16 @@ const AllImages = () => {
                 ) : (
                   <img
                     style={{
-                      width: "100%",
+                      width: "300px",
                       height: "250px",
                       borderRadius: "7px",
+                      border: "2px solid white",
+                      margin: "2px",
                     }}
                     src="https://i.imgur.com/6XK9X4u.png"
                     alt={product.name}
                   />
                 )}
-
-                <div className="product-info">
-                  <div className="product-name">{product.name}</div>
-                  <div className="product-reviews">Reviews go here</div>
-                  <p className="price">${product.price}</p>
-                  <p className="product-description">{product.description}</p>
-                </div>
               </div>
               {/* </Link> */}
             </div>
