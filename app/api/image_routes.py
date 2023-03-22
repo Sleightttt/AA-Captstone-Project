@@ -74,15 +74,15 @@ def get_product(id):
     return image
 
 # # Delete a product /api/product/:id
-# @product_routes.route('/<int:id>', methods=['DELETE'])
-# def delete_product(id):
+@image_routes.route('/<int:id>', methods=['DELETE'])
+def delete_product(id):
 
-#     if current_user.is_authenticated:
-#         product = Product.query.get(id)
-#         db.session.delete(product)
-#         db.session.commit()
-#         return {'message': 'Product deleted'}
-#     return {'errors': 'Unauthorized'}, 403
+    if current_user.is_authenticated:
+        image = Image.query.get(id)
+        db.session.delete(image)
+        db.session.commit()
+        return {'message': 'Image deleted'}
+    return {'errors': 'Unauthorized'}, 403
 
 
 # # create a product image /api/product/:id/image
@@ -129,3 +129,9 @@ def get_product(id):
 # def get_products_by_seller(id):
 #     products = Product.query.filter_by(seller_id=id).all()
 #     return {'products': [product.to_dict() for product in products], 'seller': User.query.get(id).to_dict()}
+
+
+@image_routes.route('/owner/<int:id>')
+def get_images_by_owner(id):
+    images = Image.query.filter_by(owner_id=id).all()
+    return {'images': [image.to_dict() for image in images], 'owner': User.query.get(id).to_dict()}

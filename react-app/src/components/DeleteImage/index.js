@@ -1,0 +1,41 @@
+// create delete product modal
+
+import { useEffect, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useParams, useHistory } from "react-router-dom";
+import {
+  deleteImage,
+  getImagesDetails,
+  getAllImages,
+} from "../../store/images";
+import "./DeleteImage.css";
+
+function DeleteImage({ setShowModal, imageId }) {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const handleDeleteImage = () => {
+    dispatch(deleteImage(imageId)).then(() => {
+      dispatch(getAllImages());
+      history.push("/images");
+    });
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  return (
+    <div className="modal">
+      <h3>Are you sure you want to delete this Image?</h3>
+      <button className="delete-button-model" onClick={handleDeleteImage}>
+        Yes
+      </button>
+      <button className="delete-button-model" onClick={handleCloseModal}>
+        No
+      </button>
+    </div>
+  );
+}
+
+export default DeleteImage;

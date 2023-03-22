@@ -13,6 +13,15 @@ const setSingleImage = (image) => ({
   payload: image,
 });
 
+const setImagesByUser = (images) => ({
+  type: SET_ALL_IMAGES_BY_USER,
+  payload: images,
+});
+
+const removeImage = () => ({
+  type: REMOVE_IMAGE,
+});
+
 export const getAllImages = () => async (dispatch) => {
   const response = await fetch("/api/images/");
 
@@ -31,6 +40,19 @@ export const getSingleImage = (imageId) => async (dispatch) => {
     return data;
   }
 };
+
+export const getImagesByUser = (userId) => async (dispatch) => {
+  console.log("hittt");
+  const response = await fetch(`/api/images/owner/${userId}`);
+
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(setImagesByUser(data));
+    console.log("hit");
+    return data;
+  }
+};
+
 //edit image
 export const editImage = (image) => async (dispatch) => {
   const { id, name, description, lat, lng, userId, url } = image;
@@ -140,6 +162,20 @@ export const createImage = (image) => async (dispatch) => {
     }
   } else {
     return "something went wrong when creating images";
+  }
+};
+
+export const deleteImage = (imageId) => async (dispatch) => {
+  console.log("hit delete1");
+  const response = await fetch(`/api/images/${imageId}`, {
+    method: "DELETE",
+  });
+  console.log("hit delete2");
+  if (response.ok) {
+    console.log("hit delete3");
+    const data = await response.json();
+    dispatch(removeImage());
+    return data;
   }
 };
 

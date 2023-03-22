@@ -32,7 +32,7 @@ function Navigation({ isLoaded }) {
                 </NavLink>
 
                 <div className="you">
-                  <NavLink exact to="/profile">
+                  <NavLink exact to={`/user/${sessionUser.id}`}>
                     You
                   </NavLink>
                 </div>
