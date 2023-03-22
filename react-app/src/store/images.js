@@ -27,9 +27,9 @@ export default function productReducer(state = initialState, action) {
     case SET_ALL_IMAGES_BY_USER:
       return { ...state, allImagesByUser: action.payload };
     case SET_SINGLE_IMAGE:
-      return { ...state, singleProduct: action.payload };
+      return { ...state, singleImage: action.payload };
     case REMOVE_IMAGE:
-      return { ...state, singleProduct: {} };
+      return { ...state, singleImage: {} };
     default:
       return state;
   }
