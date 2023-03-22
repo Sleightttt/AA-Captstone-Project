@@ -78,36 +78,6 @@ export const editImage = (image) => async (dispatch) => {
     dispatch(setSingleImage(imageData));
     return imageData;
   }
-
-  // let imageResponse;
-
-  // if (response.ok) {
-  //   for (let i = 0; i < images.length; i++) {
-  //     if (images[i] === "") continue;
-  //     const imageUrl = images[i].url;
-  //     const imageByProduct = await fetch(`/api/product/${productData.id}/image`);
-  //     const imageByProductData = await imageByProduct.json();
-  //     const imageId = imageByProductData.images[0].id;
-  //     imageResponse = await fetch(`/api/product/${productData.id}/image/${imageId}`, {
-  //       method: "PUT",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         id: imageId,
-  //         url: imageUrl,
-  //         preview: true,
-  //         productId: productData.id,
-  //       }),
-
-  //     });
-  //     if (!imageResponse.ok) {
-  //       return `something went wrong when creating image number ${i}`;
-  //     }
-  //   }
-  // } else {
-  //   return "something went wrong when creating product";
-  // }
 };
 
 export const createImage = (image) => async (dispatch) => {
@@ -129,30 +99,6 @@ export const createImage = (image) => async (dispatch) => {
   });
   const imageData = await response.json();
 
-  // let imageResponse;
-
-  // if (response.ok) {
-  //   for (let i = 0; i < images.length; i++) {
-  //     if (images[i] === "") continue;
-  //     imageResponse = await fetch(`/api/product/${productData.id}/image`, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         url: images[i],
-  //         preview: true,
-  //         productId: productData.id,
-  //       }),
-  //     });
-  //     if (!imageResponse.ok) {
-  //       return `something went wrong when creating image number ${i}`;
-  //     }
-  //   }
-  // } else {
-  //   return "something went wrong when creating product";
-  // }
-
   if (response.ok) {
     const final = await fetch(`/api/images/${imageData.id}`);
     if (final.ok) {
@@ -166,13 +112,13 @@ export const createImage = (image) => async (dispatch) => {
 };
 
 export const deleteImage = (imageId) => async (dispatch) => {
-  console.log("hit delete1");
+  // console.log("hit delete1");
   const response = await fetch(`/api/images/${imageId}`, {
     method: "DELETE",
   });
-  console.log("hit delete2");
+  // console.log("hit delete2");
   if (response.ok) {
-    console.log("hit delete3");
+    // console.log("hit delete3");
     const data = await response.json();
     dispatch(removeImage());
     return data;

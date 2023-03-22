@@ -40,7 +40,6 @@ const AllImages = () => {
                       width: "200px",
                       height: "250px",
                       borderRadius: "7px",
-                      margin: "2px",
                     }}
                     src={product.images[0].url}
                     alt={product.name}
@@ -52,7 +51,6 @@ const AllImages = () => {
                       height: "250px",
                       borderRadius: "7px",
                       border: "2px solid white",
-                      margin: "2px",
                     }}
                     src="https://i.imgur.com/6XK9X4u.png"
                     alt={product.name}

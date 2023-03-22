@@ -76,12 +76,21 @@ const Profile = () => {
       )}
       <div className="profile-container">
         <div className="profile-header">
-          <h1>Profile</h1>
+          <h1 className="profile-banner-container">
+            <div className="profile-name"> {user.username} </div>
+            <div className="follow-container">
+              <div className="profile-follow">
+                0 Followers &nbsp; • &nbsp;&nbsp;{" "}
+              </div>
+
+              <div className="profile-following">0 Following</div>
+            </div>
+          </h1>
         </div>
         <div className="profile-body">
           <div className="profile-info">
             <div className="profile-info-header">
-              <h2>Profile Info</h2>
+              <h2 className="profile-info">Profile Info</h2>
             </div>
             <div className="profile-info-body">
               <div className="profile-info-body-left">
