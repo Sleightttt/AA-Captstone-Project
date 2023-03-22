@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import AllImages from "./components/AllImages";
 import NewImageForm from "./components/NewImageForm";
 import SingleImage from "./components/SingleImage";
+import UpdateImage from "./components/UpdateImage";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,11 +31,15 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
+
           <Route exact={true} path="/images">
             <AllImages />
           </Route>
           <Route exact={true} path="/images/new">
             <NewImageForm />
+          </Route>
+          <Route path="/images/:id/edit">
+            <UpdateImage />
           </Route>
           <Route exact={true} path="/images/:id">
             <SingleImage />

@@ -31,6 +31,62 @@ export const getSingleImage = (imageId) => async (dispatch) => {
     return data;
   }
 };
+//edit image
+export const editImage = (image) => async (dispatch) => {
+  const { id, name, description, lat, lng, userId, url } = image;
+
+  const response = await fetch(`/api/images/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      id,
+      name,
+      description,
+      url,
+      lat,
+      lng,
+      owner_id: userId,
+    }),
+  });
+
+  if (response.ok) {
+    const imageData = await response.json();
+    dispatch(setSingleImage(imageData));
+    return imageData;
+  }
+
+  // let imageResponse;
+
+  // if (response.ok) {
+  //   for (let i = 0; i < images.length; i++) {
+  //     if (images[i] === "") continue;
+  //     const imageUrl = images[i].url;
+  //     const imageByProduct = await fetch(`/api/product/${productData.id}/image`);
+  //     const imageByProductData = await imageByProduct.json();
+  //     const imageId = imageByProductData.images[0].id;
+  //     imageResponse = await fetch(`/api/product/${productData.id}/image/${imageId}`, {
+  //       method: "PUT",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         id: imageId,
+  //         url: imageUrl,
+  //         preview: true,
+  //         productId: productData.id,
+  //       }),
+
+  //     });
+  //     if (!imageResponse.ok) {
+  //       return `something went wrong when creating image number ${i}`;
+  //     }
+  //   }
+  // } else {
+  //   return "something went wrong when creating product";
+  // }
+};
 
 export const createImage = (image) => async (dispatch) => {
   const { name, description, url, lat, lng, owner_id } = image;

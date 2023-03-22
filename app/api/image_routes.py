@@ -42,26 +42,27 @@ def create_product():
     return {'errors': 'Unauthorized'}, 403
 
 # # Update a product /api/product/:id
-# @product_routes.route('/<int:id>', methods=['PUT'])
-# def update_product(id):
-#     form = ProductForm()
-#     if current_user.is_authenticated:
-#         user = current_user.to_dict()
-#         seller_id = user['id']
-#         product = Product.query.get(id)
-#         form['csrf_token'].data = request.cookies['csrf_token']
-#         if form.validate_on_submit():
-#             product.name = form.data['name']
-#             product.description = form.data['description']
-#             product.price = form.data['price']
-#             product.quantity = form.data['quantity']
-#             product.seller_id = seller_id
-#             product.updated_at = datetime.utcnow()
-#             db.session.add(product)
-#             db.session.commit()
-#             return product.to_dict()
-#         return {'errors': form.errors}, 401
-#     return {'errors': 'Unauthorized'}, 403
+@image_routes.route('/<int:id>', methods=['PUT'])
+def update_image(id):
+    form = ImageForm()
+    if current_user.is_authenticated:
+        user = current_user.to_dict()
+        owner_id = user['id']
+        image = Image.query.get(id)
+        form['csrf_token'].data = request.cookies['csrf_token']
+        if form.validate_on_submit():
+            image.name = form.data['name']
+            image.description = form.data['description']
+            image.lat = form.data['lat']
+            image.lng = form.data['lng']
+            image.url = form.data['url']
+            image.owner_id = owner_id
+            image.updated_at = datetime.utcnow()
+            db.session.add(image)
+            db.session.commit()
+            return image.to_dict()
+        return {'errors': form.errors}, 401
+    return {'errors': 'Unauthorized'}, 403
 
 # Get a single product /api/product/:id
 @image_routes.route('/<int:id>')
