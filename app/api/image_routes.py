@@ -1,7 +1,10 @@
 from flask import Blueprint, jsonify, session, request
 from app.models import  db, Image, User
+from app.forms.image_form import ImageForm
 from flask_login import current_user
 from datetime import datetime
+
+
 
 
 image_routes = Blueprint('images', __name__)
@@ -13,29 +16,30 @@ def get_images():
     return {'images': [image.to_dict() for image in images]}
 
 # Create a product /api/product/
-# @product_routes.route('/', methods=['POST'])
-# def create_product():
+@image_routes.route('/', methods=['POST'])
+def create_product():
 
-#     form = ProductForm()
-#     if current_user.is_authenticated:
-#         user = current_user.to_dict()
-#         seller_id = user['id']
-#         form['csrf_token'].data = request.cookies['csrf_token']
-#         if form.validate_on_submit():
-#             product = Product(
-#                 name=form.data['name'],
-#                 description=form.data['description'],
-#                 price=form.data['price'],
-#                 quantity=form.data['quantity'],
-#                 seller_id=seller_id,
-#                 created_at=datetime.utcnow(),
-#                 updated_at=datetime.utcnow(),
-#             )
-#             db.session.add(product)
-#             db.session.commit()
-#             return product.to_dict()
-#         return {'errors': form.errors}, 401
-#     return {'errors': 'Unauthorized'}, 403
+    form = ImageForm()
+    if current_user.is_authenticated:
+        user = current_user.to_dict()
+        owner_id = user['id']
+        form['csrf_token'].data = request.cookies['csrf_token']
+        if form.validate_on_submit():
+            image = Image(
+                name=form.data['name'],
+                description=form.data['description'],
+                url=form.data['url'],
+                lat=form.data['lat'],
+                lng=form.data['lng'],
+                owner_id=owner_id,
+                created_at=datetime.utcnow(),
+                updated_at=datetime.utcnow(),
+            )
+            db.session.add(image)
+            db.session.commit()
+            return image.to_dict()
+        return {'errors': form.errors}, 401
+    return {'errors': 'Unauthorized'}, 403
 
 # # Update a product /api/product/:id
 # @product_routes.route('/<int:id>', methods=['PUT'])
@@ -59,14 +63,14 @@ def get_images():
 #         return {'errors': form.errors}, 401
 #     return {'errors': 'Unauthorized'}, 403
 
-# # Get a single product /api/product/:id
-# @product_routes.route('/<int:id>')
-# def get_product(id):
-#     product = Product.query.get(id)
-#     seller = User.query.get(product.seller_id)
-#     product = product.to_dict()
-#     product['seller'] = seller.to_dict()
-#     return product
+# Get a single product /api/product/:id
+@image_routes.route('/<int:id>')
+def get_product(id):
+    image = Image.query.get(id)
+    owner = User.query.get(image.owner_id)
+    image = image.to_dict()
+    image['owner'] = owner.to_dict()
+    return image
 
 # # Delete a product /api/product/:id
 # @product_routes.route('/<int:id>', methods=['DELETE'])

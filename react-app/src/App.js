@@ -6,6 +6,8 @@ import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import AllImages from "./components/AllImages";
+import NewImageForm from "./components/NewImageForm";
+import SingleImage from "./components/SingleImage";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,6 +32,12 @@ function App() {
           </Route>
           <Route exact={true} path="/images">
             <AllImages />
+          </Route>
+          <Route exact={true} path="/images/new">
+            <NewImageForm />
+          </Route>
+          <Route exact={true} path="/images/:id">
+            <SingleImage />
           </Route>
         </Switch>
       )}

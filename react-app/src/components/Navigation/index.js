@@ -75,7 +75,9 @@ function Navigation({ isLoaded }) {
                 <>
                   <div className="nav-right">
                     <div className="upload-icon">
-                      <i class="fa-solid fa-lg fas fa-upload"></i>
+                      <NavLink exact to="/images/new">
+                        <i class="fa-solid fa-lg fas fa-upload"></i>
+                      </NavLink>
                     </div>
 
                     <div className="cart-box">
