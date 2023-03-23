@@ -27,8 +27,8 @@ function DeleteImage({ setShowModal, imageId }) {
 
   return (
     <div className="modal">
-      <h3>Are you sure you want to delete this Image?</h3>
-      <button className="delete-button-model" onClick={handleDeleteImage}>
+      <h3>Are you SURE you want to delete this Image?</h3>
+      <button className="delete-button-model yes" onClick={handleDeleteImage}>
         Yes
       </button>
       <button className="delete-button-model" onClick={handleCloseModal}>
