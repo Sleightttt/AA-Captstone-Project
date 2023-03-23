@@ -45,7 +45,7 @@ html {
 
 .navbar {
   position: relative;
-  height: 100px;
+  height: 50px;
   width: 100%;
   display: inline-block;
   background-color: rgb(36, 36, 36);
@@ -53,7 +53,7 @@ html {
 
 .nav-items {
   /* border: solid red 2px; */
-  height: 65px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -126,7 +126,7 @@ html {
 
 .profile-box > button {
   display: inline-block;
-  background-color: white;
+  background-color: rgb(76, 76, 76);
   border: none;
   border-radius: 50%;
   background-repeat: no-repeat;
@@ -241,4 +241,13 @@ a:hover {
 
 .surch:hover {
   background-color: rgb(215, 215, 215);
+}
+
+.logo-holder {
+  background-image: url();
+}
+
+.logo {
+  height: 50px;
+  width: 80px;
 }
