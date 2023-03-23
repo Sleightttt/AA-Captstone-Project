@@ -19,7 +19,18 @@ const AllImages = () => {
   if (allProducts.length === 0) {
     return null;
   }
-  console.log(images.allImages);
+  console.log(images.allImages.images);
+
+  function randomNumber() {
+    return Math.random() * (15 - 5) + 5;
+  }
+
+  function randomHeight() {
+    return Math.random() * (300 - 200) + 200;
+  }
+  function randomWidth() {
+    return Math.random() * (400 - 200) + 200;
+  }
 
   return (
     <>
@@ -34,14 +45,16 @@ const AllImages = () => {
             >
               {/* <Link to={`/products/${product.id}`}> */}
               <div>
-                {images.allImages.length > 0 ? (
+                {images.allImages.images.length > 0 ? (
                   <img
                     style={{
-                      width: "200px",
-                      height: "250px",
+                      width: `${randomWidth()}px`,
+                      height: `200px`,
                       borderRadius: "7px",
+                      margin: "2px",
+                      paddingTop: `1px`,
                     }}
-                    src={product.images[0].url}
+                    src={product.url}
                     alt={product.name}
                   />
                 ) : (

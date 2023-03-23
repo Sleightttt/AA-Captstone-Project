@@ -88,71 +88,61 @@ const Profile = () => {
           </h1>
         </div>
         <div className="profile-body">
-          <div className="profile-info">
-            <div className="profile-info-header">
-              <h2 className="profile-info">Profile Info</h2>
-            </div>
+          <div className="info-profile">
+            <div className="profile-info-header"></div>
             <div className="profile-info-body">
-              <div className="profile-info-body-left">
-                <div className="profile-info-body-left-item">
-                  <h3>Username</h3>
-                  <p>{user.username}</p>
-                </div>
-                <div className="profile-info-body-left-item">
-                  <h3>Email</h3>
-                  <p>{user.email}</p>
-                </div>
-              </div>
+              <div className="profile-info-body-left"></div>
               <div className="user-products-section">
                 <div className="user-products-header">
-                  <h2>My Images</h2>
+                  <div className="your-images">Your Images</div>
                   {loggedInUser.id === Number(id) && (
                     <button
-                      className="add-product-button"
+                      className="add-image-button"
                       onClick={() => history.push("/images/new")}
                     >
-                      Add Image
+                      Add New Image
                     </button>
                   )}
-                  <div className="user-products-body">
+                  <div className="user-images-body">
                     {images[0].map((image) => (
                       <div className="user-product-card">
-                        <div className="user-product-card-image">
-                          {image[0] && (
-                            <img
-                              key={image.id}
-                              style={{ width: "200px", height: "150px" }}
-                              src={image[0].url}
-                              alt={image.name}
-                            />
-                          )}
-                        </div>
-                        <div className="user-product-card-info">
-                          <div className="user-product-card-info-top">
-                            <h3>{image.name}</h3>
-                            <p>{image.description}</p>
-                            <p>{image.lat}</p>
-                            <p>{image.lng}</p>
-                          </div>
-                          {loggedInUser.id === Number(id) && (
-                            <div className="user-product-card-buttons">
-                              <button
-                                className="user-product-card-button"
+                        <div className="user-image">
+                          {image && (
+                            <>
+                              <img
+                                className="profile-image-hover"
+                                key={image.id}
+                                style={{ width: "400px", height: "400px" }}
+                                src={image.url}
+                                alt={image.name}
                                 onClick={() =>
-                                  history.push(`/images/${image.id}/edit`)
+                                  history.push(`/images/${image.id}`)
                                 }
-                              >
-                                Edit
-                              </button>
-                              <button
-                                className="user-product-card-button"
-                                onClick={() => handleShowModal(image.id)}
-                              >
-                                Delete
-                              </button>
-                            </div>
+                              />
+                              <div className="img__description_layer">
+                                {loggedInUser.id === Number(id) && (
+                                  <div className="user-product-card-buttons">
+                                    <button
+                                      className="user-image-card-button"
+                                      onClick={() =>
+                                        history.push(`/images/${image.id}/edit`)
+                                      }
+                                    >
+                                      Edit
+                                    </button>
+                                    <button
+                                      className="user-image-card-button"
+                                      onClick={() => handleShowModal(image.id)}
+                                    >
+                                      Delete
+                                    </button>
+                                  </div>
+                                )}
+                              </div>
+                            </>
                           )}
                         </div>
+                        <div className="user-product-card-info"></div>
                       </div>
                     ))}
                   </div>

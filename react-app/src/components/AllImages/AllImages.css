@@ -6,3 +6,8 @@
   justify-content: center;
   background-color: white;
 }
+
+.image-card:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}

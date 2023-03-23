@@ -6,13 +6,14 @@
   background-repeat: no-repeat;
   background-position: center center;
   height: 200px;
+  margin-bottom: 0px;
   background-image: url(https://images.unsplash.com/photo-1679246453872-258ee52433eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80);
 }
 
 .profile-name {
   display: flex;
   font-size: 40px;
-  margin-left: 200px;
+  margin-left: 13%;
   color: white;
   font-weight: 100;
   padding-bottom: 10px;
@@ -23,7 +24,10 @@
   font-size: 16px;
   color: white;
   font-weight: 100;
-  margin-left: 203px;
+  margin-left: 13.3%;
+}
+.profile-body {
+  background-color: rgb(232, 232, 232);
 }
 
 .profile-following {
@@ -37,6 +41,21 @@
 .follow-container {
   display: flex;
   flex-direction: row;
+}
+
+.add-image-button {
+  margin: 4px;
+  border-radius: 2px;
+  background-color: rgb(41, 41, 41);
+  color: white;
+  height: 30px;
+  width: 200px;
+}
+
+.add-image-button:hover,
+.user-image-card-button:hover {
+  cursor: pointer;
+  color: rgb(195, 195, 195);
 }
 
 .modal {
@@ -56,6 +75,71 @@
   box-shadow: 1px 3px 1px black;
 }
 
+.user-images-body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.user-image {
+  padding: 3px;
+}
+
 .yes {
   background-color: rgb(82, 17, 17);
+}
+
+.info-profile {
+  font-weight: bold;
+}
+
+.your-images {
+  padding-left: 18px;
+  font-size: 30px;
+  font-weight: 1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.img__description_layer {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(36, 36, 36, 0.6);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* transition effect. not necessary */
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.user-image:hover .img__description_layer {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img__description {
+  transition: 0.2s;
+  transform: translateY(1em);
+}
+
+.user-image:hover .img__description {
+  transform: translateY(0);
+}
+
+.user-image-card-button {
+  margin: 4px;
+  border-radius: 2px;
+  background-color: rgb(41, 41, 41);
+  color: white;
+  height: 30px;
+  width: 150px;
+}
+
+.profile-image-hover {
+  cursor: pointer;
 }

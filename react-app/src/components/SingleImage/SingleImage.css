@@ -1,0 +1,45 @@
+.single-product-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(57, 57, 57);
+}
+
+.back-button-container {
+  display: block;
+  width: 100%;
+}
+
+.back-button {
+  color: white;
+  border: none;
+  outline: none;
+  background-color: rgb(57, 57, 57);
+  padding-top: 10px;
+  padding-left: 15px;
+  font-size: 15px;
+}
+
+.back-button:hover {
+  cursor: pointer;
+}
+
+.underline:hover {
+  text-decoration: underline;
+}
+
+.single-image {
+  height: 700px;
+  width: 700px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.product-info {
+  background-color: rgb(236, 236, 236);
+}
+
+.owner-link {
+  color: rgb(131, 30, 178);
+}

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleImage } from "../../store/images";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 import "./SingleImage.css";
 
 const SingleImage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
+  const history = useHistory();
   const image = useSelector((state) => state.images.singleImage);
   const currUser = useSelector((state) => state?.session?.user);
   const [quantity, setQuantity] = useState(0);
@@ -19,45 +20,27 @@ const SingleImage = () => {
     return null;
   }
 
-  //   const maxAvailable = [];
-  //   for (let i = 1; i <= product.quantity; i++) {
-  //     maxAvailable.push(i);
-  //   }
-
-  //   const quantityUpdate = (e) => {
-  //     setQuantity(e.target.value);
-  //   };
-
-  //   const addCartClick = async (e) => {
-  //     e.preventDefault();
-
-  //     const data = {
-  //       user_id: currUser.id,
-  //       product_id: product.id,
-  //       quantity: quantity,
-  //     };
-  //     console.log("item to be added", data);
-  //     await dispatch(addItemToCart(data));
-  //   };
-
-  //   const disableButton = () => {
-  //     if (!currUser) {
-  //       return true;
-  //     }
-  //   };
-
   return (
-    <div className="single-product-container">
-      <div className="images-row"></div>
+    <>
+      <div className="single-product-container">
+        <div className="back-button-container">
+          <button className="back-button" onClick={() => history.goBack()}>
+            <i className="fa fa-arrow-left fa-lg" aria-hidden="true"></i> &nbsp;
+            <span className="underline">Back to previous</span>
+          </button>
+        </div>
+        <div className="image-container">
+          <img className="single-image" src={image.url}></img>
+        </div>
+      </div>
       <div className="product-info">
-        <h3 className="single-product-name">{image.name}</h3>
+        <div className="single-product-name">{image.name}</div>
         <p>{image.description}</p>
-        <p className="single-product-price">${image.lat}</p>
         <Link to={`/user/${image.owner?.id}`}>
-          <p>Owner: {image.owner?.username}</p>
+          <div className="owner-link">Owner: {image.owner?.username}</div>
         </Link>
       </div>
-    </div>
+    </>
   );
 };
 

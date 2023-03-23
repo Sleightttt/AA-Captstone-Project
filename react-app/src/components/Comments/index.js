@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCommentsByImage, imagesComments } from "../../store/comments";
 import { useHistory, useParams } from "react-router-dom";
-// import "./AllImages.css";
+import "./Comments.css";
 
 const Comments = () => {
   const dispatch = useDispatch();
