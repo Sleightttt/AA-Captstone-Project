@@ -22,13 +22,13 @@ function Navigation({ isLoaded }) {
                 <NavLink className={".nav-home"} exact to="/">
                   ImageSpace
                 </NavLink>
-                <img className="logo" src="/images/ImageSpace_logo.jpg"></img>
+                <img className="logo" src="/Images/ImageSpace_logo.jpg"></img>
               </li>
             </ul>
           ) : (
             <ul className="nav-items">
               <li className="nav-left">
-                <img className="logo" src="/images/ImageSpace_logo.jpg"></img>
+                <img className="logo" src="/Images/ImageSpace_logo.jpg"></img>
                 <NavLink className={".nav-home"} exact to="/">
                   ImageSpace
                 </NavLink>
