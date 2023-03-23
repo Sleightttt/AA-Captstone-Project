@@ -9,7 +9,7 @@ def seed_comments():
         comment = Comment(
             user_id=randint(1, 3),
             image_id=randint(1, 3),
-            comment=f"this is review # {i}",
+            comment=f"this is comment # {i}",
             created_at=datetime.utcnow(),
             updated_at=datetime.utcnow(),
         )

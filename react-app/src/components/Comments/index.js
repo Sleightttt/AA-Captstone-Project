@@ -27,6 +27,21 @@ const Comments = () => {
           <div key={comment.id} className="single-comment">
             <div>{comment.comment}</div>
             <div>{comment.created_at}</div>
+            {user.id == comment.user_id ? (
+              <div></div>
+            ) : (
+              <>
+                <div className="icon-bar">
+                  <button className="edit-comment-button">
+                    <i className="fas fa-edit"></i>
+                  </button>
+                  <button className="delete-comment-button">
+                    {" "}
+                    <i className="fas fa-trash"></i>
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         ))}
       </div>

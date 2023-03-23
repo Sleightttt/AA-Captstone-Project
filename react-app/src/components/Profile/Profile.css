@@ -105,7 +105,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(36, 36, 36, 0.6);
+
   color: #fff;
   visibility: hidden;
   opacity: 0;
@@ -142,4 +142,9 @@
 
 .profile-image-hover {
   cursor: pointer;
+}
+
+.profile-image-hover:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
