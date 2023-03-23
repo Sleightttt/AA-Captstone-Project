@@ -7,7 +7,7 @@ from random import randint
 def seed_comments():
     for i in range(34):
         comment = Comment(
-            user_id=randint(4, 32),
+            user_id=randint(1, 3),
             image_id=randint(1, 20),
             comment=f"this is review # {i}",
             created_at=datetime.utcnow(),
