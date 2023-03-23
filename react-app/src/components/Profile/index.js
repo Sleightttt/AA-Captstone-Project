@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams, Link } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { getImagesByUser } from "../../store/images";
 import DeleteImage from "../DeleteImage";
 import { getAllUsers } from "../../store/session";
