@@ -1,0 +1,32 @@
+.about-container {
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-header {
+  color: white;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 1px rgb(62, 62, 62) solid;
+}
+
+.links {
+  color: white;
+  padding-top: 20px;
+}
+
+.bottom-nav-item {
+  font-weight: 1;
+  padding: 5px;
+}
+
+.bottom-nav-item:hover {
+  cursor: pointer;
+  padding: 5px;
+  color: rgb(156, 156, 156);
+}
