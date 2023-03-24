@@ -100,10 +100,9 @@ const UpdateImage = () => {
   }
 
   return (
-    <div className="create-product-container">
-      <h1>Edit Image</h1>
+    <div className="create-image-container">
       <form onSubmit={handleSubmit}>
-        <div className="create-product-form">
+        <div className="create-image-form">
           <div className="form-item">
             <label>Name</label>
             <input

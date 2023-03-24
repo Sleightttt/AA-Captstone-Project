@@ -78,8 +78,8 @@ const CreateProduct = () => {
   //   };
 
   return (
-    <div className="create-product-container">
-      <form className="create-product-form" onSubmit={handleSubmit}>
+    <div className="create-image-container">
+      <form className="create-image-form" onSubmit={handleSubmit}>
         <div>
           {Object.keys(errors).length > 0 && (
             <div className="alert error">
@@ -114,7 +114,7 @@ const CreateProduct = () => {
           {errors["description"] && (
             <div className="error">{errors["lat"]}</div>
           )}
-          <label>Lat</label>
+          <label>Latitude</label>
           <textarea
             name="lat"
             onChange={(e) => setLat(e.target.value)}
@@ -123,7 +123,7 @@ const CreateProduct = () => {
         </div>
         <div className="form-item">
           {errors["lng"] && <div className="error">{errors["lng"]}</div>}
-          <label>Lng</label>
+          <label>Longitude</label>
           <input
             type="number"
             name="lng"
@@ -133,7 +133,7 @@ const CreateProduct = () => {
         </div>
         <div className="form-item">
           {errors["url"] && <div className="error">{errors["url"]}</div>}
-          <label>Url</label>
+          <label>Image Url</label>
           <input
             type="text"
             name="url"

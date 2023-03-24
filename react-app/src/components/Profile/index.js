@@ -94,7 +94,7 @@ const Profile = () => {
               <div className="profile-info-body-left"></div>
               <div className="user-products-section">
                 <div className="user-products-header">
-                  <div className="your-images">Your Images</div>
+                  <div className="your-images"></div>
                   {loggedInUser.id === Number(id) && (
                     <button
                       className="add-image-button"

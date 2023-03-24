@@ -1,3 +1,46 @@
-.create-product-container {
+.create-image-container {
   background-color: white;
+}
+
+.create-image-form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  background-color: rgb(36, 36, 36);
+  color: white;
+  height: 1000px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.form-item > input,
+textarea {
+  border: none;
+  background-color: rgb(74, 74, 74);
+  border-radius: 5px;
+  color: white;
+}
+
+.form-item > label {
+  font-size: 18px;
+  color: white;
+  padding: 2px;
+}
+
+.form-button {
+  border-radius: 4px;
+  width: 70%;
+  margin-left: 30px;
+  border: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
+
+.form-button:hover {
+  background-color: rgb(225, 225, 225);
+  cursor: pointer;
 }

@@ -17,12 +17,18 @@ const Comments = () => {
   }, [dispatch]);
   console.log("these be they", comments);
 
+  const handleNewComment = () => {};
+
   const commentArr = Object.values(comments);
   console.log(commentArr);
   return (
     <>
       <div className="comments-container">
-        <div> Hello </div>
+        <button className="new-comment-button" onClick={() => handleNewComment}>
+          <i className="fas fas fa-comment fa-lg black"></i>
+          <i className="fas fas fa-plus fa-lg plus black"></i>
+        </button>
+
         {commentArr.map((comment) => (
           <div key={comment.id} className="single-comment">
             <div>{comment.comment}</div>

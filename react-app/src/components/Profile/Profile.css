@@ -148,3 +148,24 @@
   cursor: pointer;
   opacity: 0.7;
 }
+
+.new-comment-button {
+  color: rgb(0, 0, 0);
+  border: none;
+  padding-bottom: 7px;
+}
+.new-comment-button:hover {
+  cursor: pointer;
+}
+
+.black {
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+}
+.black:hover {
+  color: rgb(153, 153, 153);
+}
+
+.plus {
+  font-size: 10px;
+}
