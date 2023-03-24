@@ -1,15 +1,10 @@
 // create delete product modal
 
-import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { useModal } from "../../context/Modal";
 import { deleteCommentThunk, getCommentsByImage } from "../../store/comments";
-import {
-  deleteImage,
-  getImagesDetails,
-  getAllImages,
-} from "../../store/images";
+
 import "./CommentDeleteModal.css";
 
 function CommentDeleteModal({ setShowModal, imageId }) {
@@ -17,20 +12,22 @@ function CommentDeleteModal({ setShowModal, imageId }) {
   const history = useHistory();
   const { closeModal } = useModal();
 
-  const handleDeleteComment = () => {
-    dispatch(deleteCommentThunk(imageId)).then(() => {
-      dispatch(getCommentsByImage(imageId));
-      closeModal();
-    });
+  const handleDeleteComment = async (e) => {
+    e.preventDefault();
+    dispatch(deleteCommentThunk(imageId))
+      .then(() => {
+        dispatch(getCommentsByImage(setShowModal));
+      })
+      .then(closeModal());
   };
 
   const handleCloseModal = () => {
-    setShowModal(false);
+    closeModal();
   };
 
   return (
     <div className="modal">
-      <h3>Are you SURE you want to delete this Image?</h3>
+      <h3>Are you SURE you want to delete this Comment?</h3>
       <button className="delete-button-model yes" onClick={handleDeleteComment}>
         Yes
       </button>

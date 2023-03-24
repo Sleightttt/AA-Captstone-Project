@@ -6,8 +6,6 @@ import DeleteImage from "../DeleteImage";
 import { getAllUsers } from "../../store/session";
 import "./Profile.css";
 
-const missingImage = "https://i.imgur.com/6vKJZ0X.png";
-
 const Profile = () => {
   const dispatch = useDispatch();
   const { id } = useParams();

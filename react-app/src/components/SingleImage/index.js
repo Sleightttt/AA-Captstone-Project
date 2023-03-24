@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleImage } from "../../store/images";
 import { useParams, Link, useHistory } from "react-router-dom";
@@ -9,8 +9,6 @@ const SingleImage = () => {
   const { id } = useParams();
   const history = useHistory();
   const image = useSelector((state) => state.images.singleImage);
-  const currUser = useSelector((state) => state?.session?.user);
-  const [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
     dispatch(getSingleImage(id));
@@ -30,7 +28,7 @@ const SingleImage = () => {
           </button>
         </div>
         <div className="image-container">
-          <img className="single-image" src={image.url}></img>
+          <img alt="desciprtive" className="single-image" src={image.url}></img>
         </div>
       </div>
       <div className="product-info">

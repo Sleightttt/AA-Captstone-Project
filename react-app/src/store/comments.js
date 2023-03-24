@@ -1,6 +1,6 @@
 // ! constants
 const CREATE_COMMENT = "create Comment";
-const READ_COMMENT_ALL = "Read all Comments";
+
 const READ_COMMENT_ONE = "Read Comments by id";
 const READ_COMMENT_USERS = "Read a Users Comments";
 const READ_COMMENT_IMAGE = "Read a images comments";
@@ -52,7 +52,7 @@ export const CreateCommentThunk = (CommentData) => async (dispatch) => {
 };
 
 export const UpdateCommentThunk = (CommentData) => async (dispatch) => {
-  let { id, comment } = CommentData;
+  let { comment } = CommentData;
 
   const response = await fetch(`/api/comments/${CommentData.id}`, {
     method: "PUT",
@@ -128,6 +128,7 @@ const CommentsReducer = (state = initialState, action) => {
       };
 
       return afterCreate;
+
     case UPDATE_COMMENT:
       let afterUpdate = { ...state };
       afterUpdate["LoggedInUsersComments"] = {
@@ -140,41 +141,34 @@ const CommentsReducer = (state = initialState, action) => {
       };
 
       return afterUpdate;
-    case DELETE_COMMENT:
-      let afterDelete = {
-        ...state,
-        ...state.LoggedInUsersComments,
-        ...state.SingleImagesComments,
-      };
-      delete afterDelete["LoggedInUsersComments"][action.payload];
-      delete afterDelete["SingleImagesComments"][action.payload];
-      return afterDelete;
-    // case READ_REVIEW_ALL:
-    //     return {...state,LoggedInUsersReviews:action.payload}
-    case READ_COMMENT_ONE:
-      let neww = action.payload;
-      console.log("read action hit");
-      let newState = {
-        ...state,
-        ...state.LoggedInUsersComments,
-        ...state.SingleImagesComments,
-        SingleComment: neww,
-      };
-      return newState;
 
     case READ_COMMENT_IMAGE:
       let afterImageRead = { ...state };
+
       afterImageRead.SingleImagesComments = {};
       action.payload.forEach(
         (comment) => (afterImageRead.SingleImagesComments[comment.id] = comment)
       );
+      console.log("read hit", action.payload);
       return afterImageRead;
+
     case READ_COMMENT_USERS:
       let afterRead = { ...state };
       action.payload.forEach(
         (comment) => (afterRead.LoggedInUsersComments[comment.id] = comment)
       );
       return afterRead;
+
+    case DELETE_COMMENT:
+      let afterDelete = {
+        ...state,
+      };
+      console.log(action.payload, "---");
+      delete afterDelete["LoggedInUsersComments"][action.payload];
+      delete afterDelete["SingleImagesComments"][action.payload];
+
+      return afterDelete;
+
     default:
       return state;
   }

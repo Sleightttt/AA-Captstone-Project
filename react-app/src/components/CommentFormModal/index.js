@@ -4,14 +4,8 @@ import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import "./CommentFormModal.css";
 import { useSelector } from "react-redux";
-import { getSingleImage } from "../../store/images";
-import {
-  getCommentsByImage,
-  updateComment,
-  grabACommentThunk,
-  SingleComment,
-  UpdateCommentThunk,
-} from "../../store/comments";
+
+import { UpdateCommentThunk } from "../../store/comments";
 
 function CommentFormModal({ props }) {
   const history = useHistory();
@@ -28,6 +22,7 @@ function CommentFormModal({ props }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     closeModal();
     return dispatch(
       UpdateCommentThunk({

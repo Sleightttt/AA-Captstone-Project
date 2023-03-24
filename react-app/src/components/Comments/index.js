@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  createComment,
-  CreateCommentThunk,
-  getCommentsByImage,
-  imagesComments,
-} from "../../store/comments";
-import { useHistory, useParams } from "react-router-dom";
+import { CreateCommentThunk, getCommentsByImage } from "../../store/comments";
+import { useParams } from "react-router-dom";
 import "./Comments.css";
 import OpenModalButton from "../OpenModalButton";
 import CommentFormModal from "../CommentFormModal";
@@ -16,8 +11,7 @@ import OpenDeleteModal from "../OpenDeleteModal";
 
 const Comments = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
-  const images = useSelector((state) => state.images);
+
   const comments = useSelector((state) => state.comments.SingleImagesComments);
   const imageId = useSelector((state) => state.images.singleImage.id);
   const { id } = useParams();
@@ -27,6 +21,7 @@ const Comments = () => {
 
   useEffect(() => {
     dispatch(getCommentsByImage(id));
+    dispatch(getSingleImage(id));
   }, [dispatch]);
 
   const handleNewComment = () => {
@@ -37,10 +32,9 @@ const Comments = () => {
   };
 
   const commentHandler = async () => {
-    setComment("k");
-
     dispatch(getSingleImage(imageId));
     dispatch(getCommentsByImage(imageId));
+    setComment("");
   };
 
   const handleDelete = () => {};
@@ -83,6 +77,7 @@ const Comments = () => {
               onSubmit={() => handleNewCommentSubmit}
             >
               <textarea
+                value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 className="new-comment-text"
               ></textarea>
@@ -106,26 +101,22 @@ const Comments = () => {
             ) : (
               <>
                 <div className="icon-bar">
-                  <button onClick={handleEdit} className="edit-comment-button">
-                    <OpenModalButton
-                      className="login-signup"
-                      itemText="Delete Review"
-                      modalComponent={<CommentFormModal props={comment.id} />}
-                    />
-                  </button>
-                  <button
-                    onClick={handleDelete}
-                    className="delete-comment-button"
-                  >
-                    <OpenDeleteModal
-                      className="login-signup"
-                      itemText="Delete Review"
-                      modalComponent={
-                        <CommentDeleteModal imageId={comment.id} />
-                      }
-                    />{" "}
-                    {/* <i className="fas fa-trash"></i> */}
-                  </button>
+                  <OpenModalButton
+                    className="login-signup"
+                    itemText="Delete Review"
+                    modalComponent={<CommentFormModal props={comment.id} />}
+                  />
+                  <OpenDeleteModal
+                    className="login-signup"
+                    itemText="Delete Review"
+                    modalComponent={
+                      <CommentDeleteModal
+                        imageId={comment.id}
+                        setShowModal={id}
+                      />
+                    }
+                  />{" "}
+                  {/* <i className="fas fa-trash"></i> */}
                 </div>
               </>
             )}
