@@ -61,6 +61,7 @@ def leave_Comment():
 @comment_routes.route("/<int:id>", methods=["GET", "PUT", "DELETE"])
 def Route(id):
     print("HIT ROUTE")
+
     if request.method == "PUT":
         comment_to_update = Comment.query.get(id)
         form = UpdateCommentForm()

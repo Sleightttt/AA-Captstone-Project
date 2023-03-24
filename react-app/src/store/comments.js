@@ -55,7 +55,7 @@ export const UpdateCommentThunk = (CommentData) => async (dispatch) => {
   let { id, comment } = CommentData;
 
   const response = await fetch(`/api/comments/${CommentData.id}`, {
-    method: "put",
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
@@ -71,11 +71,13 @@ export const UpdateCommentThunk = (CommentData) => async (dispatch) => {
 };
 
 export const grabACommentThunk = (commentId) => async (dispatch) => {
-  let comment = await fetch(`api/comments/${commentId}`);
+  let comment = await fetch(`api/comments/${commentId}`, { method: "GET" });
+  console.log("prethunk");
 
   if (comment.ok) {
     let res = await comment.json();
     dispatch(SingleComment(res));
+    console.log("thunk hit", res);
     return res;
   }
 };
@@ -149,8 +151,17 @@ const CommentsReducer = (state = initialState, action) => {
       return afterDelete;
     // case READ_REVIEW_ALL:
     //     return {...state,LoggedInUsersReviews:action.payload}
-    // case READ_REVIEW_ONE:
-    //     break
+    case READ_COMMENT_ONE:
+      let neww = action.payload;
+      console.log("read action hit");
+      let newState = {
+        ...state,
+        ...state.LoggedInUsersComments,
+        ...state.SingleImagesComments,
+        SingleComment: neww,
+      };
+      return newState;
+
     case READ_COMMENT_IMAGE:
       let afterImageRead = { ...state };
       afterImageRead.SingleImagesComments = {};

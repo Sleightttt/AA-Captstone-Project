@@ -105,7 +105,7 @@ const Profile = () => {
                   )}
                   <div className="user-images-body">
                     {images[0].map((image) => (
-                      <div className="user-product-card">
+                      <div key={image.id} className="user-product-card">
                         <div className="user-image">
                           {image && (
                             <>

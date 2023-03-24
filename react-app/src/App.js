@@ -11,6 +11,7 @@ import SingleImage from "./components/SingleImage";
 import UpdateImage from "./components/UpdateImage";
 import Profile from "./components/Profile";
 import Comments from "./components/Comments";
+import About from "./components/About";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,19 +36,24 @@ function App() {
           </Route>
           <Route exact={true} path="/images">
             <AllImages />
+            <About />
           </Route>
           <Route exact={true} path="/images/new">
             <NewImageForm />
+            <About />
           </Route>
           <Route path="/images/:id/edit">
             <UpdateImage />
+            <About />
           </Route>
           <Route exact={true} path="/images/:id">
             <SingleImage />
             <Comments />
+            <About />
           </Route>
           <Route exact={true} path="/user/:id">
             <Profile />
+            <About />
           </Route>
         </Switch>
       )}
