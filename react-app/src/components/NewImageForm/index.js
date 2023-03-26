@@ -5,7 +5,7 @@ import { createImage } from "../../store/images";
 import { useSelector } from "react-redux";
 import "./NewImageForm.css";
 
-const CreateProduct = () => {
+const CreateImage = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
@@ -16,9 +16,7 @@ const CreateProduct = () => {
   const [lat, setLat] = useState("");
   const [lng, setLng] = useState("");
   const [url, setUrl] = useState("");
-  const [images, setImages] = useState([""]);
   const [errors, setErrors] = useState({});
-  const [quantity, setQuantity] = useState("");
 
   if (!user) {
     history.push("/login");
@@ -165,4 +163,4 @@ const CreateProduct = () => {
   );
 };
 
-export default CreateProduct;
+export default CreateImage;

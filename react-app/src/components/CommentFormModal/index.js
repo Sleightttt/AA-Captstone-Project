@@ -38,19 +38,19 @@ function CommentFormModal({ props }) {
 
   return (
     <>
-      <div className="reviewModal">
-        <h1>Edit your comment</h1>
-        <form className="loginForm" onSubmit={handleSubmit}>
-          <label>Description</label>
+      <div className="edit-button-modal">
+        <h1 className="edit-header">Edit your comment</h1>
+        <form className="edit-form" onSubmit={handleSubmit}>
+          <label className="edit-desc">Description</label>
           <textarea
             value={comment}
-            className="review-textarea"
+            className="edit-textarea"
             placeholder="Write your comment here"
             type="text"
             onChange={(e) => setComment(e.target.value)}
           ></textarea>
 
-          <button type="submit" className="review-button-submit">
+          <button type="submit" className="edit-button-submit">
             Submit Comment
           </button>
         </form>

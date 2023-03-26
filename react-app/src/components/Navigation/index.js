@@ -43,23 +43,32 @@ function Navigation({ isLoaded }) {
                     Explore
                   </NavLink>
                 </div>
-                <div className="prints">
-                  <NavLink exact to="/prints">
+                <div
+                  onClick={() => alert("Prints coming soon")}
+                  className="prints"
+                >
+                  {/* <NavLink exact to="/prints">
                     Prints
-                  </NavLink>
+                  </NavLink> */}
+                  Prints
                 </div>
-                <div className="get-pro">
+                <div
+                  onClick={() => alert("Pro coming soon")}
+                  className="get-pro"
+                >
                   {" "}
-                  <NavLink exact to="/get-pro">
+                  {/* <NavLink exact to="/get-pro">
                     Get Pro
-                  </NavLink>
+                  </NavLink> */}
+                  Get Pro
                 </div>
               </li>
               <div className="search-container">
                 <div className="search-form">
                   <form
                     className="search-form"
-                    onSubmit={() => history.push(`/search/${search}`)}
+                    // onSubmit={() => history.push(`/search/${search}`)}
+                    onSubmit={() => alert("Search coming soon!")}
                   >
                     <input
                       placeholder="Photos, people, or groups"
@@ -82,10 +91,13 @@ function Navigation({ isLoaded }) {
                       </NavLink>
                     </div>
 
-                    <div className="cart-box">
-                      <NavLink exact to="/notifications">
-                        <i className="cart-box  fas fa-bell fa-lg"></i>
-                      </NavLink>
+                    <div
+                      onClick={() => alert("Notifications coming soon")}
+                      className="cart-box"
+                    >
+                      {/* <NavLink exact to="/notifications"> */}
+                      <i className="cart-box  fas fa-bell fa-lg white"></i>
+                      {/* </NavLink> */}
                     </div>
                     <div className="profile-box">
                       <ProfileButton user={sessionUser} />

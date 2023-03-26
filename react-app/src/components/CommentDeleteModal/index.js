@@ -26,7 +26,7 @@ function CommentDeleteModal({ setShowModal, imageId }) {
   };
 
   return (
-    <div className="modal">
+    <div className="modal delete-button-modal">
       <h3>Are you SURE you want to delete this Comment?</h3>
       <button className="delete-button-model yes" onClick={handleDeleteComment}>
         Yes

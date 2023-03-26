@@ -40,7 +40,7 @@ const SingleImage = () => {
 
           <div className="single-product-name">{image.name}</div>
         </div>
-        <p>{image.description}</p>
+        <p className="image-desc">{image.description}</p>
         <Link to={`/user/${image.owner?.id}`}>
           <div className="owner-link">Owner: {image.owner?.username}</div>
         </Link>
