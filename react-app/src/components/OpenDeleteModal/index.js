@@ -16,7 +16,7 @@ function OpenDeleteModal({
   };
 
   return (
-    <button onClick={onClick}>
+    <button className="icon" onClick={onClick}>
       <i className="fas fa-trash"></i>
       {buttonText}
     </button>

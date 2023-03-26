@@ -44,3 +44,12 @@ textarea {
   background-color: rgb(225, 225, 225);
   cursor: pointer;
 }
+
+.icon {
+  border: none;
+}
+
+.icon:hover {
+  color: rgb(184, 184, 184) y;
+  cursor: pointer;
+}

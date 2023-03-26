@@ -16,7 +16,7 @@ function OpenModalButton({
   };
 
   return (
-    <button onClick={onClick}>
+    <button className="icon" onClick={onClick}>
       <i className="fas fa-edit"></i>
       {buttonText}
     </button>

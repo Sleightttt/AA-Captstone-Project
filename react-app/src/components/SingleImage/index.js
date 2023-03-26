@@ -32,7 +32,14 @@ const SingleImage = () => {
         </div>
       </div>
       <div className="product-info">
-        <div className="single-product-name">{image.name}</div>
+        <div className="user-name">
+          <img
+            className="profile-img"
+            src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80"
+          ></img>
+
+          <div className="single-product-name">{image.name}</div>
+        </div>
         <p>{image.description}</p>
         <Link to={`/user/${image.owner?.id}`}>
           <div className="owner-link">Owner: {image.owner?.username}</div>
