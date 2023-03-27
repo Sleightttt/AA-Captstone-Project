@@ -59,6 +59,13 @@ const Comments = () => {
     setShowMenu(true);
   };
 
+  const dateHandler = (date) => {
+    let formatDate = new Date(date);
+    let full = `${formatDate.toDateString()} `;
+
+    return full;
+  };
+
   const newComment = "new-comment" + (showMenu ? "" : " hidden");
   const closeMenu = () => setShowMenu(false);
 
@@ -94,7 +101,7 @@ const Comments = () => {
 
         {commentArr.map((comment) => (
           <div key={comment.id} className="single-comment">
-            <div>{comment.created_at}</div>
+            <div>{dateHandler(comment.created_at)}</div>
             <div className="comment-body">{comment.comment}</div>
 
             {user.id !== comment.user_id ? (

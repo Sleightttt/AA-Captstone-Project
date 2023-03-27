@@ -38,7 +38,10 @@
 }
 
 .comment-body {
-  padding: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .new-comment-submit-button {

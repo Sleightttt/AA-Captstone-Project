@@ -50,7 +50,7 @@ function CommentFormModal({ props }) {
           ></textarea>
 
           <button type="submit" className="edit-button-submit">
-            Submit Comment
+            Submit Edit
           </button>
         </form>
       </div>
