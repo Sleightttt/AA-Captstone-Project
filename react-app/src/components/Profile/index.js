@@ -46,11 +46,11 @@ const Profile = () => {
   }, [dispatch, id]);
 
   if (allUsers === undefined) {
-    return null;
+    return <div>Not Loading</div>;
   }
 
   if (userImages.length === 0) {
-    return null;
+    return <div>Not Loading</div>;
   }
 
   const users = Object.values(allUsers);
@@ -60,10 +60,12 @@ const Profile = () => {
   console.log(images);
 
   if (images[0]?.length === 0) {
-    return null;
+    return <div>Not Loading</div>;
   }
 
   console.log(loggedInUser.id === Number(id));
+
+  console.log(showModal);
 
   return (
     <>
