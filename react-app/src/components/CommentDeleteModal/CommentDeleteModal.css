@@ -1,7 +1,12 @@
 .delete-button-modal {
   height: 300px;
-  width: 200px;
+  width: 230px;
   display: flex;
   border: 1px solid rgb(125, 125, 125);
   box-shadow: 2px 2px 2px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.yes {
+  margin-top: 0;
 }
