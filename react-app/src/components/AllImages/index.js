@@ -21,13 +21,13 @@ const AllImages = () => {
   }
   console.log(images.allImages.images);
 
-  function randomNumber() {
-    return Math.random() * (15 - 5) + 5;
-  }
+  // function randomNumber() {
+  //   return Math.random() * (15 - 5) + 5;
+  // }
 
-  function randomHeight() {
-    return Math.random() * (300 - 200) + 200;
-  }
+  // function randomHeight() {
+  //   return Math.random() * (300 - 200) + 200;
+  // }
   function randomWidth() {
     return Math.random() * (400 - 200) + 200;
   }

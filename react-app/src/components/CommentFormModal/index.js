@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import "./CommentFormModal.css";
@@ -8,12 +8,11 @@ import { useSelector } from "react-redux";
 import { UpdateCommentThunk } from "../../store/comments";
 
 function CommentFormModal({ props }) {
-  const history = useHistory();
   const dispatch = useDispatch();
   const [comment, setComment] = useState("");
 
   const { closeModal } = useModal();
-  const user = useSelector((state) => state.session.user);
+  //   const user = useSelector((state) => state.session.user);
   const commentz = useSelector((state) => state.comments.SingleImagesComments);
 
   let commzArr = Object.values(commentz);

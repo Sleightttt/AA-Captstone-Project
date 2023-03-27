@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { getImagesByUser } from "../../store/images";
 import DeleteImage from "../DeleteImage";
-import { getAllUsers } from "../../store/session";
+// import { getAllUsers } from "../../store/session";
 import "./Profile.css";
 
 const Profile = () => {
@@ -26,11 +26,11 @@ const Profile = () => {
   useEffect(() => {
     const fetchData = async () => {
       const imagesByUser = await dispatch(getImagesByUser(id));
-      const users = await dispatch(getAllUsers());
+      // const users = await dispatch(getAllUsers());
       console.log(imagesByUser);
       setUserImages(Object.values(imagesByUser));
-      const user =
-        users && users[0] && users[0].find((user) => user.id === parseInt(id));
+      // const user =
+      //   users && users[0] && users[0].find((user) => user.id === parseInt(id));
     };
     fetchData();
     function handleCloseModal(event) {

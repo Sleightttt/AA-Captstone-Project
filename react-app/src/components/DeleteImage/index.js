@@ -1,13 +1,8 @@
 // create delete product modal
 
-import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
-import {
-  deleteImage,
-  getImagesDetails,
-  getAllImages,
-} from "../../store/images";
+import { useHistory } from "react-router-dom";
+import { deleteImage, getAllImages } from "../../store/images";
 import "./DeleteImage.css";
 
 function DeleteImage({ setShowModal, imageId }) {

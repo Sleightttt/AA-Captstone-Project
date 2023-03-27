@@ -1,7 +1,6 @@
 // create delete product modal
 
 import { useDispatch } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
 import { useModal } from "../../context/Modal";
 import { deleteCommentThunk, getCommentsByImage } from "../../store/comments";
 
@@ -9,7 +8,7 @@ import "./CommentDeleteModal.css";
 
 function CommentDeleteModal({ setShowModal, imageId }) {
   const dispatch = useDispatch();
-  const history = useHistory();
+
   const { closeModal } = useModal();
 
   const handleDeleteComment = async (e) => {

@@ -37,8 +37,8 @@ const Comments = () => {
     setComment("");
   };
 
-  const handleDelete = () => {};
-  const handleEdit = () => {};
+  // const handleDelete = () => {};
+  // const handleEdit = () => {};
 
   const handleNewCommentSubmit = async (e) => {
     // console.log(props, "props");
@@ -58,6 +58,7 @@ const Comments = () => {
     if (showMenu) return;
     setShowMenu(true);
   };
+
   const newComment = "new-comment" + (showMenu ? "" : " hidden");
   const closeMenu = () => setShowMenu(false);
 

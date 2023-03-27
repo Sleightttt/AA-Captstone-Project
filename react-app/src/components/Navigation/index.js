@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
-  const history = useHistory();
+  // const history = useHistory();
 
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
 
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -22,13 +22,21 @@ function Navigation({ isLoaded }) {
                 <NavLink className={".nav-home"} exact to="/">
                   ImageSpace
                 </NavLink>
-                <img className="logo" src="/Images/ImageSpace_logo.jpg"></img>
+                <img
+                  alt="ImageSpace Logo"
+                  className="logo"
+                  src="/Images/ImageSpace_logo.jpg"
+                ></img>
               </li>
             </ul>
           ) : (
             <ul className="nav-items">
               <li className="nav-left">
-                <img className="logo" src="/Images/ImageSpace_logo.jpg"></img>
+                <img
+                  alt="ImageSpace Logo"
+                  className="logo"
+                  src="/Images/ImageSpace_logo.jpg"
+                ></img>
                 <NavLink className={".nav-home"} exact to="/">
                   ImageSpace
                 </NavLink>
@@ -73,7 +81,7 @@ function Navigation({ isLoaded }) {
                     <input
                       placeholder="Photos, people, or groups"
                       className="search-form-input"
-                      onChange={(e) => setSearch(e.target.value)}
+                      // onChange={(e) => setSearch(e.target.value)}
                     />
                     {/* <i
                     onClick={(e) => setSearch(e.target.value)}
