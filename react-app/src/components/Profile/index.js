@@ -45,7 +45,13 @@ const Profile = () => {
     };
   }, [dispatch, id]);
 
+  const caller = async () => {
+    const users = await dispatch(getAllUsers());
+    const imagesByUser = await dispatch(getImagesByUser(id));
+    console.log("----", users);
+  };
   if (allUsers === undefined) {
+    caller();
     return <div>Not Loading</div>;
   }
 
@@ -56,7 +62,7 @@ const Profile = () => {
   const users = Object.values(allUsers);
   user = users[0].find((user) => user.id === parseInt(id));
 
-  const images = userImages;
+  const images = userImages ? userImages : "";
   console.log(images);
 
   if (images[0]?.length === 0) {

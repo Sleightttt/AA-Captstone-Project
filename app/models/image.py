@@ -20,7 +20,7 @@ class Image(db.Model):
     # images = db.relationship('Image', back_populates='product')
     # shopping_cart = db.relationship("ShoppingCart", back_populates='products')
     # orders = db.relationship("Order", back_populates='products')
-    comments = db.relationship("Comment", back_populates="image")
+    comments = db.relationship("Comment", back_populates="image", cascade='all, delete')
 
     # def avg_rating(self):
     #     if len(self.reviews) == 0:
