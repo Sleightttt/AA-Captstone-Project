@@ -35,41 +35,61 @@ const CreateImage = () => {
     e.preventDefault();
     let newErrors = {};
 
-    if (!name) {
-      newErrors["title"] = "Please add a name";
+    if (!name || name.length > 50 || name.length < 1) {
+      newErrors["title"] = "Please add a name between 1-50 characters";
     }
-    if (!description) {
-      newErrors["description"] = "Please add a description";
+    if (!description || description.length < 3) {
+      newErrors["description"] =
+        "Please add a description between 3-255 characters";
     }
-    if (!lat) {
-      newErrors["lat"] = "Please add a lat";
+    if (
+      !lat ||
+      isNaN(lat) ||
+      lat.toString().length > 10 ||
+      lat.toString().length < 2
+    ) {
+      newErrors["lat"] = "Please add a latitude, no letters included";
     }
-    if (!lng) {
-      newErrors["lng"] = "Please add a lng";
+    if (
+      !lng ||
+      isNaN(lng || lat.toString().length > 10 || lat.toString().length < 2)
+    ) {
+      newErrors["lng"] = "Please add a latitude, no letters included";
     }
-    if (!url) {
-      newErrors["url"] = "Please add a url";
+    if (
+      !url ||
+      url.endsWith("jpg") ||
+      url.endsWith("png") ||
+      url.endsWith("pdf")
+    ) {
+      newErrors["url"] =
+        "Please add a url. Files ending in .jpg, .png, .pdf are not currently supported";
     }
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+      console.log("error hit");
     } else {
+      console.log("hit");
       const data = await dispatch(createImage(image));
       console.log(data);
       history.push(`/images/${data.id}`);
     }
   };
 
+  let i = 44.444;
+  console.log(i.toString().length);
+
   return (
     <div className="create-image-container">
       <form className="create-image-form" onSubmit={handleSubmit}>
         <div>
-          {Object.keys(errors).length > 0 && (
+          {/* {Object.keys(errors).length > 0 && (
             <div className="alert error">
               {Object.values(errors).map((error) => (
                 <p key={error}>{error}</p>
               ))}
             </div>
-          )}
+          )} */}
         </div>
         <div className="form-item">
           {errors["title"] && <div className="error">{errors["title"]}</div>}
@@ -97,11 +117,12 @@ const CreateImage = () => {
             <div className="error">{errors["lat"]}</div>
           )}
           <label>Latitude</label>
-          <textarea
+          <input
+            type="number"
             name="lat"
             onChange={(e) => setLat(e.target.value)}
             value={lat}
-          ></textarea>
+          ></input>
         </div>
         <div className="form-item">
           {errors["lng"] && <div className="error">{errors["lng"]}</div>}

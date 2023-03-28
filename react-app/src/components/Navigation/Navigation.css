@@ -257,6 +257,7 @@ a:hover {
 
 .logo:hover {
   cursor: pointer;
+  opacity: 0.7;
 }
 .white {
   color: white;

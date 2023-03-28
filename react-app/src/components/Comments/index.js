@@ -18,6 +18,7 @@ const Comments = () => {
   const user = useSelector((state) => state.session.user);
   const [showMenu, setShowMenu] = useState(false);
   const [comment, setComment] = useState("");
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     dispatch(getCommentsByImage(id));
@@ -40,14 +41,26 @@ const Comments = () => {
   const handleNewCommentSubmit = async (e) => {
     e.preventDefault();
 
-    closeMenu();
-    return await dispatch(
-      CreateCommentThunk({
-        user_id: user.id,
-        comment: comment,
-        image_id: imageId,
-      })
-    ).then(commentHandler);
+    let newErrors = {};
+
+    if (!comment || comment.length < 1) {
+      newErrors["comment"] =
+        "Please enter a comment between 1 and 255 characters";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+    } else {
+      closeMenu();
+      setErrors({});
+      return await dispatch(
+        CreateCommentThunk({
+          user_id: user.id,
+          comment: comment,
+          image_id: imageId,
+        })
+      ).then(commentHandler);
+    }
   };
 
   // const openMenu = () => {
@@ -65,7 +78,7 @@ const Comments = () => {
   const newComment = "new-comment" + (showMenu ? "" : " hidden");
   const closeMenu = () => setShowMenu(false);
 
-  const commentArr = Object.values(comments);
+  const commentArr = Object.values(comments).reverse();
   // console.log(commentArr);
   return (
     <>
@@ -76,6 +89,12 @@ const Comments = () => {
         </button>
         <div className={newComment}>
           <div className="new-comment-container">
+            <div className="form-item">
+              {" "}
+              {errors["comment"] && (
+                <div className="error">{errors["comment"]}</div>
+              )}
+            </div>
             <form
               className="new-comment"
               onSubmit={() => handleNewCommentSubmit}

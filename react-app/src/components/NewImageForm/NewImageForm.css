@@ -53,3 +53,7 @@ textarea {
   color: rgb(184, 184, 184) y;
   cursor: pointer;
 }
+
+.error {
+  color: red;
+}

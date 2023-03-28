@@ -13,7 +13,7 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  height: 280px;
+  height: 320px;
   width: 340px;
   background-color: white;
   justify-content: center;
@@ -34,6 +34,17 @@
   border-radius: 4px;
   margin: 5px;
   padding: 5px;
+}
+
+.demo {
+  color: rgb(0, 166, 255);
+  border: none;
+  background-color: white;
+}
+
+.demo:hover {
+  cursor: pointer;
+  color: rgb(0, 118, 182);
 }
 
 .login-form-input::placeholder {
@@ -70,6 +81,7 @@
 .login-button:hover,
 .signup-button:hover {
   cursor: pointer;
+  color: rgb(0, 118, 182);
   border: 2px solid rgba(149, 0, 146, 0.206);
 }
 
