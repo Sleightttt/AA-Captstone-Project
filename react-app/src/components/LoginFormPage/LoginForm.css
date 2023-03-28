@@ -7,12 +7,13 @@
   background-image: url(https://images.unsplash.com/photo-1531966662811-c6501e46eda6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2515&q=80);
   justify-content: center;
   align-items: center;
+  border-radius: 4px;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  height: 300px;
+  height: 280px;
   width: 340px;
   background-color: white;
   justify-content: center;
@@ -23,6 +24,7 @@
 .login-formmm {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .login-form-input {
@@ -54,12 +56,28 @@
   height: 40px;
 }
 
-.login-button:hover {
+.signup-button {
+  color: white;
+  background-color: rgb(0, 166, 255);
+  border-radius: 4px;
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  font-size: 15px;
+  height: 40px;
+}
+
+.login-button:hover,
+.signup-button:hover {
   cursor: pointer;
+  border: 2px solid rgba(149, 0, 146, 0.206);
 }
 
 .errorz {
   color: red;
+  list-style: none;
+  padding-left: 50px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .profile-info {

@@ -27,14 +27,12 @@ function LoginFormPage() {
     <>
       <div className="login-container">
         <div className="login-form">
-          <h1 className="login-header">Log in to ImageSpace</h1>
+          {/* <h1 className="login-header">Log in to ImageSpace</h1> */}
           <form className="login-formmm" onSubmit={handleSubmit}>
-            <ul>
-              {errors.map((error, idx) => (
-                <li className="errorz" key={idx}>
-                  {error}
-                </li>
-              ))}
+            <ul className="errorz">
+              {errors.length ? (
+                <div>Error with credentials. Try again</div>
+              ) : null}
             </ul>
 
             <input
@@ -58,7 +56,9 @@ function LoginFormPage() {
             <button className="login-button" type="submit">
               Sign In
             </button>
+            <button className="signup-button">Sign Up</button>
           </form>
+          <div></div>
         </div>
       </div>
     </>
