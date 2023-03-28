@@ -63,15 +63,15 @@ const Profile = () => {
   user = users[0].find((user) => user.id === parseInt(id));
 
   const images = userImages ? userImages : "";
-  console.log(images);
+  // console.log(images);
 
   if (images[0]?.length === 0) {
     return <div>Not Loading</div>;
   }
 
-  console.log(loggedInUser.id === Number(id));
+  // console.log(loggedInUser.id === Number(id));
 
-  console.log(showModal);
+  // console.log(showModal);
 
   return (
     <>

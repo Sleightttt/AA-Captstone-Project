@@ -72,12 +72,12 @@ export const UpdateCommentThunk = (CommentData) => async (dispatch) => {
 
 export const grabACommentThunk = (commentId) => async (dispatch) => {
   let comment = await fetch(`api/comments/${commentId}`, { method: "GET" });
-  console.log("prethunk");
+  // console.log("prethunk");
 
   if (comment.ok) {
     let res = await comment.json();
     dispatch(SingleComment(res));
-    console.log("thunk hit", res);
+    // console.log("thunk hit", res);
     return res;
   }
 };
@@ -99,14 +99,14 @@ export const getCommentsByImage = (imageId) => async (dispatch) => {
 };
 
 export const deleteCommentThunk = (commentId) => async (dispatch) => {
-  console.log("INSIDE DELETE THUNK");
+  // console.log("INSIDE DELETE THUNK");
   let response = await fetch(`/api/comments/${commentId}`, {
     method: "DELETE",
   });
-  console.log(response.url);
-  console.log(response);
+  // console.log(response.url);
+  // console.log(response);
   if (response.ok) {
-    console.log("RESPONSE WAS OK");
+    // console.log("RESPONSE WAS OK");
     dispatch(deleteComment(commentId));
     return response;
   }
@@ -149,7 +149,7 @@ const CommentsReducer = (state = initialState, action) => {
       action.payload.forEach(
         (comment) => (afterImageRead.SingleImagesComments[comment.id] = comment)
       );
-      console.log("read hit", action.payload);
+      // console.log("read hit", action.payload);
       return afterImageRead;
 
     case READ_COMMENT_USERS:
@@ -163,7 +163,7 @@ const CommentsReducer = (state = initialState, action) => {
       let afterDelete = {
         ...state,
       };
-      console.log(action.payload, "---");
+      // console.log(action.payload, "---");
       delete afterDelete["LoggedInUsersComments"][action.payload];
       delete afterDelete["SingleImagesComments"][action.payload];
 

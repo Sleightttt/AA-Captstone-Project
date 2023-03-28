@@ -27,7 +27,6 @@ function LoginFormPage() {
     <>
       <div className="login-container">
         <div className="login-form">
-          {/* <h1 className="login-header">Log in to ImageSpace</h1> */}
           <form className="login-formmm" onSubmit={handleSubmit}>
             <ul className="errorz">
               {errors.length ? (

@@ -12,12 +12,12 @@ function CommentFormModal({ props }) {
   const [comment, setComment] = useState("");
 
   const { closeModal } = useModal();
-  //   const user = useSelector((state) => state.session.user);
+
   const commentz = useSelector((state) => state.comments.SingleImagesComments);
 
   let commzArr = Object.values(commentz);
   let sing = commzArr.find((el) => el.id == props);
-  console.log(sing, "sing");
+  // console.log(sing, "sing");
 
   const handleSubmit = async (e) => {
     e.preventDefault();

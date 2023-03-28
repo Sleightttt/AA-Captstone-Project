@@ -37,11 +37,7 @@ const Comments = () => {
     setComment("");
   };
 
-  // const handleDelete = () => {};
-  // const handleEdit = () => {};
-
   const handleNewCommentSubmit = async (e) => {
-    // console.log(props, "props");
     e.preventDefault();
 
     closeMenu();
@@ -54,10 +50,10 @@ const Comments = () => {
     ).then(commentHandler);
   };
 
-  const openMenu = () => {
-    if (showMenu) return;
-    setShowMenu(true);
-  };
+  // const openMenu = () => {
+  //   if (showMenu) return;
+  //   setShowMenu(true);
+  // };
 
   const dateHandler = (date) => {
     let formatDate = new Date(date);
@@ -70,7 +66,7 @@ const Comments = () => {
   const closeMenu = () => setShowMenu(false);
 
   const commentArr = Object.values(comments);
-  console.log(commentArr);
+  // console.log(commentArr);
   return (
     <>
       <div className="comments-container">

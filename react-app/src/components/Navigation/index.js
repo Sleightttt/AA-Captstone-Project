@@ -1,14 +1,12 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
-  // const history = useHistory();
-
-  // const [search, setSearch] = useState("");
+  const history = useHistory();
 
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -36,6 +34,7 @@ function Navigation({ isLoaded }) {
                   alt="ImageSpace Logo"
                   className="logo"
                   src="/Images/ImageSpace_logo.jpg"
+                  onClick={() => history.push("/")}
                 ></img>
                 <NavLink className={".nav-home"} exact to="/">
                   ImageSpace

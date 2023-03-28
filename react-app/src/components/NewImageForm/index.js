@@ -34,11 +34,7 @@ const CreateImage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let newErrors = {};
-    // const imgPattern = /\.(jpg|jpeg|png|gif)$/i;
-    // if (!images || !imgPattern.test(images)) {
-    //   newErrors["images"] =
-    //     "Please add at least one image and make sure its a valid image link 'example: ends with jpg, jpeg, png, gif' ";
-    // }
+
     if (!name) {
       newErrors["title"] = "Please add a name";
     }
@@ -62,18 +58,6 @@ const CreateImage = () => {
       history.push(`/images/${data.id}`);
     }
   };
-
-  //   const updateImage = (e, idx) => {
-  //     const newImages = [...images];
-  //     newImages[idx] = e.target.value;
-  //     setImages(newImages);
-  //   };
-
-  //   const addImage = () => {
-  //     const newImages = [...images];
-  //     newImages.push("");
-  //     setImages(newImages);
-  //   };
 
   return (
     <div className="create-image-container">
@@ -139,22 +123,6 @@ const CreateImage = () => {
             value={url}
           ></input>
         </div>
-        {/* <div className="form-item">
-          {errors["images"] && <div className="error">{errors["images"]}</div>}
-          <label>Images</label>
-          {images.map((image, idx) => (
-            <input
-              key={idx}
-              type="text"
-              name="image"
-              onChange={(e) => updateImage(e, idx)}
-              value={image}
-            ></input>
-          ))}
-          <button className="form-button" type="button" onClick={addImage}>
-            Add Image
-          </button>
-        </div> */}
         <button className="form-button" type="submit">
           Create Product
         </button>

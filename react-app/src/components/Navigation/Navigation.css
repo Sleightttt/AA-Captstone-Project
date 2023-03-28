@@ -255,6 +255,9 @@ a:hover {
   width: 80px;
 }
 
+.logo:hover {
+  cursor: pointer;
+}
 .white {
   color: white;
 }

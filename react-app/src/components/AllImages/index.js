@@ -8,26 +8,19 @@ const AllImages = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const images = useSelector((state) => state.images);
-  let allProducts = images.allImages;
+  let allImg = images.allImages;
 
   useEffect(() => {
     dispatch(getAllImages());
   }, [dispatch]);
 
-  allProducts = Object.values(allProducts);
+  allImg = Object.values(allImg);
 
-  if (allProducts.length === 0) {
+  if (allImg.length === 0) {
     return null;
   }
-  console.log(images.allImages.images);
+  // console.log(images.allImages.images);
 
-  // function randomNumber() {
-  //   return Math.random() * (15 - 5) + 5;
-  // }
-
-  // function randomHeight() {
-  //   return Math.random() * (300 - 200) + 200;
-  // }
   function randomWidth() {
     return Math.random() * (400 - 200) + 200;
   }
@@ -37,13 +30,12 @@ const AllImages = () => {
       <div className="all-images-container">
         <div></div>
         <div className="images-container">
-          {allProducts[0].map((product) => (
+          {allImg[0].map((image) => (
             <div
               className="image-card"
-              key={product.id}
-              onClick={() => history.push(`/images/${product.id}`)}
+              key={image.id}
+              onClick={() => history.push(`/images/${image.id}`)}
             >
-              {/* <Link to={`/products/${product.id}`}> */}
               <div>
                 {images.allImages.images.length > 0 ? (
                   <img
@@ -54,8 +46,8 @@ const AllImages = () => {
                       margin: "2px",
                       paddingTop: `1px`,
                     }}
-                    src={product.url}
-                    alt={product.name}
+                    src={image.url}
+                    alt={image.name}
                   />
                 ) : (
                   <img
@@ -66,7 +58,7 @@ const AllImages = () => {
                       border: "2px solid white",
                     }}
                     src="https://i.imgur.com/6XK9X4u.png"
-                    alt={product.name}
+                    alt={image.name}
                   />
                 )}
               </div>
