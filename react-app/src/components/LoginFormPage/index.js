@@ -35,7 +35,27 @@ function LoginFormPage() {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-    const data = await dispatch(signUp(email, username, password));
+
+    let newErrors = {};
+
+    if (password.length < 6) {
+      newErrors["password"] =
+        "Please enter a password longer than 6 characters";
+    }
+
+    if (username.length < 4) {
+      newErrors["username"] =
+        "Please enter a password longer than 4 characters";
+    }
+    if (email.length < 4 || !email.includes("@")) {
+      newErrors["username"] = "Please enter a valid email";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+    }
+
+    const data = await dispatch(signUp(username, email, password));
 
     if (data) {
       setErrors(data);
@@ -98,8 +118,14 @@ function LoginFormPage() {
             <form className="signup-formmm login-form" onSubmit={handleSignUp}>
               <ul className="errorz">
                 {errors.length ? (
-                  <div>Error with credentials. Try again</div>
-                ) : null}
+                  errors.map((error, idx) => (
+                    <li className="errorz" key={idx}>
+                      {error}
+                    </li>
+                  ))
+                ) : (
+                  <div></div>
+                )}
               </ul>
 
               <input

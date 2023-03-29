@@ -48,13 +48,13 @@ const CreateImage = () => {
       lat.toString().length > 10 ||
       lat.toString().length < 2
     ) {
-      newErrors["lat"] = "Please add a latitude, no letters included";
+      newErrors["lat"] = "Please add a latitude";
     }
     if (
       !lng ||
       isNaN(lng || lat.toString().length > 10 || lat.toString().length < 2)
     ) {
-      newErrors["lng"] = "Please add a latitude, no letters included";
+      newErrors["lng"] = "Please add a latitude";
     }
     if (
       !url ||
