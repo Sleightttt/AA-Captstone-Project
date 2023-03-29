@@ -40,6 +40,7 @@
   color: rgb(0, 166, 255);
   border: none;
   background-color: white;
+  margin-bottom: 15px;
 }
 
 .demo:hover {

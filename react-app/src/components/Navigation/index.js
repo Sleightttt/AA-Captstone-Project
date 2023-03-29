@@ -30,15 +30,15 @@ function Navigation({ isLoaded }) {
           ) : (
             <ul className="nav-items">
               <li className="nav-left">
+                <NavLink className={".nav-home"} exact to="/">
+                  ImageSpace
+                </NavLink>
                 <img
                   alt="ImageSpace Logo"
                   className="logo"
                   src="/Images/ImageSpace_logo.jpg"
                   onClick={() => history.push("/")}
                 ></img>
-                <NavLink className={".nav-home"} exact to="/">
-                  ImageSpace
-                </NavLink>
 
                 <div className="you">
                   <NavLink exact to={`/user/${sessionUser.id}`}>
