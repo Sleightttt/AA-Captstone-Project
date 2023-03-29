@@ -13,10 +13,10 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  height: 320px;
+  height: 440px;
   width: 340px;
   background-color: white;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-radius: 4px;
 }
@@ -24,7 +24,7 @@
 .login-formmm {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .login-form-input {
@@ -65,6 +65,7 @@
   border: none;
   font-size: 15px;
   height: 40px;
+  width: 85%;
 }
 
 .signup-button {
@@ -76,6 +77,7 @@
   border: none;
   font-size: 15px;
   height: 40px;
+  width: 85%;
 }
 
 .login-button:hover,

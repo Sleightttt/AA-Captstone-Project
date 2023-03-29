@@ -63,15 +63,100 @@ const Profile = () => {
   user = users[0].find((user) => user.id === parseInt(id));
 
   const images = userImages ? userImages : "";
-  // console.log(images);
+  console.log(images);
 
   if (images[0]?.length === 0) {
-    return <div>Not Loading</div>;
+    return (
+      <>
+        <div className="profile-container">
+          <div className="profile-header">
+            <h1 className="profile-banner-container">
+              <div className="profile-name"> {user.username} </div>
+              <div className="follow-container">
+                <div className="profile-follow">
+                  0 Followers &nbsp; • &nbsp;&nbsp;{" "}
+                </div>
+
+                <div className="profile-following">0 Following</div>
+              </div>
+            </h1>
+          </div>
+          <div className="profile-body">
+            <div className="info-profile">
+              <div className="profile-info-header"></div>
+              <div className="profile-info-body">
+                <div className="profile-info-body-left"></div>
+                <div className="user-products-section">
+                  <div className="user-products-header">
+                    <div className="your-images"></div>
+                    {loggedInUser.id === Number(id) && (
+                      <button
+                        className="add-image-button"
+                        onClick={() => history.push("/images/new")}
+                      >
+                        Add New Image
+                      </button>
+                    )}
+                    <div className="user-images-body">
+                      {images[0].map((image) => (
+                        <div key={image.id} className="user-product-card">
+                          <div className="user-image">
+                            {image && (
+                              <>
+                                <img
+                                  className="profile-image-hover"
+                                  key={image.id}
+                                  style={{ width: "400px", height: "400px" }}
+                                  src={image.url}
+                                  alt={image.name}
+                                  onClick={() =>
+                                    history.push(`/images/${image.id}`)
+                                  }
+                                />
+                                <div className="img__description_layer">
+                                  {loggedInUser.id === Number(id) && (
+                                    <div className="user-product-card-buttons">
+                                      <button
+                                        className="user-image-card-button"
+                                        onClick={() =>
+                                          history.push(
+                                            `/images/${image.id}/edit`
+                                          )
+                                        }
+                                      >
+                                        Edit
+                                      </button>
+                                      <button
+                                        className="user-image-card-button"
+                                        onClick={() =>
+                                          handleShowModal(image.id)
+                                        }
+                                      >
+                                        Delete
+                                      </button>
+                                    </div>
+                                  )}
+                                </div>
+                              </>
+                            )}
+                          </div>
+                          <div className="user-product-card-info"></div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
   }
 
-  // console.log(loggedInUser.id === Number(id));
+  console.log(loggedInUser.id === Number(id));
 
-  // console.log(showModal);
+  console.log(showModal);
 
   return (
     <>

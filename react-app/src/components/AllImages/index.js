@@ -45,6 +45,7 @@ const AllImages = () => {
                       borderRadius: "7px",
                       margin: "2px",
                       paddingTop: `1px`,
+                      zIndex: "1",
                     }}
                     src={image.url}
                     alt={image.name}

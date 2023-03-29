@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect, history, useHistory } from "react-router-dom";
 import "./LoginForm.css";
 import * as sessionActions from "../../store/session";
+import { signUp } from "../../store/session";
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -32,12 +33,33 @@ function LoginFormPage() {
     );
   };
 
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    const data = await dispatch(signUp(email, username, password));
+
+    if (data) {
+      setErrors(data);
+    }
+  };
+
+  const thisOrThat = signIn ? "loginnn" : "signinnn";
+
+  const sign = (e) => {
+    e.preventDefault();
+    setSignIn(!signIn);
+  };
+
+  let loginSignIn = signIn
+    ? "Sign up A New Account"
+    : "Log In With Existing Account";
+  let loginCreate = signIn ? "Create Account" : "Sign Up";
+
   return (
     <>
       <div className="login-container">
-        <div className="login-form">
+        <div className={thisOrThat}>
           {signIn ? (
-            <form className="login-formmm" onSubmit={handleSubmit}>
+            <form className="login-formmm login-form " onSubmit={handleSubmit}>
               <ul className="errorz">
                 {errors.length ? (
                   <div>Error with credentials. Try again</div>
@@ -63,12 +85,17 @@ function LoginFormPage() {
               />
 
               <button className="login-button" type="submit">
-                Sign In
+                Log In
               </button>
-              <button className="signup-button">Sign Up</button>
+              <button onClick={sign} className="signup-button">
+                {loginSignIn}
+              </button>
+              <button onClick={demoHandler} className="demo">
+                Demo User
+              </button>
             </form>
           ) : (
-            <form className="login-formmm" onSubmit={handleSubmit}>
+            <form className="signup-formmm login-form" onSubmit={handleSignUp}>
               <ul className="errorz">
                 {errors.length ? (
                   <div>Error with credentials. Try again</div>
@@ -86,33 +113,33 @@ function LoginFormPage() {
 
               <input
                 className="login-form-input"
-                placeholder="Password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-
-              <input
-                className="login-form-input"
-                placeholder="Password"
-                type="password"
-                value={password}
+                placeholder="Username"
+                type="text"
+                value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
               />
 
+              <input
+                className="login-form-input"
+                placeholder="Password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+
               <button className="login-button" type="submit">
-                Sign In
+                {loginCreate}
               </button>
-              <button onClick={setSignIn(false)} className="signup-button">
-                Sign Up
+              <button onClick={sign} className="signup-button">
+                {loginSignIn}
+              </button>
+              <button onClick={demoHandler} className="demo">
+                Demo User
               </button>
             </form>
           )}
-          <button onClick={demoHandler} className="demo">
-            Demo User
-          </button>
         </div>
       </div>
     </>

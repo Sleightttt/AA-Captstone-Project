@@ -12,27 +12,35 @@ html {
   padding-right: 10px;
   padding-left: 10px;
   width: 200px;
-  height: 200px;
+  height: 100px;
   list-style: none;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: rgb(36, 36, 36);
-  color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   border-radius: 10px;
+  z-index: 2;
 }
 
 .profile-dropdown > button {
   color: rgb(0, 0, 0);
   background: none;
+  background-color: red;
   margin: 5px 5px;
-  width: 80px;
+  width: 100px;
   border-radius: 10px;
+}
+
+.profile-dropdown > li:not(.not-you) {
+  display: block;
+  width: 100px;
+  border-bottom: solid grey 1px;
 }
 
 .profile-dropdown > button:hover {
   cursor: pointer;
-  background-color: rgb(201, 201, 201);
+  background-color: rgb(2, 137, 210);
 }
 
 .profile-pic:hover {
@@ -103,6 +111,13 @@ html {
 .get-pro:hover {
   cursor: pointer;
   color: rgb(192, 192, 192);
+}
+
+li {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow: scroll;
 }
 
 .profile-box {
@@ -205,11 +220,12 @@ a:hover {
 }
 
 .logout-button {
-  color: rgb(0, 0, 0);
-  background: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 166, 255);
+  border: none;
   margin: 5px 5px;
-  width: 80px;
-  border-radius: 10px;
+  width: 90px;
+  border-radius: 4px;
 }
 
 .profile-button {
@@ -227,7 +243,8 @@ a:hover {
 
 .logout-button:hover {
   cursor: pointer;
-  background-color: rgb(255, 255, 255);
+  color: rgb(194, 194, 194);
+  background-color: rgb(0, 123, 190);
 }
 
 .surch {
