@@ -80,7 +80,7 @@ function LoginFormPage() {
         <div className={thisOrThat}>
           {signIn ? (
             <form className="login-formmm login-form " onSubmit={handleSubmit}>
-              <ul className="errorz">
+              <ul className="errorzz">
                 {errors.length ? (
                   <div>Error with credentials. Try again</div>
                 ) : null}
@@ -118,9 +118,9 @@ function LoginFormPage() {
             <form className="signup-formmm login-form" onSubmit={handleSignUp}>
               <ul className="errorz">
                 {errors.length ? (
-                  errors.map((error, idx) => (
-                    <li className="errorz" key={idx}>
-                      {error}
+                  Object.values(errors).map((error, idx) => (
+                    <li className="errorzz" key={idx}>
+                      {error.split(":")[1]}
                     </li>
                   ))
                 ) : (

@@ -49,9 +49,15 @@ const About = () => {
           </div>
         </div>
         <div className="links">
-          Brennan Cota:&nbsp; <a href="https://github.com/Sleightttt">Github</a>
+          Brennan Cota:&nbsp;{" "}
+          <a href="https://github.com/Sleightttt" target="_blank">
+            Github
+          </a>
           &nbsp;•&nbsp;
-          <a href="https://www.linkedin.com/in/brennan-cota-11768aa6/">
+          <a
+            href="https://www.linkedin.com/in/brennan-cota-11768aa6/"
+            target="_blank"
+          >
             Linkedin
           </a>
         </div>

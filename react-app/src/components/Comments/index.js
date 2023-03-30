@@ -90,7 +90,11 @@ const Comments = () => {
         <div className={newComment}>
           <div className="new-comment-container">
             <div className="form-item">
-              {" "}
+              {comment.length > 255 ? (
+                <div className="error">Comment too long</div>
+              ) : (
+                ""
+              )}
               {errors["comment"] && (
                 <div className="error">{errors["comment"]}</div>
               )}
@@ -107,6 +111,7 @@ const Comments = () => {
               <button
                 className="new-comment-submit-button"
                 onClick={handleNewCommentSubmit}
+                disabled={comment.length > 255 || comment.length < 1}
               >
                 Create Comment
               </button>

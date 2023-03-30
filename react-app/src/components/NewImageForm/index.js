@@ -105,6 +105,13 @@ const CreateImage = () => {
           {errors["description"] && (
             <div className="error">{errors["description"]}</div>
           )}
+          {description.length > 255 ? (
+            <div className="error">
+              Description too long. {description.length} characters
+            </div>
+          ) : (
+            ""
+          )}
           <label>Description</label>
           <textarea
             name="description"
@@ -144,8 +151,12 @@ const CreateImage = () => {
             value={url}
           ></input>
         </div>
-        <button className="form-button" type="submit">
-          Create Product
+        <button
+          className="form-button"
+          type="submit"
+          disabled={description.length > 255}
+        >
+          Create Image
         </button>
       </form>
     </div>

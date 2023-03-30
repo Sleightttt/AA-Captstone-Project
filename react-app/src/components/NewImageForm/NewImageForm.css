@@ -40,6 +40,10 @@ textarea {
   background-color: rgb(0, 0, 0);
 }
 
+.form-button:disabled {
+  color: red;
+}
+
 .form-button:hover {
   background-color: rgb(225, 225, 225);
   cursor: pointer;
