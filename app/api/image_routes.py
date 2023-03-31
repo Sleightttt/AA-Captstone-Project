@@ -9,13 +9,13 @@ from datetime import datetime
 
 image_routes = Blueprint('images', __name__)
 
-# Get all products /api/product/
+# Get all images /api/image/
 @image_routes.route('/')
 def get_images():
     images = Image.query.all()
     return {'images': [image.to_dict() for image in images]}
 
-# Create a product /api/product/
+# Create a image /api/image/
 @image_routes.route('/', methods=['POST'])
 def create_product():
 
@@ -41,7 +41,7 @@ def create_product():
         return {'errors': form.errors}, 401
     return {'errors': 'Unauthorized'}, 403
 
-# # Update a product /api/product/:id
+# # Update a image /api/image/:id
 @image_routes.route('/<int:id>', methods=['PUT'])
 def update_image(id):
     form = ImageForm()
@@ -64,7 +64,7 @@ def update_image(id):
         return {'errors': form.errors}, 401
     return {'errors': 'Unauthorized'}, 403
 
-# Get a single product /api/product/:id
+# Get a single image /api/image/:id
 @image_routes.route('/<int:id>')
 def get_product(id):
     image = Image.query.get(id)
@@ -73,7 +73,7 @@ def get_product(id):
     image['owner'] = owner.to_dict()
     return image
 
-# # Delete a product /api/product/:id
+# # Delete a image /api/image/:id
 @image_routes.route('/<int:id>', methods=['DELETE'])
 def delete_product(id):
 
@@ -83,53 +83,6 @@ def delete_product(id):
         db.session.commit()
         return {'message': 'Image deleted'}
     return {'errors': 'Unauthorized'}, 403
-
-
-# # create a product image /api/product/:id/image
-# @product_routes.route('/<int:id>/image', methods=['POST'])
-# def create_product_image(id):
-#     form = ImageForm()
-#     if current_user.is_authenticated:
-#         user = current_user.to_dict()
-#         product = Product.query.get(id)
-#         image = Image(
-#             url=form.data['url'],
-#             preview=form.data['preview'],
-#             product_id=product.id
-#         )
-#         db.session.add(image)
-#         db.session.commit()
-#         return image.to_dict()
-#     return {'errors': 'Unauthorized'}, 403
-
-# # get images by product id /api/product/:id/image
-# @product_routes.route('/<int:id>/image')
-# def get_product_images(id):
-#     product = Product.query.get(id)
-#     images = Image.query.filter_by(product_id=product.id).all()
-#     return {'images': [image.to_dict() for image in images]}
-
-# # edit product image /api/product/:id/image/:image_id
-# @product_routes.route('/<int:id>/image/<int:image_id>', methods=['PUT'])
-# def edit_product_image(id, image_id):
-#     form = ImageForm()
-#     if current_user.is_authenticated:
-#         user = current_user.to_dict()
-#         image = Image.query.get(image_id)
-#         image.url = form.data['url']
-#         image.preview = form.data['preview']
-#         db.session.add(image)
-#         db.session.commit()
-#         return image.to_dict()
-#     return {'errors': 'Unauthorized'}, 403
-
-
-# # get all products by seller id /api/product/seller/:id
-# @product_routes.route('/seller/<int:id>')
-# def get_products_by_seller(id):
-#     products = Product.query.filter_by(seller_id=id).all()
-#     return {'products': [product.to_dict() for product in products], 'seller': User.query.get(id).to_dict()}
-
 
 @image_routes.route('/owner/<int:id>')
 def get_images_by_owner(id):

@@ -11,7 +11,7 @@ comment_routes = Blueprint("comments", __name__)
 
 @comment_routes.route("/user/<int:id>")
 def CommentsPage(id):
-    """ "get users reviews"""
+    """ "get users comments"""
 
     User_Reviews = Comment.query.filter(Comment.user_id == id).all()
     return [review.to_dict() for review in User_Reviews]
@@ -82,11 +82,9 @@ def Route(id):
         print("Method DELETE")
         if current_user.is_authenticated:
             user = current_user.to_dict()
-            #  = Review.query.get(id)
             comment_to_delete = Comment.query.get(id)
             comment_data = comment_to_delete.to_dict()
             print(comment_data)
-            # if user.id == review_data.author.id:
             db.session.delete(comment_to_delete)
             db.session.commit()
             return {"message": "Review deleted"}

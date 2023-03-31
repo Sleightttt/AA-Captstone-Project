@@ -17,15 +17,8 @@ class Image(db.Model):
     updated_at = db.Column(db.DateTime, nullable=False)
     owner_id = db.Column(db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
 
-    # images = db.relationship('Image', back_populates='product')
-    # shopping_cart = db.relationship("ShoppingCart", back_populates='products')
-    # orders = db.relationship("Order", back_populates='products')
-    comments = db.relationship("Comment", back_populates="image", cascade='all, delete')
 
-    # def avg_rating(self):
-    #     if len(self.reviews) == 0:
-    #         return 0
-    #     return sum(review.stars for review in self.reviews) / len(self.reviews)
+    comments = db.relationship("Comment", back_populates="image", cascade='all, delete')
 
     def to_dict(self):
         return {
