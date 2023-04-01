@@ -1,9 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleImage } from "../../store/images";
 import { useParams, Link, useHistory } from "react-router-dom";
 import "./SingleImage.css";
-import { createLikeThunk } from "../../store/likes";
+import {
+  createLikeThunk,
+  deleteLikeThunk,
+  getLikesByImage,
+  getLikesByUser,
+} from "../../store/likes";
 
 const SingleImage = () => {
   const dispatch = useDispatch();
@@ -11,36 +16,50 @@ const SingleImage = () => {
   const history = useHistory();
   const image = useSelector((state) => state.images.singleImage);
   const userId = useSelector((state) => state.session.user.id);
+  const userLikes = useSelector((state) => state.likes.userLikes);
+  const imageLikes = useSelector((state) => state.likes.imagesLikes);
+  const [lke, setLke] = useState(false);
 
   useEffect(() => {
     dispatch(getSingleImage(id));
+    dispatch(getLikesByImage(id));
+    dispatch(getLikesByUser(userId));
   }, [dispatch, id]);
 
   if (image === undefined) {
     return null;
   }
-  console.log("this is id", id);
+
+  const thisOrThat = lke ? "like" : "unlike";
 
   const likeHandler = async (e) => {
     e.preventDefault();
     console.log("hit likehandler", id);
+    setLke(!lke);
     await dispatch(
       createLikeThunk({
         image_id: id,
         liker_id: userId,
       })
     );
+    await dispatch(getLikesByImage(id));
+    await dispatch(getLikesByUser(userId));
   };
 
-  // const unlikeHandler = async (e) => {
-  //   e.preventDefault();
-  //   console.log("hit likehandler", id);
-  //   await dispatch(
-  //     deleteLikeThunk({
-  //
-  //     )
-  //   );
-  // };
+  const imageLikesArr = Object?.values(imageLikes);
+  const likeToDelete = imageLikesArr?.find((like) => like.liker_id == userId);
+
+  console.log("like to delete", likeToDelete?.id);
+  const deleter = likeToDelete?.id;
+
+  const unlikeHandler = async (e) => {
+    e.preventDefault();
+    console.log("hit unlikehandler", id);
+    setLke(!lke);
+    await dispatch(deleteLikeThunk(deleter));
+    await dispatch(getLikesByImage(id));
+    await dispatch(getLikesByUser(userId));
+  };
 
   return (
     <>
@@ -64,9 +83,15 @@ const SingleImage = () => {
           ></img>
 
           <div className="single-product-name">{image.name}</div>
-          <form onSubmit={likeHandler}>
-            <button className="liketest">test</button>
-          </form>
+          {lke ? (
+            <form onSubmit={unlikeHandler}>
+              <button className={thisOrThat}>test</button>
+            </form>
+          ) : (
+            <form onSubmit={likeHandler}>
+              <button className={thisOrThat}>test</button>
+            </form>
+          )}
         </div>
         <p className="image-desc">{image.description}</p>
         <Link to={`/user/${image.owner?.id}`}>

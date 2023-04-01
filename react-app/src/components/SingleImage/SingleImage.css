@@ -84,3 +84,11 @@
 .liketest {
   width: 50px;
 }
+
+.like {
+  background-color: rgb(0, 241, 20);
+}
+
+.unlike {
+  background-color: rgb(255, 0, 0);
+}

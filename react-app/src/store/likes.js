@@ -1,6 +1,9 @@
 const CREATE_LIKE = "likes/CREATE_LIKE";
 const DELETE_LIKE = "likes/DELETE_LIKE";
 const GET_ALL_LIKES = "likes/GET_ALL_LIKES";
+const USER_LIKE = "likes/USER_LIKE";
+const READ_LIKES_IMAGE = "likes/READ_LIKES_IMAGE";
+const READ_LIKES_USER = "likes/READ_LIKES_USER";
 
 const createLike = (like) => ({
   type: CREATE_LIKE,
@@ -12,8 +15,18 @@ const getAllLikes = (likes) => ({
   payload: likes,
 });
 
+const getUserLikes = (id) => ({
+  type: READ_LIKES_USER,
+  payload: id,
+});
+
 const deleteLike = () => ({
   type: DELETE_LIKE,
+});
+
+const imagesLikes = (like) => ({
+  type: READ_LIKES_IMAGE,
+  payload: like,
 });
 
 export const createLikeThunk = (like) => async (dispatch) => {
@@ -39,7 +52,37 @@ export const createLikeThunk = (like) => async (dispatch) => {
   }
 };
 
-const initialState = { likes: {}, userLikes: {} };
+export const getLikesByImage = (imageId) => async (dispatch) => {
+  let response = await fetch(`/api/likes/image/${imageId}`);
+  if (response.ok) {
+    let data = await response.json();
+    dispatch(imagesLikes(data));
+  }
+};
+
+export const getLikesByUser = (userId) => async (dispatch) => {
+  let response = await fetch(`/api/likes/user/${userId}`);
+  if (response.ok) {
+    let data = await response.json();
+    dispatch(getUserLikes(data));
+  }
+};
+
+export const deleteLikeThunk = (likeId) => async (dispatch) => {
+  console.log("INSIDE DELETE THUNK");
+  let response = await fetch(`/api/likes/${likeId}`, {
+    method: "DELETE",
+  });
+  // console.log(response.url);
+  // console.log(response);
+  if (response.ok) {
+    // console.log("RESPONSE WAS OK");
+    dispatch(deleteLike(likeId));
+    return response;
+  }
+};
+
+const initialState = { imagesLikes: {}, userLikes: {} };
 
 export default function likesReducer(state = initialState, action) {
   switch (action.type) {
@@ -48,9 +91,41 @@ export default function likesReducer(state = initialState, action) {
     // case SET_ALL_IMAGES_BY_USER:
     //   return { ...state, allImagesByUser: action.payload };
     case CREATE_LIKE:
-      return { ...state, likes: action.payload };
-    // case DELETE_LIKE:
-    //   return { ...state, singleImage: {} };
+      return { ...state, userLikes: action.payload };
+
+    case USER_LIKE:
+      return { ...state, userLikes: action.payload };
+
+    case READ_LIKES_IMAGE:
+      let afterImageRead = { ...state };
+
+      //   afterImageRead.imagesLikes = {};
+      console.log("-----", action.payload);
+      action.payload.forEach(
+        (like) => (afterImageRead.imagesLikes[like.id] = like)
+      );
+      return afterImageRead;
+
+    case READ_LIKES_USER:
+      let afterImageRead2 = { ...state };
+
+      afterImageRead2.userLikes = {};
+      action.payload.forEach(
+        (like) => (afterImageRead2.userLikes[like.id] = like)
+      );
+
+      // console.log("read hit", action.payload);
+      return afterImageRead2;
+    case DELETE_LIKE:
+      let afterDelete = {
+        ...state,
+      };
+      // console.log(action.payload, "---");
+      delete afterDelete["imagesLikes"][action.payload];
+      delete afterDelete["userLikes"][action.payload];
+
+      return afterDelete;
+
     default:
       return state;
   }
