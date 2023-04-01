@@ -34,7 +34,7 @@ export function imagesComments(comment) {
 // Thunks
 
 export const CreateCommentThunk = (CommentData) => async (dispatch) => {
-  console.log("---", CommentData);
+  // console.log("---", CommentData);
   let { user_id, image_id, comment } = CommentData;
 
   const response = await fetch(`/api/comments/new`, {

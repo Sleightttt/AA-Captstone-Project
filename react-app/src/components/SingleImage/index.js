@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { getSingleImage } from "../../store/images";
 import { useParams, Link, useHistory } from "react-router-dom";
 import "./SingleImage.css";
+import { createLikeThunk } from "../../store/likes";
 
 const SingleImage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const history = useHistory();
   const image = useSelector((state) => state.images.singleImage);
+  const userId = useSelector((state) => state.session.user.id);
 
   useEffect(() => {
     dispatch(getSingleImage(id));
@@ -17,6 +19,28 @@ const SingleImage = () => {
   if (image === undefined) {
     return null;
   }
+  console.log("this is id", id);
+
+  const likeHandler = async (e) => {
+    e.preventDefault();
+    console.log("hit likehandler", id);
+    await dispatch(
+      createLikeThunk({
+        image_id: id,
+        liker_id: userId,
+      })
+    );
+  };
+
+  // const unlikeHandler = async (e) => {
+  //   e.preventDefault();
+  //   console.log("hit likehandler", id);
+  //   await dispatch(
+  //     deleteLikeThunk({
+  //
+  //     )
+  //   );
+  // };
 
   return (
     <>
@@ -40,6 +64,9 @@ const SingleImage = () => {
           ></img>
 
           <div className="single-product-name">{image.name}</div>
+          <form onSubmit={likeHandler}>
+            <button className="liketest">test</button>
+          </form>
         </div>
         <p className="image-desc">{image.description}</p>
         <Link to={`/user/${image.owner?.id}`}>

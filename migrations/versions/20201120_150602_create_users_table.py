@@ -60,6 +60,17 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
 
+    # likes table
+    op.create_table('likes',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('liker_id', sa.Integer(), nullable=False),
+    sa.Column('image_id', sa.Integer(), nullable=False),
+    sa.ForeignKeyConstraint(['image_id'], ['images.id'], ),
+    sa.ForeignKeyConstraint(['liker_id'], ['users.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
+
+
 
 
     if environment == "production":
