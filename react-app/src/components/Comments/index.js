@@ -124,7 +124,7 @@ const Comments = () => {
             <div>{dateHandler(comment.created_at)}</div>
             <div className="comment-body">{comment.comment}</div>
 
-            {user.id !== comment.user_id ? (
+            {user?.id !== comment.user_id ? (
               <div></div>
             ) : (
               <>

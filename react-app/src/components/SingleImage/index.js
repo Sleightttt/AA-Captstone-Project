@@ -20,7 +20,7 @@ const SingleImage = () => {
   const { id } = useParams();
   const history = useHistory();
   const image = useSelector((state) => state.images.singleImage);
-  const userId = useSelector((state) => state.session.user.id);
+  const userId = useSelector((state) => state?.session?.user?.id);
   const userLikes = useSelector((state) => state.likes.userLikes);
   const imageLikes = useSelector((state) => state.likes.imagesLikes);
   const userFollows = useSelector((state) => state.followers.userFollows);
