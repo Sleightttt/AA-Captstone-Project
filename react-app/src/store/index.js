@@ -4,12 +4,14 @@ import session from "./session";
 import imagesReducer from "./images";
 import CommentsReducer from "./comments";
 import likesReducer from "./likes";
+import followerReducer from "./followers";
 
 const rootReducer = combineReducers({
   session,
   images: imagesReducer,
   comments: CommentsReducer,
   likes: likesReducer,
+  followers: followerReducer,
 });
 
 let enhancer;

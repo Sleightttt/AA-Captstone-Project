@@ -7,8 +7,8 @@ from random import randint
 def seed_likes():
     for i in range(1):
         like = Like(
-            liker_id=randint(1, 3),
-            image_id=randint(1, 3),
+            liker_id=randint(2, 3),
+            image_id=randint(2, 3),
         )
         db.session.add(like)
     db.session.commit()

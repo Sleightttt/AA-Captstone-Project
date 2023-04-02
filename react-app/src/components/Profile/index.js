@@ -5,14 +5,18 @@ import { getImagesByUser } from "../../store/images";
 import DeleteImage from "../DeleteImage";
 import { getAllUsers } from "../../store/session";
 import "./Profile.css";
+import { getAllFollowsThunk } from "../../store/followers";
 
 const Profile = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const [userImages, setUserImages] = useState([]);
   const [imageId, setImageId] = useState(null);
+
   const loggedInUser = useSelector((state) => state.session.user);
   const allUsers = useSelector((state) => state.session.users);
+  const allFollows = useSelector((state) => state.followers.follows);
+  const userId = useSelector((state) => state.session.user.id);
   const [showModal, setShowModal] = useState(false);
   const divRef = useRef(null);
   let user;
@@ -26,13 +30,15 @@ const Profile = () => {
   useEffect(() => {
     const fetchData = async () => {
       const imagesByUser = await dispatch(getImagesByUser(id));
+      await dispatch(getAllFollowsThunk());
       const users = await dispatch(getAllUsers());
-      console.log(imagesByUser);
+      // console.log(imagesByUser);
       setUserImages(Object.values(imagesByUser));
       const user =
         users && users[0] && users[0].find((user) => user.id === parseInt(id));
     };
     fetchData();
+    // console.log(profileFollows, "follows");
     function handleCloseModal(event) {
       if (divRef.current && !divRef.current.contains(event.target)) {
         setShowModal(false);
@@ -50,6 +56,7 @@ const Profile = () => {
     const imagesByUser = await dispatch(getImagesByUser(id));
     console.log("----", users);
   };
+
   if (allUsers === undefined) {
     caller();
     return <div>Not Loading</div>;
@@ -63,7 +70,45 @@ const Profile = () => {
   user = users[0].find((user) => user.id === parseInt(id));
 
   const images = userImages ? userImages : "";
-  console.log(images);
+  // console.log(images);
+  let profileFollows;
+  let profileFollowers;
+
+  // if (allFollows.follows) {
+  //   profileFollows = Object.values(allFollows.follows).filter(
+  //     (follow) => follow.following_id === id
+  //   );
+  // }
+
+  console.log(allFollows["follows"], "allfollows");
+
+  profileFollows = allFollows["follows"].filter(
+    (follow) => follow.follower_id == id
+  );
+
+  console.log("bobbies follows", profileFollows?.length, profileFollows);
+
+  profileFollowers = allFollows["follows"].filter(
+    (follow) => follow.following_id == id
+  );
+
+  console.log("bobbies followers", profileFollowers?.length, profileFollowers);
+
+  let myProfileFollows = allFollows.follows.filter(
+    (follow) => follow.follower_id == userId
+  );
+  console.log("my profile follows", myProfileFollows);
+
+  let myProfileFollowers = allFollows.follows.filter(
+    (follow) => follow.following_id == userId
+  );
+  console.log(profileFollowers, "profile followers");
+
+  // console.log(myProfileFollows.length, "following length");
+  // console.log(myProfileFollowers.length, "folllowers length");
+  // console.log(Object.values(allFollows.follows));
+
+  const myProfile = userId == id;
 
   if (images[0]?.length === 0) {
     return (
@@ -74,10 +119,19 @@ const Profile = () => {
               <div className="profile-name"> {user.username} </div>
               <div className="follow-container">
                 <div className="profile-follow">
-                  0 Followers &nbsp; • &nbsp;&nbsp;{" "}
+                  &nbsp;
+                  {myProfile
+                    ? profileFollowers?.length
+                    : profileFollows?.length}{" "}
+                  Followers • &nbsp;&nbsp;{" "}
                 </div>
 
-                <div className="profile-following">0 Following</div>
+                <div className="profile-following">
+                  {myProfile
+                    ? myProfileFollows?.length
+                    : profileFollows?.length}{" "}
+                  Following
+                </div>
               </div>
             </h1>
           </div>
@@ -154,9 +208,9 @@ const Profile = () => {
     );
   }
 
-  console.log(loggedInUser.id === Number(id));
+  // console.log(loggedInUser.id === Number(id));
 
-  console.log(showModal);
+  // console.log(showModal);
 
   return (
     <>
@@ -171,10 +225,17 @@ const Profile = () => {
             <div className="profile-name"> {user.username} </div>
             <div className="follow-container">
               <div className="profile-follow">
-                0 Followers &nbsp; • &nbsp;&nbsp;{" "}
+                {myProfile ? 4 : profileFollowers?.length}
+                &nbsp;Followers • &nbsp;&nbsp;{" "}
               </div>
 
-              <div className="profile-following">0 Following</div>
+              <div className="profile-following">
+                {" "}
+                {myProfile
+                  ? myProfileFollows?.length
+                  : profileFollows?.length}{" "}
+                Following
+              </div>
             </div>
           </h1>
         </div>

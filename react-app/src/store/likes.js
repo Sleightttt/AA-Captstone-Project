@@ -100,7 +100,7 @@ export default function likesReducer(state = initialState, action) {
     case READ_LIKES_IMAGE:
       let afterImageRead = { ...state };
 
-      //   afterImageRead.imagesLikes = {};
+      afterImageRead.imagesLikes = {};
       console.log("-----", action.payload);
       action.payload.forEach(
         (like) => (afterImageRead.imagesLikes[like.id] = like)

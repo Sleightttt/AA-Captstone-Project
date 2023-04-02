@@ -57,7 +57,7 @@
 }
 
 .single-product-name {
-  padding-top: 20px;
+  /* padding-top: 20px; */
   padding-left: 20px;
   font-size: 25px;
   font-weight: bold;
@@ -66,6 +66,8 @@
 
 .user-name {
   display: flex;
+  align-items: center;
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 }
 .image-desc {
@@ -83,12 +85,66 @@
 
 .liketest {
   width: 50px;
+  border: none;
 }
 
 .like {
-  background-color: rgb(0, 241, 20);
+  margin-left: 50px;
+  border: none;
+  color: rgb(0, 166, 255);
+  background-color: rgb(236, 236, 236);
 }
 
 .unlike {
-  background-color: rgb(255, 0, 0);
+  border: none;
+  margin-left: 50px;
+  color: rgb(0, 166, 255);
+  background-color: rgb(236, 236, 236);
+}
+
+.like:hover,
+.unlike:hover {
+  cursor: pointer;
+  border-bottom: 1px solid rgb(173, 173, 173);
+}
+
+.likes-info {
+  padding-left: 50px;
+  border: none;
+}
+
+.owner-info-row {
+  display: flex;
+}
+
+.follow-button {
+  margin-left: 88px;
+  color: white;
+  background-color: rgb(0, 166, 255);
+  border: none;
+  height: 30px;
+  width: 100px;
+  border-radius: 4px;
+}
+
+.follow-button:hover {
+  cursor: pointer;
+  border: 1px solid rgb(0, 74, 113);
+  color: rgb(216, 216, 216);
+}
+
+.unfollow-button {
+  margin-left: 88px;
+  color: white;
+  background-color: rgb(0, 166, 255);
+  border: none;
+  height: 30px;
+  width: 100px;
+  border-radius: 4px;
+}
+
+.unfollow-button:hover {
+  cursor: pointer;
+  border: 1px solid rgb(0, 74, 113);
+  color: rgb(216, 216, 216);
 }
