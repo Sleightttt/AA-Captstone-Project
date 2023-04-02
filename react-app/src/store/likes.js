@@ -20,8 +20,9 @@ const getUserLikes = (id) => ({
   payload: id,
 });
 
-const deleteLike = () => ({
+const deleteLike = (id) => ({
   type: DELETE_LIKE,
+  payload: id,
 });
 
 const imagesLikes = (like) => ({
@@ -116,12 +117,14 @@ export default function likesReducer(state = initialState, action) {
 
       // console.log("read hit", action.payload);
       return afterImageRead2;
+
     case DELETE_LIKE:
       let afterDelete = {
         ...state,
       };
-      // console.log(action.payload, "---");
+      console.log(action.payload, "---");
       delete afterDelete["imagesLikes"][action.payload];
+
       delete afterDelete["userLikes"][action.payload];
 
       return afterDelete;

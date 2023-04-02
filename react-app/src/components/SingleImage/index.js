@@ -83,6 +83,7 @@ const SingleImage = () => {
           ></img>
 
           <div className="single-product-name">{image.name}</div>
+          <div>{imageLikesArr?.length}</div>
           {lke ? (
             <form onSubmit={unlikeHandler}>
               <button className={thisOrThat}>test</button>
