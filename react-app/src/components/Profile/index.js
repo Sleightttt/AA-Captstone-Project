@@ -16,7 +16,7 @@ const Profile = () => {
   const loggedInUser = useSelector((state) => state.session.user);
   const allUsers = useSelector((state) => state.session.users);
   const allFollows = useSelector((state) => state.followers.follows);
-  const userId = useSelector((state) => state.session.user.id);
+  const userId = useSelector((state) => state?.session?.user?.id);
   const [showModal, setShowModal] = useState(false);
   const divRef = useRef(null);
   let user;
