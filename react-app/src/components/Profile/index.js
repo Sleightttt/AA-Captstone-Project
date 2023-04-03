@@ -225,7 +225,9 @@ const Profile = () => {
             <div className="profile-name"> {user.username} </div>
             <div className="follow-container">
               <div className="profile-follow">
-                {myProfile ? 4 : profileFollowers?.length}
+                {myProfile
+                  ? profileFollowers?.length
+                  : profileFollowers?.length}
                 &nbsp;Followers • &nbsp;&nbsp;{" "}
               </div>
 
