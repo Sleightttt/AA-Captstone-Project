@@ -32,8 +32,9 @@
 
 .edit-button-submit {
   margin: 4px;
-  border-radius: 2px;
-  background-color: rgb(41, 41, 41);
+  border-radius: 4px;
+  background-color: rgb(0, 166, 255);
+  border: none;
   color: white;
   height: 30px;
   width: 150px;

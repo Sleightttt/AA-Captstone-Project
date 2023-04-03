@@ -55,7 +55,9 @@
   margin: 4px;
   width: 10%;
   color: white;
-  background-color: rgb(41, 41, 41);
+  border-radius: 4px;
+  border: none;
+  background-color: rgb(0, 166, 255);
 }
 
 .new-comment-submit-button:hover {

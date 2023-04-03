@@ -48,7 +48,8 @@
 .add-image-button {
   margin: 4px;
   border-radius: 2px;
-  background-color: rgb(41, 41, 41);
+  border: none;
+  background-color: rgb(0, 166, 255);
   color: white;
   height: 30px;
   width: 200px;
@@ -68,7 +69,7 @@
 .delete-button-model {
   border-radius: 3px;
   border: none;
-  background-color: rgb(38, 37, 43);
+  background-color: rgb(0, 166, 255);
   outline: none;
   box-shadow: none;
 }
@@ -88,7 +89,11 @@
 }
 
 .yes {
-  background-color: rgb(82, 17, 17);
+  background-color: rgb(39, 39, 39);
+}
+
+.yes:hover {
+  background-color: rgb(177, 0, 0);
 }
 
 .info-profile {
@@ -136,7 +141,8 @@
 .user-image-card-button {
   margin: 4px;
   border-radius: 2px;
-  background-color: rgb(41, 41, 41);
+  background-color: rgb(0, 166, 255);
+  border: none;
   color: white;
   height: 30px;
   width: 150px;
