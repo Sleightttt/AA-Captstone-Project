@@ -47,7 +47,8 @@
 }
 
 .owner-link {
-  color: rgb(131, 30, 178);
+  color: rgb(0, 0, 0);
+  font-size: 20px;
 }
 
 .profile-img {
@@ -81,6 +82,10 @@
 
 .owner-link {
   padding-left: 85px;
+}
+
+.owner-link:hover {
+  color: rgb(0, 166, 255);
 }
 
 .liketest {
