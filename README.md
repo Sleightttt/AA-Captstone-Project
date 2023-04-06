@@ -1,6 +1,6 @@
 # ImageSpace Project
 
-This is the starter for the FLickr clone ImageSpace.
+This is the starter for the Flickr clone ImageSpace.
 
 ## ImageSpace
 
