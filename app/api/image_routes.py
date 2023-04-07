@@ -84,6 +84,8 @@ def delete_product(id):
         return {'message': 'Image deleted'}
     return {'errors': 'Unauthorized'}, 403
 
+
+# Get images by owner
 @image_routes.route('/owner/<int:id>')
 def get_images_by_owner(id):
     images = Image.query.filter_by(owner_id=id).all()

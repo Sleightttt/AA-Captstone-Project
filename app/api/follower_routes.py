@@ -47,6 +47,8 @@ def create_follow():
         return {'errors': form.errors}, 401
     return {'errors': 'Unauthorized'}, 403
 
+
+# delete follow
 @followers_routes.route('/<int:id>', methods=['DELETE'])
 def delete_follow(id):
 

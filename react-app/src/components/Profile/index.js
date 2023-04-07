@@ -59,11 +59,11 @@ const Profile = () => {
 
   if (allUsers === undefined) {
     caller();
-    return <div>Not Loading</div>;
+    return <div>Render fell asleep, please wait</div>;
   }
 
   if (userImages.length === 0) {
-    return <div>Not Loading</div>;
+    return <div>Render fell asleep, please wait</div>;
   }
 
   const users = Object.values(allUsers);

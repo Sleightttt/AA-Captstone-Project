@@ -19,22 +19,25 @@ def CommentsPage(id):
 
 @comment_routes.route("/")
 def Comments():
+    """get all comments"""
     all_reviews = Comment.query.all()
     return [review.to_dict() for review in all_reviews]
 
 
 @comment_routes.route("/image/<int:id>")
 def ProductComments(id):
+    """get a images comments"""
 
     image_comments = db.paginate(Comment.query.filter(id == Comment.image_id))
     print("The comments", image_comments)
-    return [review.to_dict() for review in image_comments]
+    return [image.to_dict() for image in image_comments]
 
 
 @comment_routes.route("/new", methods=["POST"])
 def leave_Comment():
-    print("The current_user object is :", current_user)
-    print("The Request", request.data)
+    """create a new comment"""
+    # print("The current_user object is :", current_user)
+    # print("The Request", request.data)
     form = NewCommentForm()
     if current_user.is_authenticated:
         user = current_user.to_dict()
@@ -43,7 +46,7 @@ def leave_Comment():
         form["csrf_token"].data = request.cookies["csrf_token"]
         print("-----------", form.data)
         if form.validate_on_submit():
-            print("Form Validated")
+            # print("Form Validated")
             comment = Comment(
                 user_id=user_id,
                 image_id=form.data["image_id"],
@@ -60,7 +63,8 @@ def leave_Comment():
 
 @comment_routes.route("/<int:id>", methods=["GET", "PUT", "DELETE"])
 def Route(id):
-    print("HIT ROUTE")
+    # print("HIT ROUTE")
+    """Edit and delete a comment"""
 
     if request.method == "PUT":
         comment_to_update = Comment.query.get(id)

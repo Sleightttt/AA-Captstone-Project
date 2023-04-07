@@ -11,7 +11,7 @@ likes_routes = Blueprint('likes', __name__)
 
 @likes_routes.route("/user/<int:id>")
 def LikesPage(id):
-    """ "get users comments"""
+    """ "get users likes"""
 
     User_Likes = Like.query.filter(Like.liker_id == id).all()
     return [like.to_dict() for like in User_Likes]
@@ -22,6 +22,8 @@ def get_likes():
     return {'likes': [like.to_dict() for like in likes]}
     # return {"hello": "hi"}
 
+
+# create new like
 @likes_routes.route('/', methods=['POST'])
 def create_like():
 
@@ -45,6 +47,8 @@ def create_like():
         return {'errors': form.errors}, 401
     return {'errors': 'Unauthorized'}, 403
 
+
+# delete a like
 @likes_routes.route('/<int:id>', methods=['DELETE'])
 def delete_like(id):
 
@@ -55,7 +59,7 @@ def delete_like(id):
         return {'message': 'Like deleted'}
     return {'errors': 'Unauthorized'}, 403
 
-
+# get likes for image
 @likes_routes.route("/image/<int:id>")
 def ProductComments(id):
 
