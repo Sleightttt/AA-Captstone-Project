@@ -31,6 +31,9 @@ const SingleImage = () => {
     (follow) =>
       follow.follower_id == userId && follow.following_id == image.owner?.id
   );
+  const comments = useSelector(
+    (state) => state?.comments?.SingleImagesComments
+  );
 
   const [lke, setLke] = useState(false);
   const [isFollowed, setIsFollowed] = useState(false);
@@ -66,6 +69,7 @@ const SingleImage = () => {
     await dispatch(getLikesByImage(id));
     await dispatch(getLikesByUser(userId));
   };
+  const commentArr = Object?.values(comments).reverse();
 
   console.log("follow to delete", followToDelete?.id);
 
@@ -107,6 +111,13 @@ const SingleImage = () => {
     }
   };
 
+  const dateHandler = (date) => {
+    let formatDate = new Date(date);
+    let full = `${formatDate.toDateString()} `;
+
+    return full;
+  };
+
   const unfollowHandler = async (e) => {
     e.preventDefault();
     console.log("unfollow button hit");
@@ -117,6 +128,10 @@ const SingleImage = () => {
 
       setIsFollowed(false);
     }
+  };
+
+  const randnum = () => {
+    return Math.random() * (1000 - 100) + 100;
   };
 
   console.log("THIS IS LIKED", lke);
@@ -133,54 +148,84 @@ const SingleImage = () => {
           <img alt="desciprtive" className="single-image" src={image.url}></img>
         </div>
       </div>
-      <div className="product-info">
-        <div className="user-name">
-          <img
-            alt="main placeholder"
-            className="profile-img"
-            src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80"
-          ></img>
+      <div className="user-card">
+        <div className="product-info">
+          <div className="user-name">
+            <img
+              alt="main placeholder"
+              className="profile-img"
+              src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80"
+            ></img>
 
-          <div className="single-product-name">{image.name}</div>
-          <div className="likes-info">
-            {imageLikesArr?.length}{" "}
-            {imageLikesArr?.length === 1 ? "Like " : "Likes"}
+            <div className="single-product-name">{image.name}</div>
+            <div className="likes-info">
+              {/* {imageLikesArr?.length}{" "}
+              {imageLikesArr?.length === 1 ? "Like " : "Likes"} */}
+            </div>
+            {lke ? (
+              <form onSubmit={unlikeHandler}>
+                <button className={thisOrThat}>
+                  {" "}
+                  <i className="fas fa-heart fa-3x"></i>
+                </button>
+              </form>
+            ) : (
+              <form onSubmit={likeHandler}>
+                <button className={thisOrThat}>
+                  <i className="far fa-heart fa-3x"></i>
+                </button>
+              </form>
+            )}
           </div>
-          {lke ? (
-            <form onSubmit={unlikeHandler}>
-              <button className={thisOrThat}>
-                {" "}
-                <i className="fas fa-heart fa-3x"></i>
-              </button>
-            </form>
-          ) : (
-            <form onSubmit={likeHandler}>
-              <button className={thisOrThat}>
-                <i className="far fa-heart fa-3x"></i>
-              </button>
-            </form>
-          )}
-        </div>
-        <p className="image-desc">{image.description}</p>
-        <div className="owner-info-row">
-          <Link to={`/user/${image.owner?.id}`}>
-            <div className="owner-link">Owner: {image.owner?.username}</div>
-          </Link>
-          {isFollowed ? (
-            image.owner_id !== userId ? (
-              <button className="unfollow-button" onClick={unfollowHandler}>
-                UNFOLLOW
+
+          <p className="image-desc">{image.description}</p>
+          <div className="owner-info-row">
+            <Link to={`/user/${image.owner?.id}`}>
+              <div className="owner-link">Owner: {image.owner?.username}</div>
+            </Link>
+
+            {isFollowed ? (
+              image.owner_id !== userId ? (
+                <button className="unfollow-button" onClick={unfollowHandler}>
+                  UNFOLLOW
+                </button>
+              ) : (
+                ""
+              )
+            ) : image.owner_id !== userId ? (
+              <button className="follow-button" onClick={followHandler}>
+                FOLLOW
               </button>
             ) : (
               ""
-            )
-          ) : image.owner_id !== userId ? (
-            <button className="follow-button" onClick={followHandler}>
-              FOLLOW
-            </button>
-          ) : (
-            ""
-          )}
+            )}
+          </div>
+        </div>
+        <div className="profile-follows-likes">
+          <div className="views">
+            <div className="box">
+              <div className="numbah">{Math.trunc(randnum())}</div>
+              <div className="grey">views</div>
+            </div>
+            <div className="box">
+              <div className="numbah">{imageLikesArr?.length}</div>
+              <div className="grey">
+                {" "}
+                {imageLikesArr?.length === 1 ? "Like " : "Likes"}
+              </div>{" "}
+            </div>
+            <div className="box">
+              <div className="numbah">{commentArr.length}</div>
+              <div className="grey">Comments</div>
+            </div>
+            <div className="taken-on">
+              Taken on {dateHandler(image?.created_at)}
+              <div>
+                <i className=" space fa fa-copyright"></i> &nbsp;All rights
+                reserved
+              </div>{" "}
+            </div>
+          </div>
         </div>
       </div>
     </>

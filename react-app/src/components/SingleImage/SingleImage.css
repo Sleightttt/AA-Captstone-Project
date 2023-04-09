@@ -39,11 +39,12 @@
 
 .product-info {
   border-bottom: 1px solid rgb(207, 207, 207);
-  height: 160px;
+  height: 200px;
   background-color: rgb(236, 236, 236);
   padding: 5%;
   padding-bottom: 10px;
   padding-top: 40px;
+  width: 50%;
 }
 
 .owner-link {
@@ -94,7 +95,7 @@
 }
 
 .like {
-  margin-left: 50px;
+  margin-left: 10px;
   border: none;
   color: rgb(0, 166, 255);
   background-color: rgb(236, 236, 236);
@@ -102,7 +103,7 @@
 
 .unlike {
   border: none;
-  margin-left: 50px;
+  margin-left: 10px;
   color: rgb(0, 166, 255);
   background-color: rgb(236, 236, 236);
 }
@@ -115,6 +116,7 @@
 
 .likes-info {
   padding-left: 50px;
+  padding-top: 5px;
   border: none;
 }
 
@@ -123,7 +125,7 @@
 }
 
 .follow-button {
-  margin-left: 88px;
+  margin-left: 8px;
   color: white;
   background-color: rgb(0, 166, 255);
   border: none;
@@ -139,7 +141,7 @@
 }
 
 .unfollow-button {
-  margin-left: 88px;
+  margin-left: 8px;
   color: white;
   background-color: rgb(0, 166, 255);
   border: none;
@@ -152,4 +154,52 @@
   cursor: pointer;
   border: 1px solid rgb(0, 74, 113);
   color: rgb(216, 216, 216);
+}
+
+.user-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-follows-likes {
+  border-bottom: 1px solid rgb(207, 207, 207);
+  height: 200px;
+  background-color: rgb(236, 236, 236);
+  padding: 5%;
+  padding-bottom: 10px;
+  padding-top: 40px;
+
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.views {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.box {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.numbah {
+  font-size: 20px;
+}
+
+.grey {
+  color: rgb(169, 169, 169);
+}
+
+.taken-on {
+  padding-top: 15px;
+  padding-left: 15px;
+}
+.space {
+  margin: 5px;
 }

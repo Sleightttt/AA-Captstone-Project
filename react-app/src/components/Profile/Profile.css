@@ -167,11 +167,11 @@
 }
 
 .black {
-  color: rgb(0, 0, 0);
+  color: rgb(0, 166, 255);
   font-size: 30px;
 }
 .black:hover {
-  color: rgb(153, 153, 153);
+  color: rgb(0, 130, 199);
 }
 
 .plus {
