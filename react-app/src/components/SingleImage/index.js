@@ -34,9 +34,15 @@ const SingleImage = () => {
   const comments = useSelector(
     (state) => state?.comments?.SingleImagesComments
   );
-
+  const randnum = () => {
+    return Math.random() * (1000 - 100) + 100;
+  };
   const [lke, setLke] = useState(false);
   const [isFollowed, setIsFollowed] = useState(false);
+  // const [ran, setRan] = useState("");
+  // if (ran == "") {
+  //   setRan(randnum());
+  // }
 
   //pulling store on load
   useEffect(() => {
@@ -130,10 +136,6 @@ const SingleImage = () => {
     }
   };
 
-  const randnum = () => {
-    return Math.random() * (1000 - 100) + 100;
-  };
-
   console.log("THIS IS LIKED", lke);
   return (
     <>
@@ -204,7 +206,7 @@ const SingleImage = () => {
         <div className="profile-follows-likes">
           <div className="views">
             <div className="box">
-              <div className="numbah">{Math.trunc(randnum())}</div>
+              <div className="numbah">x</div>
               <div className="grey">views</div>
             </div>
             <div className="box">
@@ -226,6 +228,12 @@ const SingleImage = () => {
               </div>{" "}
             </div>
           </div>
+          {/* <div className="camera-box">
+            <div className="camera">
+              <i className="fa fa-camera fa-4x"></i>
+            </div>
+            <div className="camera-info">yo</div>
+          </div> */}
         </div>
       </div>
     </>

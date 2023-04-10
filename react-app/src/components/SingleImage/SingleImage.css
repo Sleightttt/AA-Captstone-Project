@@ -203,3 +203,8 @@
 .space {
   margin: 5px;
 }
+
+.camera-box {
+  display: flex;
+  flex-direction: row;
+}
