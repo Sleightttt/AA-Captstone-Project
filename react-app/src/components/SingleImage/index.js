@@ -14,7 +14,7 @@ import {
   getFollowsByUser,
   deleteFollowThunk,
 } from "../../store/followers";
-
+//Single image component
 const SingleImage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -34,15 +34,9 @@ const SingleImage = () => {
   const comments = useSelector(
     (state) => state?.comments?.SingleImagesComments
   );
-  const randnum = () => {
-    return Math.random() * (1000 - 100) + 100;
-  };
+
   const [lke, setLke] = useState(false);
   const [isFollowed, setIsFollowed] = useState(false);
-  // const [ran, setRan] = useState("");
-  // if (ran == "") {
-  //   setRan(randnum());
-  // }
 
   //pulling store on load
   useEffect(() => {
@@ -50,7 +44,6 @@ const SingleImage = () => {
     dispatch(getLikesByImage(id));
     dispatch(getLikesByUser(userId));
     dispatch(getFollowsByUser(userId));
-    console.log(likeToDelete == true, "----");
   }, [dispatch, id]);
 
   //prerender protection
@@ -58,27 +51,14 @@ const SingleImage = () => {
     return null;
   }
 
+  //toggles
   let thisOrThat = lke ? "unlike" : "like";
 
   let flipper = isFollowed ? "Unfollow" : "Follow";
 
-  const likeHandler = async (e) => {
-    e.preventDefault();
-    // console.log("hit likehandler", id);
-    setLke(!lke);
-    await dispatch(
-      createLikeThunk({
-        image_id: id,
-        liker_id: userId,
-      })
-    );
-    await dispatch(getLikesByImage(id));
-    await dispatch(getLikesByUser(userId));
-  };
   const commentArr = Object?.values(comments).reverse();
 
-  console.log("follow to delete", followToDelete?.id);
-
+  //// Need to refactor
   if (likeToDelete && !lke) likeToDelete ? setLke(true) : setLke(false);
 
   if (!likeToDelete && lke) likeToDelete ? setLke(true) : setLke(false);
@@ -89,21 +69,41 @@ const SingleImage = () => {
 
   if (!followToDelete && isFollowed)
     followToDelete ? setIsFollowed(true) : setIsFollowed(false);
+  /////
 
   const deleter2 = followToDelete?.id;
 
+  // Action handlers
+  const likeHandler = async (e) => {
+    e.preventDefault();
+    setLke(!lke);
+    await dispatch(
+      createLikeThunk({
+        image_id: id,
+        liker_id: userId,
+      })
+    );
+    await dispatch(getLikesByImage(id));
+    await dispatch(getLikesByUser(userId));
+  };
+
   const unlikeHandler = async (e) => {
     e.preventDefault();
-    // console.log("hit unlikehandler", id);
     setLke(!lke);
     await dispatch(deleteLikeThunk(deleter));
     await dispatch(getLikesByImage(id));
     await dispatch(getLikesByUser(userId));
   };
 
+  const dateHandler = (date) => {
+    let formatDate = new Date(date);
+    let full = `${formatDate.toDateString()} `;
+
+    return full;
+  };
+
   const followHandler = async (e) => {
     e.preventDefault();
-
     if (!isFollowed) {
       await dispatch(
         createFollowThunk({
@@ -115,13 +115,6 @@ const SingleImage = () => {
 
       setIsFollowed(true);
     }
-  };
-
-  const dateHandler = (date) => {
-    let formatDate = new Date(date);
-    let full = `${formatDate.toDateString()} `;
-
-    return full;
   };
 
   const unfollowHandler = async (e) => {
@@ -136,7 +129,6 @@ const SingleImage = () => {
     }
   };
 
-  console.log("THIS IS LIKED", lke);
   return (
     <>
       <div className="single-product-container">
