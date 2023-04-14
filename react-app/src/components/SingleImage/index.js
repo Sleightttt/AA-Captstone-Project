@@ -197,11 +197,11 @@ const SingleImage = () => {
         </div>
         <div className="profile-follows-likes">
           <div className="views">
-            <div className="box">
-              <div className="numbah">x</div>
-              <div className="grey">views</div>
+            <div className="box spaced">
+              {/* <div className="numbah">x</div>
+              <div className="grey">views</div> */}
             </div>
-            <div className="box">
+            <div className="box like-box">
               <div className="numbah">{imageLikesArr?.length}</div>
               <div className="grey">
                 {" "}
