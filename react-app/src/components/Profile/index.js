@@ -151,52 +151,22 @@ const Profile = () => {
                         Add New Image
                       </button>
                     )}
-                    <div className="user-images-body">
-                      {images[0].map((image) => (
-                        <div key={image.id} className="user-product-card">
-                          <div className="user-image">
-                            {image && (
-                              <>
-                                <img
-                                  className="profile-image-hover"
-                                  key={image.id}
-                                  style={{ width: "400px", height: "400px" }}
-                                  src={image.url}
-                                  alt={image.name}
-                                  onClick={() =>
-                                    history.push(`/images/${image.id}`)
-                                  }
-                                />
-                                <div className="img__description_layer">
-                                  {loggedInUser.id === Number(id) && (
-                                    <div className="user-product-card-buttons">
-                                      <button
-                                        className="user-image-card-button"
-                                        onClick={() =>
-                                          history.push(
-                                            `/images/${image.id}/edit`
-                                          )
-                                        }
-                                      >
-                                        Edit
-                                      </button>
-                                      <button
-                                        className="user-image-card-button"
-                                        onClick={() =>
-                                          handleShowModal(image.id)
-                                        }
-                                      >
-                                        Delete
-                                      </button>
-                                    </div>
-                                  )}
-                                </div>
-                              </>
-                            )}
-                          </div>
-                          <div className="user-product-card-info"></div>
-                        </div>
-                      ))}
+
+                    <div className="try">
+                      {" "}
+                      <i className="fas fa-angle-up fa-bounce "></i>&nbsp; Get
+                      started!
+                    </div>
+                    <div
+                      className="user-images-body"
+                      style={{
+                        height: "500px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignContent: "center",
+                      }}
+                    >
+                      <div className="such-empty">No photos uploaded yet!</div>
                     </div>
                   </div>
                 </div>
