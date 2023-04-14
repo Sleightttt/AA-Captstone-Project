@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/session";
 import { useHistory } from "react-router-dom";
 import OpenModalButton from "../OpenModalButton";
@@ -12,6 +12,7 @@ function ProfileButton({ user }) {
   // const sessionUser = useSelector((state) => state.session.user);
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
+  const userz = useSelector((state) => state?.session?.user);
 
   const openMenu = () => {
     if (showMenu) return;
@@ -39,19 +40,36 @@ function ProfileButton({ user }) {
     history.push("/");
   };
 
+  const profileHandler = () => {
+    closeMenu();
+    history.push(`/user/${userz?.id}`);
+  };
+
   const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
   const closeMenu = () => setShowMenu(false);
 
   return (
     <>
-      <button className="profile-pic" onClick={openMenu}>
-        <i className="fas fa-user-circle fa-lg" />
-      </button>
+      <button className="profile-pic" onClick={openMenu}></button>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-            <li>{user.username}</li>
-            <li>{user.email}</li>
+            <li>
+              {" "}
+              <i className="fas fa-hand-paper purps "></i>
+              {user.username}
+            </li>
+            <li>
+              <i className="fas fa-user purps "></i>
+              {user.email}
+            </li>
+            <li>
+              <i className="fas fa-camera purps "></i>
+              <div onClick={profileHandler} className="profile-redirect">
+                {" "}
+                Your Profile
+              </div>
+            </li>
             <li className="not-you">
               <button className="logout-button" onClick={handleLogout}>
                 Log Out

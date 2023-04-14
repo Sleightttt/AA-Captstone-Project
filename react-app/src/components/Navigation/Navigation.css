@@ -7,11 +7,11 @@ html {
   flex-direction: column;
   border: solid grey 2px;
   position: relative;
-  right: 70px;
-  top: 40px;
+  right: 140px;
+  top: 6px;
   padding-right: 10px;
   padding-left: 10px;
-  width: 200px;
+  width: 180px;
   height: 100px;
   list-style: none;
   justify-content: center;
@@ -33,9 +33,17 @@ html {
 }
 
 .profile-dropdown > li:not(.not-you) {
-  display: block;
-  width: 100px;
-  border-bottom: solid grey 1px;
+  display: flex;
+  justify-content: space-between;
+
+  width: 140px;
+  border-bottom: solid rgb(211, 211, 211) 1px;
+}
+
+.profile-dropdown > li {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-between;
 }
 
 .profile-dropdown > button:hover {
@@ -43,10 +51,20 @@ html {
   background-color: rgb(2, 137, 210);
 }
 
-.profile-pic:hover {
-  cursor: pointer;
+.profile-redirect {
+  color: rgb(2, 137, 210);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+.profile-redirect:hover {
+  color: rgb(1, 114, 175);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.purps {
+  color: rgb(115, 0, 255);
+}
 .hidden {
   display: none;
 }
@@ -123,11 +141,16 @@ li {
 .profile-box {
   height: 40px;
   width: 40px;
-  display: flex;
+  /* display: flex; */
 }
 
 .profile-pic:hover {
   cursor: pointer;
+  opacity: 0.7;
+}
+
+.profile-pic {
+  width: 40px;
 }
 
 .upload-icon:hover {
