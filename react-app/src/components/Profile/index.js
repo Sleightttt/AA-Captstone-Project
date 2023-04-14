@@ -151,7 +151,6 @@ const Profile = () => {
                         Add New Image
                       </button>
                     )}
-
                     <div className="try">
                       {" "}
                       <i className="fas fa-angle-up fa-bounce "></i>&nbsp; Get
