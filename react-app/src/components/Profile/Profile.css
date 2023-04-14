@@ -175,6 +175,7 @@
   color: rgb(0, 0, 0);
   border: none;
   padding-bottom: 7px;
+  background-color: rgb(236, 236, 236);
 }
 .new-comment-button:hover {
   cursor: pointer;
