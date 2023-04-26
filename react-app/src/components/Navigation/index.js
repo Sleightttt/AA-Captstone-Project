@@ -4,7 +4,9 @@ import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 
 import "./Navigation.css";
-
+//1.aws
+//2.search
+//3.make all links work
 function Navigation({ isLoaded }) {
   const history = useHistory();
 
