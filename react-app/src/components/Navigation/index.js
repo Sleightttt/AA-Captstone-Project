@@ -58,13 +58,12 @@ function Navigation({ isLoaded }) {
                   </NavLink>
                 </div>
                 <div
-                  onClick={() => alert("Prints coming soon")}
+                  // onClick={() => alert("Prints coming soon")}
                   className="prints"
                 >
-                  {/* <NavLink exact to="/prints">
+                  <NavLink exact to="/prints">
                     Prints
-                  </NavLink> */}
-                  Prints
+                  </NavLink>
                 </div>
                 <div
                   onClick={() => alert("Pro coming soon")}

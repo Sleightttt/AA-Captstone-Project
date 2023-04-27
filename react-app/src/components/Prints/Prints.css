@@ -1,0 +1,120 @@
+.choose-container {
+  height: 300px;
+  background-color: white;
+}
+
+.choose-header {
+  font-size: 32px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  padding-left: 10%;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.choose-desc {
+  padding: 5px 10%;
+  font-size: 25px;
+  width: 400px;
+  font-weight: 100;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.choose-button {
+  margin-left: 10%;
+  margin-top: 60px;
+  height: 60px;
+  width: 150px;
+  border-radius: 12px;
+  background: none;
+  color: black;
+  font-size: 15px;
+  font-weight: 600;
+  border: 3px solid black;
+}
+
+.choose-button:hover {
+  background-color: rgb(218, 218, 218);
+  cursor: pointer;
+}
+
+.image-banner-1 {
+  height: 420px;
+  background-color: red;
+  background-image: url(https://images.unsplash.com/photo-1500051638674-ff996a0ec29e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2118&q=80);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.image-banner-2 {
+  height: 420px;
+  background-color: red;
+  background-image: url(https://images.unsplash.com/photo-1531683944026-e56b930467ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.info-row {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  padding-top: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 50px;
+  padding-left: 10%;
+}
+.info-row2 {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 50px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.info-container2 {
+  display: flex;
+  justify-content: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+  width: 33%;
+}
+
+.info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.info-header {
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 30px;
+  width: 90%;
+}
+
+.faq {
+  font-size: 24px;
+  background-color: white;
+  padding: 50px;
+  padding-bottom: 0;
+  padding-left: 122px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}

@@ -176,6 +176,7 @@
   border: none;
   padding-bottom: 7px;
   background-color: rgb(236, 236, 236);
+  border-bottom: 1px solid rgb(205, 205, 205);
 }
 .new-comment-button:hover {
   cursor: pointer;
@@ -202,4 +203,4 @@
     margin: 0;
     padding: 0.5em 0;
   }
-} */ ;
+} */

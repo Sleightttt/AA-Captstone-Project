@@ -12,6 +12,7 @@ import UpdateImage from "./components/UpdateImage";
 import Profile from "./components/Profile";
 import Comments from "./components/Comments";
 import About from "./components/About";
+import Prints from "./components/Prints";
 
 function App() {
   const dispatch = useDispatch();
@@ -53,6 +54,10 @@ function App() {
           </Route>
           <Route exact={true} path="/user/:id">
             <Profile />
+            <About />
+          </Route>
+          <Route exact={true} path="/prints">
+            <Prints />
             <About />
           </Route>
         </Switch>

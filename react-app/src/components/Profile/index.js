@@ -80,29 +80,29 @@ const Profile = () => {
   //   );
   // }
 
-  console.log(allFollows["follows"], "allfollows");
+  // console.log(allFollows["follows"], "allfollows");
 
   profileFollows = allFollows["follows"].filter(
     (follow) => follow.follower_id == id
   );
 
-  console.log("bobbies follows", profileFollows?.length, profileFollows);
+  // console.log("bobbies follows", profileFollows?.length, profileFollows);
 
   profileFollowers = allFollows["follows"].filter(
     (follow) => follow.following_id == id
   );
 
-  console.log("bobbies followers", profileFollowers?.length, profileFollowers);
+  // console.log("bobbies followers", profileFollowers?.length, profileFollowers);
 
   let myProfileFollows = allFollows.follows.filter(
     (follow) => follow.follower_id == userId
   );
-  console.log("my profile follows", myProfileFollows);
+  // console.log("my profile follows", myProfileFollows);
 
   let myProfileFollowers = allFollows.follows.filter(
     (follow) => follow.following_id == userId
   );
-  console.log(profileFollowers, "profile followers");
+  // console.log(profileFollowers, "profile followers");
 
   // console.log(myProfileFollows.length, "following length");
   // console.log(myProfileFollowers.length, "folllowers length");
