@@ -17,6 +17,7 @@
   height: 80px;
   background-color: white;
   color: black;
+  resize: none;
 }
 
 .edit-comment-button {

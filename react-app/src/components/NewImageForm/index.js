@@ -114,6 +114,7 @@ const CreateImage = () => {
           )}
           <label>Description</label>
           <textarea
+            className="desc-new-image"
             name="description"
             onChange={(e) => setDescription(e.target.value)}
             value={description}

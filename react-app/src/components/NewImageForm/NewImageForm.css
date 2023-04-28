@@ -61,3 +61,8 @@ textarea {
 .error {
   color: red;
 }
+
+.desc-new-image {
+  resize: none;
+  height: 200px;
+}

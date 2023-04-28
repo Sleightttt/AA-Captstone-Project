@@ -13,6 +13,7 @@ import Profile from "./components/Profile";
 import Comments from "./components/Comments";
 import About from "./components/About";
 import Prints from "./components/Prints";
+import GetPro from "./components/GetPro";
 
 function App() {
   const dispatch = useDispatch();
@@ -58,6 +59,10 @@ function App() {
           </Route>
           <Route exact={true} path="/prints">
             <Prints />
+            <About />
+          </Route>
+          <Route exact={true} path="/get-pro">
+            <GetPro />
             <About />
           </Route>
         </Switch>
