@@ -81,22 +81,13 @@ export const editImage = (image) => async (dispatch) => {
 };
 
 export const createImage = (image) => async (dispatch) => {
-  const { name, description, url, lat, lng, owner_id } = image;
-
+  // const { name, description, url, lat, lng, owner_id } = image;
+  console.log("this is the image in the thunk", image);
   const response = await fetch("/api/images/", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      name,
-      description,
-      url,
-      lat,
-      lng,
-      owner_id,
-    }),
+    body: image,
   });
+
   const imageData = await response.json();
 
   if (response.ok) {

@@ -3,6 +3,7 @@ from app.models import  db, Image, User
 from app.forms.image_form import ImageForm
 from flask_login import current_user
 from datetime import datetime
+from app.routes.aws_helpers import upload_file_to_s3, get_unique_filename
 
 
 
@@ -18,17 +19,29 @@ def get_images():
 # Create a image /api/image/
 @image_routes.route('/', methods=['POST'])
 def create_product():
-
+    print('route hit')
     form = ImageForm()
     if current_user.is_authenticated:
+        print('auth hit')
+        print('formdata',form.data)
         user = current_user.to_dict()
         owner_id = user['id']
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
+            print('val hit')
+            izg = form.data['url']
+
+            izg.filename = get_unique_filename(izg.filename)
+
+            upload = upload_file_to_s3(izg)
+
+            if "url" not in upload:
+                return upload, 400
+
             image = Image(
                 name=form.data['name'],
                 description=form.data['description'],
-                url=form.data['url'],
+                url=upload['url'],
                 lat=form.data['lat'],
                 lng=form.data['lng'],
                 owner_id=owner_id,
@@ -51,6 +64,7 @@ def update_image(id):
         image = Image.query.get(id)
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
+
             image.name = form.data['name']
             image.description = form.data['description']
             image.lat = form.data['lat']

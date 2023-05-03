@@ -35,6 +35,15 @@ const CreateImage = () => {
     e.preventDefault();
     let newErrors = {};
 
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("lat", lat);
+    formData.append("lng", lng);
+    formData.append("url", url);
+    formData.append("userId", userId);
+    console.log("this is formdata", formData);
+
     if (!name || name.length > 50 || name.length < 1) {
       newErrors["title"] = "Please add a name between 1-50 characters";
     }
@@ -56,21 +65,13 @@ const CreateImage = () => {
     ) {
       newErrors["lng"] = "Please add a latitude";
     }
-    if (
-      !url ||
-      url.endsWith("jpg") ||
-      url.endsWith("png") ||
-      url.endsWith("pdf")
-    ) {
-      newErrors["url"] =
-        "Please add a url. Files ending in .jpg, .png, .pdf are not currently supported";
-    }
+
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       console.log("error hit");
     } else {
       console.log("hit");
-      const data = await dispatch(createImage(image));
+      const data = await dispatch(createImage(formData));
       console.log(data);
       history.push(`/images/${data.id}`);
     }
@@ -81,7 +82,11 @@ const CreateImage = () => {
 
   return (
     <div className="create-image-container">
-      <form className="create-image-form" onSubmit={handleSubmit}>
+      <form
+        className="create-image-form"
+        encType="multipart/form-data"
+        onSubmit={handleSubmit}
+      >
         <div>
           {/* {Object.keys(errors).length > 0 && (
             <div className="alert error">
@@ -146,10 +151,10 @@ const CreateImage = () => {
           {errors["url"] && <div className="error">{errors["url"]}</div>}
           <label>Image Url</label>
           <input
-            type="text"
+            type="file"
+            accept="image/*"
             name="url"
-            onChange={(e) => setUrl(e.target.value)}
-            value={url}
+            onChange={(e) => setUrl(e.target.files[0])}
           ></input>
         </div>
         <button
