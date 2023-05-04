@@ -55,22 +55,12 @@ export const getImagesByUser = (userId) => async (dispatch) => {
 
 //edit image
 export const editImage = (image) => async (dispatch) => {
-  const { id, name, description, lat, lng, userId, url } = image;
-
-  const response = await fetch(`/api/images/${id}`, {
+  // const { id, name, description, lat, lng, userId, url } = image;
+  // console.log("THIS BE URL", url);
+  console.log("---", image.get("id"));
+  const response = await fetch(`/api/images/${image.get("id")}`, {
     method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      id,
-      name,
-      description,
-      url,
-      lat,
-      lng,
-      owner_id: userId,
-    }),
+    body: image,
   });
 
   if (response.ok) {

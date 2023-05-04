@@ -49,7 +49,17 @@ const UpdateImage = () => {
       userId,
     };
 
+    const formData = new FormData();
+    formData.append("id", id);
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("lat", lat);
+    formData.append("lng", lng);
+    formData.append("url", url);
+    formData.append("userId", userId);
+    console.log("this is formdata", formData);
     let newErrors = {};
+    // console.log(formData.get("id"));
 
     if (!name || name.length > 50 || name.length < 1) {
       newErrors["title"] = "Please add a name between 1-50 characters";
@@ -72,19 +82,19 @@ const UpdateImage = () => {
     ) {
       newErrors["lng"] = "Please add longitude";
     }
-    if (
-      !url ||
-      url.endsWith("jpg") ||
-      url.endsWith("png") ||
-      url.endsWith("pdf")
-    ) {
-      newErrors["url"] = "Please add a url";
-    }
+    // if (
+    //   !url ||
+    //   url.endsWith("jpg") ||
+    //   url.endsWith("png") ||
+    //   url.endsWith("pdf")
+    // ) {
+    //   newErrors["url"] = "Please add a url";
+    // }
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      const data = await dispatch(editImage(imageObj));
+      const data = await dispatch(editImage(formData));
       console.log(data);
       history.push(`/images/${data.id}`);
     }
