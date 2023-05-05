@@ -36,8 +36,8 @@ def create_product():
 
             upload = upload_file_to_s3(izg)
 
-            if "url" not in upload:
-                return upload, 400
+            # if "url" not in upload:
+            #     return upload, 400
 
             image = Image(
                 name=form.data['name'],
@@ -49,6 +49,7 @@ def create_product():
                 created_at=datetime.utcnow(),
                 updated_at=datetime.utcnow(),
             )
+            # print('This is the new image' ,image)
             db.session.add(image)
             db.session.commit()
             return image.to_dict()
