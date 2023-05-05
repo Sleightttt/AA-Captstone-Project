@@ -79,7 +79,7 @@ export const createImage = (image) => async (dispatch) => {
   });
 
   const imageData = await response.json();
-
+  console.log("image id", imageData.id);
   if (response.ok) {
     const final = await fetch(`/api/images/${imageData.id}`);
     if (final.ok) {
