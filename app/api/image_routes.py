@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, session, request
 from app.models import  db, Image, User
 from app.forms.image_form import ImageForm
+from app.forms.image_update_form import ImageForm2
 from flask_login import current_user
 from datetime import datetime
 from app.routes.aws_helpers import upload_file_to_s3, get_unique_filename
@@ -57,20 +58,21 @@ def create_product():
 # # Update a image /api/image/:id
 @image_routes.route('/<int:id>', methods=['PUT'])
 def update_image(id):
-    form = ImageForm()
+    form = ImageForm2()
     if current_user.is_authenticated:
         user = current_user.to_dict()
         owner_id = user['id']
         image = Image.query.get(id)
         form['csrf_token'].data = request.cookies['csrf_token']
+        print('This is form dataaaaaaaaaaa',form.data['name'], form.data['description'], form.data)
         if form.validate_on_submit():
 
             image.name = form.data['name']
             image.description = form.data['description']
-            image.lat = form.data['lat']
-            image.lng = form.data['lng']
-            image.url = form.data['url']
-            image.owner_id = owner_id
+            # image.lat = form.data['lat']
+            # image.lng = form.data['lng']
+            # image.url = form.data['url']
+            # image.owner_id = owner_id
             image.updated_at = datetime.utcnow()
             db.session.add(image)
             db.session.commit()

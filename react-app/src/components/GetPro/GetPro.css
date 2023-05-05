@@ -8,7 +8,6 @@
   padding-top: 0px;
   color: white;
   display: flex;
-
   flex-direction: column;
   font-size: 80px;
   align-items: center;
@@ -54,6 +53,38 @@
 }
 
 .slide-info-l {
+  background-image: linear-gradient(
+    to left,
+    rgb(139, 0, 190),
+    rgb(0, 247, 255)
+  );
+  height: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid gainsboro;
+}
+
+.slide-info-l-bottom {
+  background-image: linear-gradient(
+    to left,
+    rgb(139, 0, 190),
+    rgb(0, 247, 255)
+  );
+  height: 520px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid gainsboro;
+}
+
+.slide-info-l1 {
+  background-image: linear-gradient(
+    to right,
+    rgb(139, 0, 190),
+    rgb(0, 247, 255)
+  );
   height: 520px;
   display: flex;
   justify-content: center;
@@ -85,6 +116,7 @@
 .slide-info-left {
   height: 400px;
   width: 60%;
+  /* background-color: rgba(255, 255, 255, 0.075); */
 }
 
 .slide-info-right {
@@ -94,6 +126,83 @@
   background-repeat: no-repeat;
 }
 
+.slide-info-right2 {
+  height: 400px;
+  width: 60%;
+  background-image: url(https://images.unsplash.com/29/night-square.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2681&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slide-info-right3 {
+  height: 400px;
+  width: 60%;
+  background-image: url(https://images.unsplash.com/photo-1629904888780-8de0c7aeed28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slide-info-right4 {
+  height: 400px;
+  width: 60%;
+  background-image: url(https://images.unsplash.com/photo-1626863905121-3b0c0ed7b94c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .space-text {
   padding-left: 70px;
+}
+
+.feature-card {
+  transition: transform 0.2s; /* Animation */
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 18%;
+  background-color: black;
+  color: rgb(242, 242, 242);
+  border-radius: 12px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+}
+
+.feature-header-image {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 5px 10px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 6px -3px;
+  border-radius: 12px;
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.feature-title {
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  font-family: Georgia, "Times New Roman", Times, sans-serif;
+}
+
+.feature-info-container {
+  display: flex;
+  justify-content: center;
+}
+
+.feature-info {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 18px;
+  letter-spacing: 1.5px;
+  font-size: 17px;
+  padding-top: 10px;
 }

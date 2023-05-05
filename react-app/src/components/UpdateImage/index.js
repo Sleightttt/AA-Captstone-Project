@@ -57,7 +57,7 @@ const UpdateImage = () => {
     formData.append("lng", lng);
     formData.append("url", url);
     formData.append("userId", userId);
-    console.log("this is formdata", formData);
+    console.log("this is formdata", formData.get("url"));
     let newErrors = {};
     // console.log(formData.get("id"));
 
@@ -96,7 +96,7 @@ const UpdateImage = () => {
     } else {
       const data = await dispatch(editImage(formData));
       console.log(data);
-      history.push(`/images/${data.id}`);
+      history.push(`/images/${id}`);
     }
   };
 
@@ -125,7 +125,7 @@ const UpdateImage = () => {
 
   return (
     <div className="create-image-container">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} encType="multipart/form-data">
         <div className="create-image-form">
           <div className="form-item">
             <label>Name</label>
@@ -139,6 +139,7 @@ const UpdateImage = () => {
           <div className="form-item">
             <label>Description</label>
             <textarea
+              className="desc-new-image"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -146,7 +147,7 @@ const UpdateImage = () => {
               <div className="error">{errors.description}</div>
             )}
           </div>
-          <div className="form-item">
+          {/* <div className="form-item">
             <label>Lat</label>
             <input
               type="number"
@@ -164,15 +165,7 @@ const UpdateImage = () => {
             />
             {errors.lng && <div className="error">{errors.lng}</div>}
           </div>
-          <div className="form-item">
-            <label>Url</label>
-            <input
-              type="text"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-            />
-            {errors.url && <div className="error">{errors.url}</div>}
-          </div>
+          <div className="form-item"></div> */}
           {/* <div className="create-product-images">
                 <label>Images</label>
                 {images.map((image,idx) => (

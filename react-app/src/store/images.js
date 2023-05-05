@@ -57,8 +57,8 @@ export const getImagesByUser = (userId) => async (dispatch) => {
 export const editImage = (image) => async (dispatch) => {
   // const { id, name, description, lat, lng, userId, url } = image;
   // console.log("THIS BE URL", url);
-  console.log("---", image.get("id"));
-  const response = await fetch(`/api/images/${image.get("id")}`, {
+  console.log("---", image.get("url"));
+  const response = await fetch(`/api/images/${+image.get("id")}`, {
     method: "PUT",
     body: image,
   });

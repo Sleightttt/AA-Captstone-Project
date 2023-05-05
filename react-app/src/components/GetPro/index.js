@@ -11,7 +11,12 @@ const GetPro = () => {
               <span className="purple">Space</span> pro
             </div>
             <div className="get-pro-tag">The ideal ImageSpace experience</div>
-            <button className="get-pro-button">Get Started</button>
+            <button
+              onClick={() => alert("Pro coming soon!")}
+              className="get-pro-button"
+            >
+              Get Started
+            </button>
           </div>
           <div className="slide-info-l">
             <div className="slide-info-l-container">
@@ -29,13 +34,13 @@ const GetPro = () => {
               <div className="slide-info-right"></div>
             </div>
           </div>
-          <div className="slide-info-l">
+          <div className="slide-info-l1">
             <div className="slide-info-l-container-2">
-              <div className="slide-info-right"></div>
+              <div className="slide-info-right2"></div>
               <div className="slide-info-left">
                 {" "}
                 <div className="info space-text">
-                  Ad-free browsing on Flickr for you and your visitors
+                  Ad-free browsing on ImageSpace for you and your visitors
                   <div className="info-header">
                     Enjoy a fully ad-free experience across all of Flickr.
                     Visitors to your account will never see an ad on your
@@ -59,12 +64,12 @@ const GetPro = () => {
                   </div>
                 </div>
               </div>
-              <div className="slide-info-right"></div>
+              <div className="slide-info-right3"></div>
             </div>
           </div>
-          <div className="slide-info-l">
+          <div className="slide-info-l1">
             <div className="slide-info-l-container-2">
-              <div className="slide-info-right"></div>
+              <div className="slide-info-right4"></div>
               <div className="slide-info-left">
                 {" "}
                 <div className="info space-text">
@@ -79,13 +84,87 @@ const GetPro = () => {
             </div>
           </div>
         </div>
+        <div className="slide-info-l-bottom">
+          <div className="feature-card">
+            <div className="feature-header-image">
+              <img
+                className="feature-header-image"
+                src="https://images.unsplash.com/photo-1614285344846-2ac84a3acd92?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+                alt="promo"
+              />
+              <div className="feture-info-container">
+                <div className="feature-title">SmugMug</div>
+                <div className="feature-info">
+                  With unlimited photo storage and website customization,
+                  SmugMug is perfect for every photographer. Take 50% off the
+                  first year for new subscriptions.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="feature-card">
+            <div className="feature-header-image">
+              <img
+                className="feature-header-image"
+                src="https://images.unsplash.com/photo-1621600411688-4be93cd68504?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80"
+                alt="promo"
+              />
+              <div className="feture-info-container">
+                <div className="feature-title">Blurb</div>
+                <div className="feature-info">
+                  Get $35 dollars off your Photo Book purchase up to 4 times a
+                  year. Valid for orders of $70 or more.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="feature-card">
+            <div className="feature-header-image">
+              <img
+                className="feature-header-image"
+                src="https://images.unsplash.com/photo-1541257317361-ceec071c4b36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2673&q=80"
+                alt="promo"
+              />
+              <div className="feture-info-container">
+                <div className="feature-title">PHLEARN</div>
+                <div className="feature-info">
+                  ImageSpace Pro members get 1 free month, and unlimited access
+                  to the #1 Photoshop & Lightroom course catalog in the world
+                  for 35% off.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="feature-card">
+            <div className="feature-header-image">
+              <img
+                className="feature-header-image"
+                src="https://images.unsplash.com/photo-1620674156044-52b714665d46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+                alt="promo"
+              />
+              <div className="feture-info-container">
+                <div className="feature-title">Blurb</div>
+                <div className="feature-info">
+                  Get $35 dollars off your Photo Book purchase up to 4 times a
+                  year. Valid for orders of $70 or more.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="get-pro-image">
           <div>
             <span className="blue">Image</span>
             <span className="purple">Space</span> pro
           </div>
           <div className="get-pro-tag">The ideal ImageSpace experience</div>
-          <button className="get-pro-button">Get Started</button>
+          <button
+            onClick={() => alert("Pro coming soon!")}
+            className="get-pro-button"
+          >
+            Get Started
+          </button>
         </div>
       </section>
     </>

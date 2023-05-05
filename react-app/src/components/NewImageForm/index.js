@@ -13,8 +13,8 @@ const CreateImage = () => {
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [lat, setLat] = useState("");
-  const [lng, setLng] = useState("");
+  const [lat, setLat] = useState(11);
+  const [lng, setLng] = useState(11);
   const [url, setUrl] = useState("");
   const [errors, setErrors] = useState({});
 
@@ -125,7 +125,7 @@ const CreateImage = () => {
             value={description}
           ></textarea>
         </div>
-        <div className="form-item">
+        {/* <div className="form-item">
           {errors["description"] && (
             <div className="error">{errors["lat"]}</div>
           )}
@@ -146,11 +146,20 @@ const CreateImage = () => {
             onChange={(e) => setLng(e.target.value)}
             value={lng}
           ></input>
-        </div>
+        </div> */}
         <div className="form-item">
           {errors["url"] && <div className="error">{errors["url"]}</div>}
           <label>Image Url</label>
+          {/* <button
+            onclick="document.getElementById('file').click()"
+            className="upload-button"
+          >
+            Upload Photo
+            <div className="dragndrop">Drag on drop here!</div>
+          </button> */}
           <input
+            id="file"
+            className="image-url-input"
             type="file"
             accept="image/*"
             name="url"

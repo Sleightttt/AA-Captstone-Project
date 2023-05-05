@@ -9,7 +9,12 @@ const Prints = () => {
           <div className="choose-desc">
             Get stunning wall art and high-quality prints of your photos
           </div>
-          <button className="choose-button">Choose Photos</button>
+          <button
+            onClick={() => alert("Feature coming soon")}
+            className="choose-button"
+          >
+            Choose Photos
+          </button>
         </div>
       </div>
       <div className="image-banner-1"></div>
