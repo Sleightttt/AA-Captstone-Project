@@ -73,6 +73,7 @@ export const editImage = (image) => async (dispatch) => {
 export const createImage = (image) => async (dispatch) => {
   // const { name, description, url, lat, lng, owner_id } = image;
   console.log("this is the image in the thunk", image);
+
   const response = await fetch("/api/images/", {
     method: "POST",
     body: image,
@@ -80,6 +81,7 @@ export const createImage = (image) => async (dispatch) => {
 
   const imageData = await response.json();
   console.log("image id", imageData.id);
+
   if (response.ok) {
     const final = await fetch(`/api/images/${imageData.id}`);
     if (final.ok) {

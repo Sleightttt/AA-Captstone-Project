@@ -30,9 +30,11 @@ def create_product():
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
             print('val hit')
+            print('this is url', form.data['url'])
             izg = form.data['url']
 
             izg.filename = get_unique_filename(izg.filename)
+            print('this is izg', izg)
 
             upload = upload_file_to_s3(izg)
 
