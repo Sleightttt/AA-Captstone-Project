@@ -14,6 +14,7 @@ import Comments from "./components/Comments";
 import About from "./components/About";
 import Prints from "./components/Prints";
 import GetPro from "./components/GetPro";
+import Search from "./components/Search";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,6 +39,10 @@ function App() {
           </Route>
           <Route exact={true} path="/images">
             <AllImages />
+            <About />
+          </Route>
+          <Route exact={true} path="/search/:search">
+            <Search />
             <About />
           </Route>
           <Route exact={true} path="/images/new">

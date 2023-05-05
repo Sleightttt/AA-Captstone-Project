@@ -11,6 +11,7 @@ from .api.image_routes import image_routes
 from .api.comment_routes import comment_routes
 from .api.likes_routes import likes_routes
 from .api.follower_routes import followers_routes
+from .api.search_routes import search_routes
 
 from .seeds import seed_commands
 from .config import Config
@@ -37,6 +38,7 @@ app.register_blueprint(image_routes, url_prefix='/api/images')
 app.register_blueprint(comment_routes, url_prefix='/api/comments')
 app.register_blueprint(likes_routes, url_prefix='/api/likes')
 app.register_blueprint(followers_routes, url_prefix='/api/follower')
+app.register_blueprint(search_routes, url_prefix='/api/search')
 db.init_app(app)
 Migrate(app, db)
 

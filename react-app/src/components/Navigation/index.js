@@ -4,19 +4,19 @@ import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 
 import "./Navigation.css";
-//1.aws
-//2.search
-//3.make all links work
+
 function Navigation({ isLoaded }) {
   const history = useHistory();
 
   const sessionUser = useSelector((state) => state.session.user);
-  const [search, setSearch] = useState();
+  const [search1, setSearch] = useState("");
+
   const handleSearch = (e) => {
     e.preventDefault();
     alert("Search coming soon");
     setSearch("");
   };
+
   return (
     <>
       <div className="navbar">
@@ -79,13 +79,12 @@ function Navigation({ isLoaded }) {
                 <div className="search-form">
                   <form
                     className="search-form"
-                    // onSubmit={() => history.push(`/search/${search}`)}
-                    onSubmit={handleSearch}
+                    onSubmit={() => history.push(`/search/${search1}`)}
                   >
                     <input
                       placeholder="Photos, people, or groups"
                       className="search-form-input"
-                      value={search}
+                      value={search1}
                       onChange={(e) => setSearch(e.target.value)}
                     />
                     {/* <i
