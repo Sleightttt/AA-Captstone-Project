@@ -75,9 +75,10 @@ const GetPro = () => {
                 <div className="info space-text">
                   Premier product support.
                   <div className="info-header">
-                    Why wait in line for help? Flickr Pros receive top-priority
-                    assistance from our world-class support heroes, so you can
-                    resolve your questions and get back to your photography.
+                    Why wait in line for help? ImageSpace Pros receive
+                    top-priority assistance from our world-class support heroes,
+                    so you can resolve your questions and get back to your
+                    photography.
                   </div>
                 </div>
               </div>

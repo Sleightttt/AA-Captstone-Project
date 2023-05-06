@@ -53,11 +53,7 @@
 }
 
 .slide-info-l {
-  background-image: linear-gradient(
-    to left,
-    rgb(139, 0, 190),
-    rgb(0, 247, 255)
-  );
+  background-image: linear-gradient(to left, rgb(97, 0, 132), rgb(0, 247, 255));
   height: 520px;
   display: flex;
   justify-content: center;
@@ -66,11 +62,7 @@
 }
 
 .slide-info-l-bottom {
-  background-image: linear-gradient(
-    to left,
-    rgb(139, 0, 190),
-    rgb(0, 247, 255)
-  );
+  background-image: linear-gradient(to left, rgb(86, 0, 117), rgb(0, 247, 255));
   height: 520px;
   display: flex;
   flex-direction: row;
@@ -82,7 +74,7 @@
 .slide-info-l1 {
   background-image: linear-gradient(
     to right,
-    rgb(139, 0, 190),
+    rgb(97, 0, 132),
     rgb(0, 247, 255)
   );
   height: 520px;
@@ -120,29 +112,37 @@
 }
 
 .slide-info-right {
+  border-radius: 2px;
   height: 400px;
   width: 60%;
   background-image: url(https://combo.staticflickr.com/ap/build/images/pro/flickrpro-stats-images/bg_en-us.png);
   background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .slide-info-right2 {
+  border-radius: 2px;
   height: 400px;
   width: 60%;
   background-image: url(https://images.unsplash.com/29/night-square.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2681&q=80);
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .slide-info-right3 {
+  border-radius: 2px;
   height: 400px;
   width: 60%;
   background-image: url(https://images.unsplash.com/photo-1629904888780-8de0c7aeed28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80);
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .slide-info-right4 {
+  border-radius: 2px;
   height: 400px;
   width: 60%;
   background-image: url(https://images.unsplash.com/photo-1626863905121-3b0c0ed7b94c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80);
@@ -155,12 +155,17 @@
 }
 
 .feature-card {
+  font-family: "Source Sans Pro", sans-serif;
   transition: transform 0.2s; /* Animation */
   display: flex;
   flex-direction: column;
   height: 400px;
   width: 18%;
-  background-color: black;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(186, 186, 186),
+    rgb(79, 0, 125)
+  );
   color: rgb(242, 242, 242);
   border-radius: 12px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -182,6 +187,7 @@
 }
 
 .feature-title {
+  font-family: "Source Sans Pro", sans-serif;
   padding-top: 5px;
   display: flex;
   justify-content: center;
@@ -189,7 +195,7 @@
   font-size: 30px;
   font-weight: bold;
   letter-spacing: 1.5px;
-  font-family: Georgia, "Times New Roman", Times, sans-serif;
+  /* font-family: Georgia, "Times New Roman", Times, sans-serif; */
 }
 
 .feature-info-container {

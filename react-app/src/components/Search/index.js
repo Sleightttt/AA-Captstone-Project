@@ -15,17 +15,17 @@ function Search() {
   useEffect(() => {
     const updateFields = async () => {
       const searchResults = await dispatch(createSearch(search));
-      console.log(searchResults);
+      //   console.log(searchResults);
       setArr(Object.values(searchResults));
     };
 
     updateFields();
   }, [dispatch]);
 
-  console.log(arr);
+  //   console.log(arr);
 
   if (arr?.length === 0) {
-    console.log("oooooo");
+    // console.log("oooooo");
     return (
       <>
         <div className="such-empty">
@@ -37,9 +37,10 @@ function Search() {
       </>
     );
   }
+
   if (arr[0])
     if (arr[0]?.length === 0) {
-      console.log("oooooo");
+      //   console.log("oooooo");
       return (
         <>
           <div className="such-empty">
@@ -67,7 +68,7 @@ function Search() {
               key={image.id}
               onClick={() => history.push(`/images/${image.id}`)}
             >
-              {console.log(arr)}
+              {/* {console.log(arr)} */}
               <div>
                 <img className="big" src={image.url} alt={image.name} />
               </div>

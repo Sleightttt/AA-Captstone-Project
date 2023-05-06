@@ -20,27 +20,27 @@ def get_images():
 # Create a image /api/image/
 @image_routes.route('/', methods=['POST'])
 def create_product():
-    print('route hit')
+    # print('route hit')
     form = ImageForm()
     if current_user.is_authenticated:
-        print('auth hit')
-        print('formdata',form.data)
+        # print('auth hit')
+        # print('formdata',form.data)
         user = current_user.to_dict()
         owner_id = user['id']
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
-            print('val hit')
-            print('this is url', form.data['url'])
+            # print('val hit')
+            # print('this is url', form.data['url'])
             izg = form.data['url']
 
             izg.filename = get_unique_filename(izg.filename)
-            print('this is izg', izg)
+            # print('this is izg', izg)
 
             upload = upload_file_to_s3(izg)
 
             # if "url" not in upload:
             #     return upload, 400
-            print('upload', upload)
+            # print('upload', upload)
             image = Image(
                 name=form.data['name'],
                 description=form.data['description'],
@@ -51,7 +51,7 @@ def create_product():
                 created_at=datetime.utcnow(),
                 updated_at=datetime.utcnow(),
             )
-            # print('This is the new image' ,image)
+
             db.session.add(image)
             db.session.commit()
             return image.to_dict()
