@@ -28,7 +28,7 @@ function Search() {
     // console.log("oooooo");
     return (
       <>
-        <div className="such-empty">
+        <div className="such-empty2">
           <div className="results">
             {" "}
             {`No results for '${search}'. Try Again?`}
