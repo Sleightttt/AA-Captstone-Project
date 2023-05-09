@@ -38,7 +38,6 @@ const Profile = () => {
         users && users[0] && users[0].find((user) => user.id === parseInt(id));
     };
     fetchData();
-    // console.log(profileFollows, "follows");
     function handleCloseModal(event) {
       if (divRef.current && !divRef.current.contains(event.target)) {
         setShowModal(false);
@@ -70,43 +69,25 @@ const Profile = () => {
   user = users[0].find((user) => user.id === parseInt(id));
 
   const images = userImages ? userImages : "";
-  // console.log(images);
+
   let profileFollows;
   let profileFollowers;
-
-  // if (allFollows.follows) {
-  //   profileFollows = Object.values(allFollows.follows).filter(
-  //     (follow) => follow.following_id === id
-  //   );
-  // }
-
-  // console.log(allFollows["follows"], "allfollows");
 
   profileFollows = allFollows["follows"].filter(
     (follow) => follow.follower_id == id
   );
 
-  // console.log("bobbies follows", profileFollows?.length, profileFollows);
-
   profileFollowers = allFollows["follows"].filter(
     (follow) => follow.following_id == id
   );
 
-  // console.log("bobbies followers", profileFollowers?.length, profileFollowers);
-
   let myProfileFollows = allFollows.follows.filter(
     (follow) => follow.follower_id == userId
   );
-  // console.log("my profile follows", myProfileFollows);
 
   let myProfileFollowers = allFollows.follows.filter(
     (follow) => follow.following_id == userId
   );
-  // console.log(profileFollowers, "profile followers");
-
-  // console.log(myProfileFollows.length, "following length");
-  // console.log(myProfileFollowers.length, "folllowers length");
-  // console.log(Object.values(allFollows.follows));
 
   const myProfile = userId == id;
 
@@ -176,10 +157,6 @@ const Profile = () => {
       </>
     );
   }
-
-  // console.log(loggedInUser.id === Number(id));
-
-  // console.log(showModal);
 
   return (
     <>
