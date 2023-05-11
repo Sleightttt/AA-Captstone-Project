@@ -85,6 +85,7 @@ html {
   justify-content: space-between;
   padding: 0%;
   margin-top: 0;
+  background-color: rgb(36, 36, 36);
 }
 
 .nav-right {
