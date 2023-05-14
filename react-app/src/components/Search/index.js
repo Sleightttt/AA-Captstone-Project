@@ -65,6 +65,10 @@ function Search() {
             >
               <div>
                 <img className="big" src={image.url} alt={image.name} />
+                <div className="info-overlay">
+                  <h2 className="image-name">{image.name}</h2>
+                  <p className="image-description">{image.description}</p>
+                </div>
               </div>
             </div>
           ))}

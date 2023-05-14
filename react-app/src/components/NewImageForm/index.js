@@ -157,6 +157,7 @@ const CreateImage = () => {
             Upload Photo
             <div className="dragndrop">Drag on drop here!</div>
           </button> */}
+
           <input
             id="file"
             className="image-url-input"
