@@ -22,24 +22,15 @@ function Search() {
   }, [dispatch]);
 
   if (arr?.length === 0) {
-    return (
-      <>
-        <div className="such-empty2">
-          <div className="results">
-            {" "}
-            {`No results for '${search}'. Try Again?`}
-          </div>
-        </div>
-      </>
-    );
+    return null;
   }
 
   if (arr[0])
     if (arr[0]?.length === 0) {
       return (
         <>
-          <div className="such-empty">
-            <div className="results">
+          <div className="such-empty2">
+            <div className="results2">
               {" "}
               {`No results for '${search}'. Try Again?`}
             </div>

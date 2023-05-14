@@ -304,6 +304,11 @@ a:hover {
   color: white;
 }
 
+.results2 {
+  font-family: "Source Sans Pro", sans-serif;
+
+  font-size: 24px;
+}
 /* @media screen and (max-width: 768px) {
   .nav-left {
     flex-direction: column;
