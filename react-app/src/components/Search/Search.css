@@ -96,3 +96,20 @@
   display: flex;
   opacity: 1;
 }
+
+.fade-in-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

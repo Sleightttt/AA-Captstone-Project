@@ -21,8 +21,14 @@ function Search() {
     updateFields();
   }, [dispatch]);
 
+  let ranSeconds = Math.floor(Math.random());
+
   if (arr?.length === 0) {
-    return null;
+    return (
+      <div className="spinner">
+        <i className="fas fa-spinner"></i>
+      </div>
+    );
   }
 
   if (arr[0])
@@ -47,12 +53,13 @@ function Search() {
             ? `${arr[0].length} results for '${search}'`
             : `${arr[0].length} results for '${search}'`}
         </div>
-        <div className="images-container">
-          {arr[0]?.map((image) => (
+        <div className="images-container fade-in-container">
+          {arr[0]?.map((image, index) => (
             <div
               className="image-card"
               key={image.id}
               onClick={() => history.push(`/images/${image.id}`)}
+              style={{ animationDelay: `${index * ranSeconds}s` }}
             >
               <div>
                 <img className="big" src={image.url} alt={image.name} />

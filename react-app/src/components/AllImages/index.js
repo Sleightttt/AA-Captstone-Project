@@ -17,7 +17,11 @@ const AllImages = () => {
   allImg = Object.values(allImg);
 
   if (allImg.length === 0) {
-    return null;
+    return (
+      <div className="spinner">
+        <i className="fas fa-spinner"></i>
+      </div>
+    );
   }
   // console.log(images.allImages.images);
 
@@ -27,7 +31,7 @@ const AllImages = () => {
 
   return (
     <>
-      <div className="all-images-container">
+      <div className="all-images-container fade-in-container">
         <div></div>
         <div className="images-container">
           {allImg[0].map((image) => (

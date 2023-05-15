@@ -11,3 +11,13 @@
   cursor: pointer;
   opacity: 0.6;
 }
+
+.spinner {
+  color: rgb(0, 166, 255);
+  font-size: 3em;
+  text-align: center;
+}
+
+.spinner i {
+  animation: fa-spin 1s infinite linear;
+}

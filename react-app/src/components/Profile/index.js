@@ -58,11 +58,19 @@ const Profile = () => {
 
   if (allUsers === undefined) {
     caller();
-    return <div>Render fell asleep, please wait</div>;
+    return (
+      <div className="spinner">
+        <i className="fas fa-spinner"></i>
+      </div>
+    );
   }
 
   if (userImages.length === 0) {
-    return <div>Render fell asleep, please wait</div>;
+    return (
+      <div className="spinner">
+        <i className="fas fa-spinner"></i>
+      </div>
+    );
   }
 
   const users = Object.values(allUsers);
