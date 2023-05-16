@@ -145,10 +145,11 @@ const GetPro = () => {
                 alt="promo"
               />
               <div className="feture-info-container">
-                <div className="feature-title">Blurb</div>
+                <div className="feature-title">Priime</div>
                 <div className="feature-info">
-                  Get $35 dollars off your Photo Book purchase up to 4 times a
-                  year. Valid for orders of $70 or more.
+                  Get 20% off Priime’s Lightroom presets bundle, with 13
+                  presents based on film aesthetics, and more than 100 total
+                  variations.
                 </div>
               </div>
             </div>
