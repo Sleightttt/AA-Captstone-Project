@@ -136,7 +136,6 @@ li {
   word-wrap: break-word;
   white-space: pre-wrap;
   word-break: break-word;
-  overflow: scroll;
 }
 
 .profile-box {
