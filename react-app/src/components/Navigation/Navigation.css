@@ -329,3 +329,16 @@ a:hover {
     display: none;
   }
 } */
+
+.nav-left-items {
+  display: flex;
+}
+
+@media screen and (max-width: 1040px) {
+  .nav-left-items {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: auto;
+  }
+}
