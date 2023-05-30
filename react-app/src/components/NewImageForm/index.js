@@ -78,6 +78,7 @@ const CreateImage = () => {
   };
 
   let i = 44.444;
+
   console.log(i.toString().length);
 
   return (

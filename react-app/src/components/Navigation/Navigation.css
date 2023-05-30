@@ -23,6 +23,29 @@ html {
   z-index: 2;
 }
 
+.profile-dropdown2 {
+  display: flex;
+  font-size: 17px;
+  font-weight: 100;
+  flex-direction: column;
+  border: solid grey 2px;
+  position: relative;
+  right: 40px;
+  top: 19.5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 80px;
+  height: auto;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  z-index: 2;
+}
+
 .profile-dropdown > button {
   color: rgb(0, 0, 0);
   background: none;
@@ -39,8 +62,24 @@ html {
   width: 140px;
   border-bottom: solid rgb(211, 211, 211) 1px;
 }
+.profile-dropdown2 > li:not(.not-you) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 93px;
+  border-bottom: solid rgb(211, 211, 211) 1px;
+}
 
+.profile-dropdown2 > li:not(.not-you):hover {
+  background-color: rgb(184, 184, 184);
+}
 .profile-dropdown > li {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-dropdown2 > li {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: space-between;
@@ -106,6 +145,7 @@ html {
 .nav-left {
   /* border: solid rgb(13, 0, 255) 2px; */
   display: flex;
+  flex-direction: row;
   margin-left: 80px;
   list-style: none;
   font-size: 30px;
@@ -142,6 +182,13 @@ li {
   height: 40px;
   width: 40px;
   /* display: flex; */
+}
+
+.profile-box2 {
+  height: 40px;
+  width: 40px;
+
+  align-items: center;
 }
 
 .profile-pic:hover {
@@ -333,6 +380,14 @@ a:hover {
   display: flex;
 }
 
+.nav-left-items-smol {
+  display: none;
+}
+.nav-left-items-smol {
+  display: none;
+  align-items: center;
+}
+
 @media screen and (max-width: 1040px) {
   .nav-left-items {
     display: none;
@@ -340,4 +395,23 @@ a:hover {
     align-items: flex-start;
     margin-right: auto;
   }
+
+  .nav-left-items-smol {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    width: 40px;
+  }
+
+  .nav-left-items-smol:hover {
+    cursor: pointer;
+  }
+}
+
+.hamburger {
+  display: flex;
+}
+
+.over {
+  font-family: Arial, Helvetica, sans-serif;
 }

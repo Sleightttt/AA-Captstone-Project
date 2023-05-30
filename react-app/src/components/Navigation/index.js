@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
-
+import NavBurger from "./NavBurger";
 import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
@@ -78,6 +78,11 @@ function Navigation({ isLoaded }) {
                     <NavLink exact to="/get-pro">
                       Get Pro
                     </NavLink>
+                  </div>
+                </div>
+                <div className="nav-left-items-smol">
+                  <div className="profile-box2">
+                    <NavBurger user={sessionUser} />
                   </div>
                 </div>
               </li>
