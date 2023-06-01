@@ -29,9 +29,8 @@ html {
   font-weight: 100;
   flex-direction: column;
   border: solid grey 2px;
-  position: relative;
-  right: 40px;
-  top: 19.5px;
+  position: absolute;
+  top: 49px;
   padding-right: 10px;
   padding-left: 10px;
   width: 80px;
@@ -66,12 +65,15 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 93px;
   border-bottom: solid rgb(211, 211, 211) 1px;
 }
 
 .profile-dropdown2 > li:not(.not-you):hover {
-  background-color: rgb(184, 184, 184);
+  background-color: rgb(234, 233, 233);
+  color: rgb(0, 166, 255);
+  border-radius: 12px;
 }
 .profile-dropdown > li {
   font-family: Arial, Helvetica, sans-serif;
@@ -187,7 +189,7 @@ li {
 .profile-box2 {
   height: 40px;
   width: 40px;
-
+  display: flex;
   align-items: center;
 }
 
@@ -414,4 +416,9 @@ a:hover {
 
 .over {
   font-family: Arial, Helvetica, sans-serif;
+  padding: 4px;
 }
+
+/* .abs {
+  position: fixed;
+} */

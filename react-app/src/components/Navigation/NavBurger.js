@@ -32,31 +32,47 @@ function NavBurger({ user }) {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
-  const handleLogout = async (e) => {
-    e.preventDefault();
-    await dispatch(logout());
-
-    history.push("/");
+  const pushImages = () => {
+    history.push("/images");
+    closeMenu();
+  };
+  const pushProfile = () => {
+    history.push(`/user/${userz?.id}`);
+    closeMenu();
   };
 
-  const profileHandler = () => {
+  const pushPrints = () => {
+    history.push("/prints");
     closeMenu();
-    history.push(`/user/${userz?.id}`);
+  };
+
+  const pushPro = () => {
+    history.push("/get-pro");
+    closeMenu();
   };
 
   const ulClassName = "profile-dropdown2" + (showMenu ? "" : " hidden");
+
   const closeMenu = () => setShowMenu(false);
 
   return (
     <>
-      <i class="fa fa-bars" onClick={openMenu}>
+      <i className="fa fa-bars abs" onClick={openMenu}>
         <ul className={ulClassName} ref={ulRef}>
           {user ? (
             <>
-              <li className="over">You</li>
-              <li className="over">Explore</li>
-              <li className="over">Prints</li>
-              <li className="over">Get Pro</li>
+              <li className="over" onClick={() => pushProfile()}>
+                You
+              </li>
+              <li className="over" onClick={() => pushImages()}>
+                Explore
+              </li>
+              <li className="over" onClick={() => pushPrints()}>
+                Prints
+              </li>
+              <li className="over" onClick={() => pushPro()}>
+                Get Pro
+              </li>
             </>
           ) : (
             <>

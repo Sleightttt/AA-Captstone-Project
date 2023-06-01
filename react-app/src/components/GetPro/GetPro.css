@@ -160,7 +160,7 @@
   transition: transform 0.2s; /* Animation */
   display: flex;
   flex-direction: column;
-  height: 420px;
+  height: 480px;
   width: 18%;
   background-image: linear-gradient(
     to bottom,
