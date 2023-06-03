@@ -62,18 +62,12 @@ function Navigation({ isLoaded }) {
                       Explore
                     </NavLink>
                   </div>
-                  <div
-                    // onClick={() => alert("Prints coming soon")}
-                    className="prints"
-                  >
+                  <div className="prints">
                     <NavLink exact to="/prints">
                       Prints
                     </NavLink>
                   </div>
-                  <div
-                    // onClick={() => alert("Pro coming soon")}
-                    className="get-pro"
-                  >
+                  <div className="get-pro">
                     {" "}
                     <NavLink exact to="/get-pro">
                       Get Pro
@@ -114,9 +108,7 @@ function Navigation({ isLoaded }) {
                       onClick={() => alert("Notifications coming soon")}
                       className="cart-box"
                     >
-                      {/* <NavLink exact to="/notifications"> */}
                       <i className="cart-box  fas fa-bell fa-lg white"></i>
-                      {/* </NavLink> */}
                     </div>
                     <div className="profile-box">
                       <ProfileButton user={sessionUser} />
