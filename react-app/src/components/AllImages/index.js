@@ -23,7 +23,6 @@ const AllImages = () => {
       </div>
     );
   }
-  // console.log(images.allImages.images);
 
   function randomWidth() {
     return Math.random() * (400 - 200) + 200;
