@@ -15,10 +15,10 @@
   flex-direction: column;
   height: 440px;
   width: 340px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.396);
   justify-content: space-between;
   align-items: center;
-  border-radius: 4px;
+  border-radius: 12px;
 }
 
 .login-formmm {
@@ -37,15 +37,15 @@
 }
 
 .demo {
-  color: rgb(0, 166, 255);
+  color: rgb(255, 255, 255);
   border: none;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0);
   margin-bottom: 15px;
 }
 
 .demo:hover {
   cursor: pointer;
-  color: rgb(0, 118, 182);
+  color: rgb(105, 202, 255);
 }
 
 .login-form-input::placeholder {
@@ -84,7 +84,7 @@
 .login-button:hover,
 .signup-button:hover {
   cursor: pointer;
-  color: rgb(0, 118, 182);
+  color: rgb(210, 210, 210);
   border: 2px solid rgba(149, 0, 146, 0.206);
 }
 

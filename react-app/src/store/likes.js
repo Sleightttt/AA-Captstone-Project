@@ -10,10 +10,10 @@ const createLike = (like) => ({
   payload: like,
 });
 
-const getAllLikes = (likes) => ({
-  type: GET_ALL_LIKES,
-  payload: likes,
-});
+// const getAllLikes = (likes) => ({
+//   type: GET_ALL_LIKES,
+//   payload: likes,
+// });
 
 const getUserLikes = (id) => ({
   type: READ_LIKES_USER,
@@ -70,7 +70,7 @@ export const getLikesByUser = (userId) => async (dispatch) => {
 };
 
 export const deleteLikeThunk = (likeId) => async (dispatch) => {
-  console.log("INSIDE DELETE THUNK");
+  // console.log("INSIDE DELETE THUNK");
   let response = await fetch(`/api/likes/${likeId}`, {
     method: "DELETE",
   });
@@ -101,7 +101,7 @@ export default function likesReducer(state = initialState, action) {
       let afterImageRead = { ...state };
 
       afterImageRead.imagesLikes = {};
-      console.log("-----", action.payload);
+      // console.log("-----", action.payload);
       action.payload.forEach(
         (like) => (afterImageRead.imagesLikes[like.id] = like)
       );
@@ -122,7 +122,7 @@ export default function likesReducer(state = initialState, action) {
       let afterDelete = {
         ...state,
       };
-      console.log(action.payload, "---");
+      // console.log(action.payload, "---");
       delete afterDelete["imagesLikes"][action.payload];
 
       delete afterDelete["userLikes"][action.payload];

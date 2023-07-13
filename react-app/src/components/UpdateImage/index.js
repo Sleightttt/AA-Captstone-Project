@@ -39,15 +39,15 @@ const UpdateImage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    let imageObj = {
-      id,
-      name: name,
-      description,
-      url,
-      lat,
-      lng,
-      userId,
-    };
+    // let imageObj = {
+    //   id,
+    //   name: name,
+    //   description,
+    //   url,
+    //   lat,
+    //   lng,
+    //   userId,
+    // };
 
     const formData = new FormData();
     formData.append("id", id);

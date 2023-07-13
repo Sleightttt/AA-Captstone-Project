@@ -1,7 +1,7 @@
 const CREATE_FOLLOW = "likes/CREATE_FOLLOW";
 const DELETE_FOLLOW = "likes/DELETE_FOLLOW";
 const GET_ALL_FOLLOWS = "likes/GET_ALL_FOLLOWS";
-const USER_FOLLOW = "likes/USER_FOLLOW";
+// const USER_FOLLOW = "likes/USER_FOLLOW";
 const READ_FOLLOWS_IMAGE = "likes/READ_FOLLOWS_IMAGE";
 const READ_FOLLOWS_USER = "likes/READ_FOLLOWS_USER";
 
@@ -25,10 +25,10 @@ const deleteFollow = (id) => ({
   payload: id,
 });
 
-const imagesFollows = (follow) => ({
-  type: READ_FOLLOWS_IMAGE,
-  payload: follow,
-});
+// const imagesFollows = (follow) => ({
+//   type: READ_FOLLOWS_IMAGE,
+//   payload: follow,
+// });
 
 export const createFollowThunk = (follow) => async (dispatch) => {
   console.log("hit create thunk");
@@ -97,7 +97,7 @@ const initialState = { imagesFollows: {}, userFollows: {}, follows: {} };
 export default function followerReducer(state = initialState, action) {
   switch (action.type) {
     case GET_ALL_FOLLOWS:
-      console.log("action", action.payload);
+      // console.log("action", action.payload);
       return { ...state, follows: action.payload };
     // case SET_ALL_IMAGES_BY_USER:
     //   return { ...state, allImagesByUser: action.payload };
@@ -113,7 +113,7 @@ export default function followerReducer(state = initialState, action) {
       let afterImageRead = { ...state };
 
       afterImageRead.imagesFollows = {};
-      console.log("-----", action.payload);
+      // console.log("-----", action.payload);
       action.payload.forEach(
         (follow) => (afterImageRead.imagesFollows[follow.id] = follow)
       );
@@ -134,7 +134,7 @@ export default function followerReducer(state = initialState, action) {
       let afterDelete = {
         ...state,
       };
-      console.log(action.payload, "---");
+      // console.log(action.payload, "---");
       delete afterDelete["imagesFollows"][action.payload];
 
       delete afterDelete["userFollows"][action.payload];
