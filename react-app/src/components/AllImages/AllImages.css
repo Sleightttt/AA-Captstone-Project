@@ -5,7 +5,8 @@
   align-items: center;
   justify-content: center;
   background-color: white;
-  height: 100%;
+  height: fit-content;
+  width: 100vw;
 }
 
 .image-card:hover {
@@ -21,4 +22,26 @@
 
 .spinner i {
   animation: fa-spin 1s infinite linear;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  border: none;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 16px;
+  padding: 8px 16px;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button.active {
+  background-color: #333333;
+  color: rgb(0, 166, 255);
 }

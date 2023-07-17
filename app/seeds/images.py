@@ -8,7 +8,7 @@ from app.imgtest import imgList
 # Adds a demo products
 def seed_images():
     users = User.query.all()
-    for i in range(20):
+    for i in range(60):
         image = Image(
             name=f"Image {i+1}",
             description=f"This is the description for Image {i+1}",

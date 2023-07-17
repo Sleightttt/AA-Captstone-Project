@@ -15,7 +15,7 @@
   flex-direction: column;
   height: 440px;
   width: 340px;
-  background-color: rgba(255, 255, 255, 0.396);
+  background-color: rgba(255, 255, 255, 0.942);
   justify-content: space-between;
   align-items: center;
   border-radius: 12px;
@@ -37,7 +37,7 @@
 }
 
 .demo {
-  color: rgb(255, 255, 255);
+  color: rgb(105, 202, 255);
   border: none;
   background-color: rgba(255, 255, 255, 0);
   margin-bottom: 15px;
@@ -45,7 +45,7 @@
 
 .demo:hover {
   cursor: pointer;
-  color: rgb(105, 202, 255);
+  color: rgb(179, 228, 255);
 }
 
 .login-form-input::placeholder {
@@ -85,7 +85,7 @@
 .signup-button:hover {
   cursor: pointer;
   color: rgb(210, 210, 210);
-  border: 2px solid rgba(149, 0, 146, 0.206);
+  border: 2px solid rgb(255, 255, 255);
 }
 
 .errorz {
