@@ -30,10 +30,13 @@ const Profile = () => {
   useEffect(() => {
     const fetchData = async () => {
       const imagesByUser = await dispatch(getImagesByUser(id));
+
       await dispatch(getAllFollowsThunk());
+
       const users = await dispatch(getAllUsers());
-      // console.log(imagesByUser);
+
       setUserImages(Object.values(imagesByUser));
+
       const user =
         users && users[0] && users[0].find((user) => user.id === parseInt(id));
     };
@@ -93,9 +96,9 @@ const Profile = () => {
     (follow) => follow.follower_id == userId
   );
 
-  let myProfileFollowers = allFollows.follows.filter(
-    (follow) => follow.following_id == userId
-  );
+  // let myProfileFollowers = allFollows.follows.filter(
+  //   (follow) => follow.following_id == userId
+  // );
 
   const myProfile = userId == id;
 

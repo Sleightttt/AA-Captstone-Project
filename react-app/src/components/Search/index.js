@@ -1,6 +1,6 @@
 import "./Search.css";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { createSearch } from "../../store/search";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
@@ -10,7 +10,8 @@ function Search() {
   const dispatch = useDispatch();
   const history = useHistory();
   const [arr, setArr] = useState([]);
-  const searchResults = useSelector((state) => state.search?.searchResults);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [imagesPerPage] = useState(20);
 
   useEffect(() => {
     const updateFields = async () => {
@@ -19,7 +20,7 @@ function Search() {
     };
 
     updateFields();
-  }, [dispatch]);
+  }, [dispatch, search]);
 
   let ranSeconds = Math.floor(Math.random());
 
@@ -31,19 +32,25 @@ function Search() {
     );
   }
 
-  if (arr[0])
-    if (arr[0]?.length === 0) {
-      return (
-        <>
-          <div className="such-empty2">
-            <div className="results2">
-              {" "}
-              {`No results for '${search}'. Try Again?`}
-            </div>
-          </div>
-        </>
-      );
-    }
+  if (arr[0]?.length === 0) {
+    return (
+      <>
+        <div className="such-empty2">
+          <div className="results2">{`No results for '${search}'. Try Again?`}</div>
+        </div>
+      </>
+    );
+  }
+
+  // Get current images based on pagination
+  const indexOfLastImage = currentPage * imagesPerPage;
+  const indexOfFirstImage = indexOfLastImage - imagesPerPage;
+  const currentImages = arr[0]?.slice(indexOfFirstImage, indexOfLastImage);
+
+  // Change page
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <>
@@ -54,7 +61,7 @@ function Search() {
             : `${arr[0].length} results for '${search}'`}
         </div>
         <div className="images-container fade-in-container">
-          {arr[0]?.map((image, index) => (
+          {currentImages?.map((image, index) => (
             <div
               className="image-card"
               key={image.id}
@@ -71,6 +78,19 @@ function Search() {
             </div>
           ))}
         </div>
+      </div>
+      <div className="pagination">
+        {Array.from({ length: Math.ceil(arr[0]?.length / imagesPerPage) }).map(
+          (_, index) => (
+            <button
+              key={index}
+              onClick={() => paginate(index + 1)}
+              className={currentPage === index + 1 ? "active" : ""}
+            >
+              {index + 1}
+            </button>
+          )
+        )}
       </div>
     </>
   );

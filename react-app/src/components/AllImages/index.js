@@ -8,10 +8,9 @@ const AllImages = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const images = useSelector((state) => state.images);
-  let allImg = images.allImages;
-
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(20);
+  let allImg = images.allImages;
 
   useEffect(() => {
     dispatch(getAllImages());

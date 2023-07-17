@@ -10,17 +10,6 @@ function Navigation({ isLoaded }) {
 
   const sessionUser = useSelector((state) => state.session.user);
   const [search1, setSearch] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    alert("Search coming soon");
-    setSearch("");
-  };
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
     <>

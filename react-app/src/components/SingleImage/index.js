@@ -14,6 +14,7 @@ import {
   getFollowsByUser,
   deleteFollowThunk,
 } from "../../store/followers";
+
 //Single image component
 const SingleImage = () => {
   const dispatch = useDispatch();
@@ -21,7 +22,6 @@ const SingleImage = () => {
   const history = useHistory();
   const image = useSelector((state) => state.images.singleImage);
   const userId = useSelector((state) => state?.session?.user?.id);
-  const userLikes = useSelector((state) => state.likes.userLikes);
   const imageLikes = useSelector((state) => state.likes.imagesLikes);
   const userFollows = useSelector((state) => state.followers.userFollows);
   const userFollowsArr = Object?.values(userFollows);
@@ -34,7 +34,6 @@ const SingleImage = () => {
   const comments = useSelector(
     (state) => state?.comments?.SingleImagesComments
   );
-
   const [lke, setLke] = useState(false);
   const [isFollowed, setIsFollowed] = useState(false);
 
@@ -54,8 +53,6 @@ const SingleImage = () => {
   //toggles
   let thisOrThat = lke ? "unlike" : "like";
 
-  let flipper = isFollowed ? "Unfollow" : "Follow";
-
   const commentArr = Object?.values(comments).reverse();
 
   //// Need to refactor
@@ -70,8 +67,6 @@ const SingleImage = () => {
   if (!followToDelete && isFollowed)
     followToDelete ? setIsFollowed(true) : setIsFollowed(false);
   /////
-
-  const deleter2 = followToDelete?.id;
 
   // Action handlers
   const likeHandler = async (e) => {

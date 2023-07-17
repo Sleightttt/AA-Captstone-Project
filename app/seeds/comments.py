@@ -1,14 +1,16 @@
-from app.models import db, Comment, environment, SCHEMA
+from app.models import db, Comment, environment, SCHEMA, User, Image
 from sqlalchemy.sql import text
 from datetime import datetime
 from random import randint
 
 
 def seed_comments():
+    users = User.query.all()
+    images = Image.query.all()
     for i in range(34):
         comment = Comment(
-            user_id=randint(1, 3),
-            image_id=randint(1, 3),
+            user_id=randint(1, len(users) - 1),
+            image_id=randint(1, len(images) - 1),
             comment=f"this is comment # {i}",
             created_at=datetime.utcnow(),
             updated_at=datetime.utcnow(),
