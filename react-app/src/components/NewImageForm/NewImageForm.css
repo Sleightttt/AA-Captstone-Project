@@ -1,4 +1,6 @@
 .create-image-container {
+  display: flex;
+  flex-direction: row;
   background-color: rgb(179, 179, 179);
 }
 
@@ -85,3 +87,28 @@ textarea {
   color: rgb(147, 147, 147);
   margin-top: 10px;
 } */
+
+.preview-container {
+  width: 100%;
+}
+
+.preview-box {
+  height: 30%;
+  width: 20%;
+  border: 1px solid rgb(215, 215, 215);
+  background-color: rgb(35, 35, 35);
+}
+
+.preview-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-image {
+  width: 90%;
+  height: 200px;
+  object-fit: cover;
+  background-color: blue;
+  margin-top: 10px;
+}

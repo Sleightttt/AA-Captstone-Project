@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllImages } from "../../store/images";
 import { useHistory } from "react-router-dom";
@@ -35,9 +35,10 @@ const AllImages = () => {
   const indexOfFirstImage = indexOfLastImage - imagesPerPage;
   const currentImages = allImg[0].slice(indexOfFirstImage, indexOfLastImage);
 
-  // Change page
+  // Change page and scroll to top
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (

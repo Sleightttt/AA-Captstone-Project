@@ -1,9 +1,6 @@
-// create delete product modal
-
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { deleteCommentThunk, getCommentsByImage } from "../../store/comments";
-
 import "./CommentDeleteModal.css";
 
 function CommentDeleteModal({ setShowModal, imageId }) {

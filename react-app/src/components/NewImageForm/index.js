@@ -10,13 +10,13 @@ const CreateImage = () => {
   const history = useHistory();
   const user = useSelector((state) => state.session.user);
   const userId = user?.id;
-
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [lat, setLat] = useState(11);
   const [lng, setLng] = useState(11);
   const [url, setUrl] = useState("");
   const [errors, setErrors] = useState({});
+  const [previewImageUrl, setPreviewImageUrl] = useState([]);
 
   if (!user) {
     history.push("/login");
@@ -29,6 +29,22 @@ const CreateImage = () => {
     lng,
     url,
     userId,
+  };
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      setUrl(file);
+
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewImageUrl(reader.result); // Set the preview image URL
+      };
+      reader.readAsDataURL(file);
+    } else {
+      setUrl("");
+      setPreviewImageUrl(""); // Reset the preview image URL
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -88,15 +104,7 @@ const CreateImage = () => {
         encType="multipart/form-data"
         onSubmit={handleSubmit}
       >
-        <div>
-          {/* {Object.keys(errors).length > 0 && (
-            <div className="alert error">
-              {Object.values(errors).map((error) => (
-                <p key={error}>{error}</p>
-              ))}
-            </div>
-          )} */}
-        </div>
+        <div></div>
         <div className="form-item">
           {errors["title"] && <div className="error">{errors["title"]}</div>}
           <label>Name</label>
@@ -126,38 +134,10 @@ const CreateImage = () => {
             value={description}
           ></textarea>
         </div>
-        {/* <div className="form-item">
-          {errors["description"] && (
-            <div className="error">{errors["lat"]}</div>
-          )}
-          <label>Latitude</label>
-          <input
-            type="number"
-            name="lat"
-            onChange={(e) => setLat(e.target.value)}
-            value={lat}
-          ></input>
-        </div>
-        <div className="form-item">
-          {errors["lng"] && <div className="error">{errors["lng"]}</div>}
-          <label>Longitude</label>
-          <input
-            type="number"
-            name="lng"
-            onChange={(e) => setLng(e.target.value)}
-            value={lng}
-          ></input>
-        </div> */}
+
         <div className="form-item">
           {errors["url"] && <div className="error">{errors["url"]}</div>}
           <label>Image Url</label>
-          {/* <button
-            onclick="document.getElementById('file').click()"
-            className="upload-button"
-          >
-            Upload Photo
-            <div className="dragndrop">Drag on drop here!</div>
-          </button> */}
 
           <input
             id="file"
@@ -165,7 +145,10 @@ const CreateImage = () => {
             type="file"
             accept="image/*"
             name="url"
-            onChange={(e) => setUrl(e.target.files[0])}
+            onChange={(e) => {
+              setUrl(e.target.files[0]);
+              handleImageChange(e);
+            }}
           ></input>
         </div>
         <button
@@ -176,6 +159,19 @@ const CreateImage = () => {
           Create Image
         </button>
       </form>
+      <div className="preview-container">
+        <div className="preview-box">
+          <div className="preview-image-container">
+            {previewImageUrl != "" ? (
+              <img
+                src={previewImageUrl}
+                alt="Preview"
+                className="preview-image"
+              />
+            ) : null}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
