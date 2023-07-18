@@ -93,10 +93,6 @@ const CreateImage = () => {
     }
   };
 
-  let i = 44.444;
-
-  console.log(i.toString().length);
-
   return (
     <div className="create-image-container">
       <form
@@ -137,7 +133,7 @@ const CreateImage = () => {
 
         <div className="form-item">
           {errors["url"] && <div className="error">{errors["url"]}</div>}
-          <label>Image Url</label>
+          <label>Select your Image</label>
 
           <input
             id="file"
@@ -169,6 +165,9 @@ const CreateImage = () => {
                 className="preview-image"
               />
             ) : null}
+          </div>
+          <div className="preview-image-name">
+            {url.name == undefined ? null : `${url.name}`}
           </div>
         </div>
       </div>

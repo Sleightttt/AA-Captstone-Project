@@ -42,7 +42,7 @@ const GetPro = () => {
                 <div className="info space-text">
                   Ad-free browsing on ImageSpace for you and your visitors
                   <div className="info-header">
-                    Enjoy a fully ad-free experience across all of Flickr.
+                    Enjoy a fully ad-free experience across all of ImageSpace.
                     Visitors to your account will never see an ad on your
                     photostream, albums, profile, or any of your photos. Learn
                     more.

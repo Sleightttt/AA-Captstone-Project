@@ -93,9 +93,9 @@ textarea {
 }
 
 .preview-box {
-  height: 30%;
-  width: 20%;
-  border: 1px solid rgb(215, 215, 215);
+  height: 40%;
+  width: 40%;
+  border: 1px solid rgb(147, 147, 147);
   background-color: rgb(35, 35, 35);
 }
 
@@ -107,8 +107,21 @@ textarea {
 
 .preview-image {
   width: 90%;
-  height: 200px;
+  height: 320px;
   object-fit: cover;
   background-color: blue;
   margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px, rgba(0, 0, 0, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.preview-image-name {
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
+  font-family: "Source Sans Pro", sans-serif;
+  overflow: auto;
 }
