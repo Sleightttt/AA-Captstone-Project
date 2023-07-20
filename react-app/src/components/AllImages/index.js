@@ -52,7 +52,7 @@ const AllImages = () => {
               key={image.id}
               onClick={() => history.push(`/images/${image.id}`)}
             >
-              <div>
+              <div style={{ position: "relative" }}>
                 {images.allImages.images.length > 0 ? (
                   <img
                     style={{
@@ -78,6 +78,7 @@ const AllImages = () => {
                     alt={image.name}
                   />
                 )}
+                <div className="image-overlay">{image.name}</div>
               </div>
               {/* </Link> */}
             </div>

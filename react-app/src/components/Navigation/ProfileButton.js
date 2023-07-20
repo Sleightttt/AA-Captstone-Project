@@ -53,17 +53,9 @@ function ProfileButton({ user }) {
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
+            <li> {user.username}</li>
+            <li>{user.email}</li>
             <li>
-              {" "}
-              <i className="fas fa-hand-paper purps "></i>
-              {user.username}
-            </li>
-            <li>
-              <i className="fas fa-user purps "></i>
-              {user.email}
-            </li>
-            <li>
-              <i className="fas fa-camera purps "></i>
               <div onClick={profileHandler} className="profile-redirect">
                 {" "}
                 Your Profile
