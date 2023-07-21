@@ -223,7 +223,6 @@ const Profile = () => {
                               <img
                                 className="profile-image-hover"
                                 key={image.id}
-                                style={{ width: "400px", height: "400px" }}
                                 src={image.url}
                                 alt={image.name}
                                 onClick={() =>
