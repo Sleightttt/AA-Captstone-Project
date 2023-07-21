@@ -57,15 +57,14 @@ html {
 .profile-dropdown > li:not(.not-you) {
   display: flex;
   justify-content: space-between;
-
   width: 140px;
   border-bottom: solid rgb(211, 211, 211) 1px;
+  overflow: auto;
 }
 .profile-dropdown2 > li:not(.not-you) {
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 93px;
   border-bottom: solid rgb(211, 211, 211) 1px;
 }
@@ -119,7 +118,6 @@ html {
 }
 
 .nav-items {
-  /* border: solid red 2px; */
   height: 40px;
   display: flex;
   align-items: center;
@@ -240,11 +238,11 @@ li {
 
 .nav-home {
   text-decoration: none;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .nav-home:visited {
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
@@ -281,7 +279,7 @@ a {
   color: white;
 }
 
-a:visited {
+/* a:visited {
   color: white;
   text-decoration: none;
 }
@@ -289,7 +287,7 @@ a:visited {
 a:hover {
   text-decoration: none;
   color: rgb(185, 185, 185);
-}
+} */
 
 .logout-button {
   color: rgb(255, 255, 255);
@@ -419,6 +417,29 @@ a:hover {
   padding: 4px;
 }
 
-/* .abs {
-  position: fixed;
-} */
+@media screen and (max-width: 700px) {
+  .nav-left {
+    margin-left: 0;
+    height: 100%;
+  }
+
+  .nav-home {
+    display: hidden;
+  }
+
+  .nav-home {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: none;
+  }
+  .logo {
+    height: 100%;
+  }
+  .nav-right {
+    margin: 0;
+    justify-content: space-around;
+  }
+  .nav-items {
+    justify-content: space-between;
+  }
+}

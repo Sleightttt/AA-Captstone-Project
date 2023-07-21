@@ -18,7 +18,7 @@ function Navigation({ isLoaded }) {
           {!sessionUser ? (
             <ul className="nav-items">
               <li className="nav-left">
-                <NavLink className={".nav-home"} exact to="/">
+                <NavLink className={"nav-home"} exact to="/">
                   ImageSpace
                 </NavLink>
                 <img
@@ -31,7 +31,7 @@ function Navigation({ isLoaded }) {
           ) : (
             <ul className="nav-items">
               <li className="nav-left">
-                <NavLink className={".nav-home"} exact to="/">
+                <NavLink className={"nav-home"} exact to="/">
                   ImageSpace
                 </NavLink>
                 <img

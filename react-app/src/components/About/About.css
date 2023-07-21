@@ -36,3 +36,20 @@
 .purp {
   color: rgb(140, 42, 232);
 }
+
+@media screen and (max-width: 700px) {
+  .link-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .bottom-nav-item {
+    margin: 0;
+    padding: 0;
+  }
+  .about-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

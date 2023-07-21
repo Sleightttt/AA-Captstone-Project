@@ -53,11 +53,10 @@ function ProfileButton({ user }) {
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-            <li> {user.username}</li>
+            <li>Hello{user.username}</li>
             <li>{user.email}</li>
             <li>
               <div onClick={profileHandler} className="profile-redirect">
-                {" "}
                 Your Profile
               </div>
             </li>

@@ -55,6 +55,7 @@ const AllImages = () => {
               <div style={{ position: "relative" }}>
                 {images.allImages.images.length > 0 ? (
                   <img
+                    className="img-all"
                     style={{
                       width: `${randomWidth()}px`,
                       height: `200px`,
