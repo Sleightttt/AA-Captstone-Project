@@ -109,7 +109,17 @@ textarea {
   width: 90%;
   height: 320px;
   object-fit: cover;
-  background-color: blue;
+
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px, rgba(0, 0, 0, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.preview-image2 {
+  width: 90%;
+  height: 320px;
+  object-fit: cover;
+  border-bottom: rgb(124, 124, 124) 0.5px solid;
   margin-top: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px, rgba(0, 0, 0, 0.1) 0px 8px 24px,
     rgba(17, 17, 26, 0.1) 0px 16px 56px;

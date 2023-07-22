@@ -164,10 +164,22 @@ const CreateImage = () => {
                 alt="Preview"
                 className="preview-image"
               />
-            ) : null}
+            ) : (
+              <>
+                <>
+                  <div className="preview-image2"></div>
+                </>
+              </>
+            )}
           </div>
           <div className="preview-image-name">
-            {url.name == undefined ? null : `${url.name}`}
+            {url.name == undefined ? (
+              <>
+                <div>-</div>
+              </>
+            ) : (
+              `${url.name}`
+            )}
           </div>
         </div>
       </div>

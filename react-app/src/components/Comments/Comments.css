@@ -80,3 +80,28 @@ h3 {
   padding-top: 15px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.comment-owner {
+  font-weight: 100;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .single-comment {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .new-comment-text {
+    width: 90%;
+  }
+  .new-comment-submit-button {
+    width: 20%;
+  }
+  .comment-body {
+    padding: 0;
+  }
+  .comments-container {
+    padding: 5px;
+  }
+}

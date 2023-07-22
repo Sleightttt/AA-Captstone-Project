@@ -93,6 +93,7 @@ const UpdateImage = () => {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+      console.log("errors hit");
     } else {
       const data = await dispatch(editImage(formData));
       console.log(data);
