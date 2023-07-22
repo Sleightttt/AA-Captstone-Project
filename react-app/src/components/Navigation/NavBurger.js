@@ -94,4 +94,3 @@ function NavBurger({ user }) {
 }
 
 export default NavBurger;
-// Path: practice-for-week-19-python-project-skeleton/react-app/src/components/Navigation/index.js;
