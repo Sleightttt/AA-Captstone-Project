@@ -140,4 +140,7 @@ textarea {
   .preview-box {
     width: 100%;
   }
+  .create-image-form {
+    width: 40%;
+  }
 }
