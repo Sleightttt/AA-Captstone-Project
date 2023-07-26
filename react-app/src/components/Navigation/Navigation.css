@@ -12,7 +12,7 @@ html {
   padding-right: 10px;
   padding-left: 10px;
   width: 160px;
-  height: 100px;
+  height: 120px;
   list-style: none;
   justify-content: center;
   align-items: center;
@@ -21,12 +21,13 @@ html {
   color: rgb(255, 255, 255);
   border-radius: 10px;
   z-index: 2;
+  font-size: 17px;
 }
 
 .profile-dropdown2 {
   display: flex;
   font-size: 17px;
-  font-weight: 100;
+  /* font-weight: 100; */
   flex-direction: column;
   border: solid grey 2px;
   position: absolute;
@@ -57,13 +58,14 @@ html {
 .profile-dropdown > li:not(.not-you) {
   display: flex;
   justify-content: center;
-
+  font-family: "Source Sans Pro", sans-serif;
   width: 140px;
   /* border-bottom: solid rgb(211, 211, 211) 1px; */
   overflow: auto;
 }
 .profile-dropdown2 > li:not(.not-you) {
   display: flex;
+  font-family: "Source Sans Pro", sans-serif;
   justify-content: center;
   align-items: center;
   width: 93px;
@@ -94,7 +96,7 @@ html {
 
 .profile-redirect {
   color: rgb(2, 137, 210);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .profile-redirect:hover {
@@ -412,7 +414,7 @@ a:hover {
 }
 
 .over {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   padding: 4px;
 }
 
