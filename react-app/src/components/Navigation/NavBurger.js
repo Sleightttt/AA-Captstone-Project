@@ -49,7 +49,7 @@ function NavBurger({ user }) {
     closeMenu();
   };
 
-  const ulClassName = "profile-dropdown2" + (showMenu ? "" : " hidden");
+  const ulClassName = "profile-dropdown2" + (showMenu ? " expanded" : "");
 
   const closeMenu = () => setShowMenu(false);
 

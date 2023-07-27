@@ -44,7 +44,7 @@ function ProfileButton({ user }) {
     history.push(`/user/${userz?.id}`);
   };
 
-  const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
+  const ulClassName = "profile-dropdown" + (showMenu ? " expanded" : "");
   const closeMenu = () => setShowMenu(false);
 
   return (
