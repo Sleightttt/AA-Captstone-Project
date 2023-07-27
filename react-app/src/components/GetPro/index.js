@@ -6,7 +6,7 @@ const GetPro = () => {
       <section>
         <div className="get-pro-container">
           <div className="get-pro-image">
-            <div>
+            <div className="imagespace">
               <span className="blue">Image</span>
               <span className="purple">Space</span> pro
             </div>
@@ -156,7 +156,7 @@ const GetPro = () => {
           </div>
         </div>
         <div className="get-pro-image">
-          <div>
+          <div className="imagespace">
             <span className="blue">Image</span>
             <span className="purple">Space</span> pro
           </div>
