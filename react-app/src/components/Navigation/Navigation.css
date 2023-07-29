@@ -5,7 +5,6 @@ html {
 .profile-dropdown {
   display: flex;
   flex-direction: column;
-  /* border: solid grey 2px; */
   position: relative;
   right: 140px;
   top: 6px;
@@ -13,7 +12,6 @@ html {
   padding-left: 10px;
   width: 160px;
   height: 0;
-
   overflow: hidden;
   list-style: none;
   justify-content: center;
@@ -63,9 +61,7 @@ html {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(
-      -20px
-    ); /* Adjust the distance for the desired animation */
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
@@ -75,9 +71,7 @@ html {
 .profile-dropdown2 {
   display: flex;
   font-size: 17px;
-  /* font-weight: 100; */
   flex-direction: column;
-  /* border: solid grey 2px; */
   position: absolute;
   top: 49px;
   padding-right: 10px;
@@ -97,7 +91,6 @@ html {
 .profile-dropdown2.expanded {
   display: flex;
   font-size: 17px;
-  /* font-weight: 100; */
   flex-direction: column;
   border: solid grey 2px;
   position: absolute;
@@ -206,7 +199,6 @@ html {
 }
 
 .nav-right {
-  /* border: solid #0004ff 2px; */
   display: flex;
   flex-direction: row;
   height: 50px;
@@ -221,7 +213,6 @@ html {
 }
 
 .nav-left {
-  /* border: solid rgb(13, 0, 255) 2px; */
   display: flex;
   flex-direction: row;
   margin-left: 80px;
@@ -259,7 +250,6 @@ li {
 .profile-box {
   height: 40px;
   width: 40px;
-  /* display: flex; */
 }
 
 .profile-box2 {
@@ -327,7 +317,6 @@ li {
 
 .search-container {
   display: flex;
-  /* border: solid red 2px; */
   height: 35px;
   width: 20%;
 
@@ -357,16 +346,6 @@ a {
   text-decoration: none;
   color: white;
 }
-
-/* a:visited {
-  color: white;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-  color: rgb(185, 185, 185);
-} */
 
 .logout-button {
   color: rgb(255, 255, 255);
@@ -431,26 +410,6 @@ a:hover {
 
   font-size: 24px;
 }
-/* @media screen and (max-width: 768px) {
-  .nav-left {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: auto;
-  }
-
-  .logo {
-    margin-bottom: 10px;
-    margin-right: 0;
-  }
-
-  .search-container {
-    display: none;
-  }
-
-  .nav-right {
-    display: none;
-  }
-} */
 
 .nav-left-items {
   display: flex;
