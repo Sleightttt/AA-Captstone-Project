@@ -7,9 +7,9 @@
 
 .aboutpage-left {
   height: 100vh;
-  width: 30%;
-
+  width: 100%;
   padding: 3%;
+  padding-left: 1%;
 }
 
 .aboutpage-left-link {
@@ -54,4 +54,28 @@
   font-size: 30px;
   color: rgb(119, 0, 255);
   font-weight: bold;
+}
+
+.aboutpage-h2 {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.aboutpage-h2-2 {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.about-info {
+  margin: 1% 5%;
+  font-size: 18px;
+  line-height: 30px;
+  font-size: 22px;
+}
+
+.about-info-p {
+  margin: 1% 5%;
+  font-size: 18px;
+  line-height: 30px;
 }
