@@ -59,6 +59,7 @@ html {
 .profile-dropdown2.expanded > * {
   animation: fadeIn 1.2s ease 0s;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
