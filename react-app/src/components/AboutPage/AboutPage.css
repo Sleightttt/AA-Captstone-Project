@@ -1,0 +1,57 @@
+.aboutpage-container {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.aboutpage-left {
+  height: 100vh;
+  width: 30%;
+
+  padding: 3%;
+}
+
+.aboutpage-left-link {
+  list-style: none;
+  margin: 15px;
+  border-bottom: 1px solid grey;
+  color: rgb(0, 166, 255);
+  cursor: pointer;
+  padding-bottom: 5px;
+  font-size: 18px;
+}
+.aboutpage-left-link2 {
+  list-style: none;
+  /* margin: 15px; */
+  margin-left: 15px;
+  margin-bottom: 10px;
+  color: rgb(0, 166, 255);
+  cursor: pointer;
+  /* padding-bottom: 5px; */
+  font-size: 18px;
+}
+
+.needhelp {
+  list-style: none;
+  margin: 15px;
+  padding-left: 40px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  font-size: 18px;
+}
+
+.aboutpage-right {
+  height: 100%;
+  margin-left: 60px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.aboutpage-header {
+  margin-top: 30px;
+  font-size: 30px;
+  color: rgb(119, 0, 255);
+  font-weight: bold;
+}

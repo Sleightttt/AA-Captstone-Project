@@ -15,6 +15,7 @@ import About from "./components/About";
 import Prints from "./components/Prints";
 import GetPro from "./components/GetPro";
 import Search from "./components/Search";
+import AboutPage from "./components/AboutPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -68,6 +69,10 @@ function App() {
           </Route>
           <Route exact={true} path="/get-pro">
             <GetPro />
+            <About />
+          </Route>
+          <Route exact={true} path="/about">
+            <AboutPage />
             <About />
           </Route>
         </Switch>
