@@ -16,6 +16,7 @@ import Prints from "./components/Prints";
 import GetPro from "./components/GetPro";
 import Search from "./components/Search";
 import AboutPage from "./components/AboutPage";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
   const dispatch = useDispatch();

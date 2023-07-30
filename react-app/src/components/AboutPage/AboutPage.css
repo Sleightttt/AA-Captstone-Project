@@ -46,6 +46,7 @@
 .aboutpage-right {
   height: 100%;
   margin-left: 60px;
+  margin-right: 3%;
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -78,4 +79,35 @@
   margin: 1% 5%;
   font-size: 18px;
   line-height: 30px;
+}
+
+.aboutpage-image {
+  border-radius: 4px;
+  margin-bottom: 30px;
+  height: 100px;
+  width: 100px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  object-fit: contain;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  margin: 5px;
+  height: 20px;
+  color: rgb(162, 0, 255);
+  font-size: 40px;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+.team-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 30px;
+  margin-bottom: 40px;
 }
