@@ -56,7 +56,6 @@ const Profile = () => {
   const caller = async () => {
     const users = await dispatch(getAllUsers());
     const imagesByUser = await dispatch(getImagesByUser(id));
-    console.log("----", users);
   };
 
   if (allUsers === undefined) {

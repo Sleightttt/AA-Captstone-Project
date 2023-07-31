@@ -57,9 +57,8 @@ const UpdateImage = () => {
     formData.append("lng", lng);
     formData.append("url", url);
     formData.append("userId", userId);
-    console.log("this is formdata", formData.get("url"));
+
     let newErrors = {};
-    // console.log(formData.get("id"));
 
     if (!name || name.length > 50 || name.length < 1) {
       newErrors["title"] = "Please add a name between 1-50 characters";
@@ -93,10 +92,9 @@ const UpdateImage = () => {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-      console.log("errors hit");
     } else {
       const data = await dispatch(editImage(formData));
-      console.log(data);
+
       history.push(`/images/${id}`);
     }
   };

@@ -58,7 +58,6 @@ const CreateImage = () => {
     formData.append("lng", lng);
     formData.append("url", url);
     formData.append("userId", userId);
-    console.log("this is formdata", formData);
 
     if (!name || name.length > 50 || name.length < 1) {
       newErrors["title"] = "Please add a name between 1-50 characters";
@@ -84,11 +83,9 @@ const CreateImage = () => {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-      console.log("error hit");
     } else {
-      console.log("hit");
       const data = await dispatch(createImage(formData));
-      console.log(data);
+
       history.push(`/images/${data.id}`);
     }
   };

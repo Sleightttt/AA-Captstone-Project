@@ -17,7 +17,6 @@ function CommentFormModal({ props }) {
 
   let commzArr = Object.values(commentz);
   let sing = commzArr.find((el) => el.id == props);
-  // console.log(sing, "sing");
 
   const handleSubmit = async (e) => {
     e.preventDefault();

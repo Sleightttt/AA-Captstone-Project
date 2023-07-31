@@ -31,7 +31,6 @@ const imagesLikes = (like) => ({
 });
 
 export const createLikeThunk = (like) => async (dispatch) => {
-  console.log("hit create thunk");
   const { image_id, liker_id } = like;
 
   const res = await fetch("/api/likes/", {

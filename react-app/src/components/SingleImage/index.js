@@ -114,10 +114,10 @@ const SingleImage = () => {
 
   const unfollowHandler = async (e) => {
     e.preventDefault();
-    console.log("unfollow button hit");
+
     if (isFollowed) {
       await dispatch(deleteFollowThunk(followToDelete?.id));
-      console.log("this is user id", userId);
+
       await dispatch(getFollowsByUser(userId));
 
       setIsFollowed(false);

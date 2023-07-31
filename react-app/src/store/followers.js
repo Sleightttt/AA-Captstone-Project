@@ -31,7 +31,6 @@ const deleteFollow = (id) => ({
 // });
 
 export const createFollowThunk = (follow) => async (dispatch) => {
-  console.log("hit create thunk");
   const { follower_id, following_id } = follow;
 
   const res = await fetch("/api/follower/", {
@@ -79,7 +78,6 @@ export const getFollowsByUser = (userId) => async (dispatch) => {
 };
 
 export const deleteFollowThunk = (followId) => async (dispatch) => {
-  console.log("INSIDE DELETE THUNK", followId);
   let response = await fetch(`/api/follower/${followId}`, {
     method: "DELETE",
   });

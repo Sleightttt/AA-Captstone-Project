@@ -79,7 +79,7 @@ const Comments = () => {
   const closeMenu = () => setShowMenu(false);
 
   const commentArr = Object.values(comments).reverse();
-  // console.log(commentArr);
+
   return (
     <>
       <div className="comments-container">
