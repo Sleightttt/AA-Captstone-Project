@@ -121,7 +121,7 @@ export default function likesReducer(state = initialState, action) {
       let afterDelete = {
         ...state,
       };
-      // console.log(action.payload, "---");
+
       delete afterDelete["imagesLikes"][action.payload];
 
       delete afterDelete["userLikes"][action.payload];
