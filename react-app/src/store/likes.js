@@ -114,7 +114,6 @@ export default function likesReducer(state = initialState, action) {
         (like) => (afterImageRead2.userLikes[like.id] = like)
       );
 
-      // console.log("read hit", action.payload);
       return afterImageRead2;
 
     case DELETE_LIKE:
