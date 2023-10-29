@@ -89,7 +89,6 @@ const AllImages = () => {
                   </div>
                 </div>
               </div>
-              {/* </Link> */}
             </div>
           ))}
         </div>
