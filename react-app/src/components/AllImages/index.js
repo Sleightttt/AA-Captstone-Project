@@ -81,10 +81,10 @@ const AllImages = () => {
                 )}
 
                 <div className="image-overlay">
-                  <div className="image-ol-box"> that dude</div>
-
+                  <div className="image-ol-box"> </div>
+                  <div className="spacer"></div>
                   <div className="image-ol-likes">
-                    <div>1009 comments</div>
+                    <div>1009 comments{console.log(image)}</div>
                     <div>1009 comments</div>
                   </div>
                 </div>
