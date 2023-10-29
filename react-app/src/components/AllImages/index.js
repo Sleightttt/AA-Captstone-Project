@@ -79,7 +79,15 @@ const AllImages = () => {
                     alt={image.name}
                   />
                 )}
-                <div className="image-overlay">{image.name}</div>
+
+                <div className="image-overlay">
+                  <div className="image-ol-box"> that dude</div>
+
+                  <div className="image-ol-likes">
+                    <div>1009 comments</div>
+                    <div>1009 comments</div>
+                  </div>
+                </div>
               </div>
               {/* </Link> */}
             </div>
