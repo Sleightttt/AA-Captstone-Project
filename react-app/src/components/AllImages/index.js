@@ -30,12 +30,11 @@ const AllImages = () => {
     return Math.random() * (400 - 200) + 200;
   }
 
-  // Get current images based on pagination
+  // Pagination
   const indexOfLastImage = currentPage * imagesPerPage;
   const indexOfFirstImage = indexOfLastImage - imagesPerPage;
   const currentImages = allImg[0].slice(indexOfFirstImage, indexOfLastImage);
 
-  // Change page and scroll to top
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -84,7 +83,7 @@ const AllImages = () => {
                   <div className="image-ol-box"> </div>
                   <div className="spacer"></div>
                   <div className="image-ol-likes">
-                    <div>1009 comments{console.log(image)}</div>
+                    <div>1009 likes{console.log(image)}</div>
                     <div>1009 comments</div>
                   </div>
                 </div>
