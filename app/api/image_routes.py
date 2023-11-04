@@ -29,8 +29,7 @@ def create_product():
         owner_id = user['id']
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
-            # print('val hit')
-            # print('this is url', form.data['url'])
+
             izg = form.data['url']
 
             izg.filename = get_unique_filename(izg.filename)
