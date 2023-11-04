@@ -105,6 +105,28 @@
   transition: background-color 0.3s ease;
 }
 
+.like-icon {
+  margin-left: 5px;
+}
+
+.small-icon {
+  font-size: 18px;
+  color: rgb(0, 166, 255);
+  margin-left: 5px;
+}
+
+.spaced {
+  margin-left: 5px;
+}
+
+.likes-bar {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  align-items: center;
+  color: rgb(0, 166, 255);
+}
+
 .pagination button.active {
   background-color: #333333;
   color: rgb(0, 166, 255);
