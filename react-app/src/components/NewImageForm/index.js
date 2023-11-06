@@ -172,7 +172,7 @@ const CreateImage = () => {
           <div className="preview-image-name">
             {url.name == undefined ? (
               <>
-                <div>-</div>
+                <div></div>
               </>
             ) : (
               `${url.name}`

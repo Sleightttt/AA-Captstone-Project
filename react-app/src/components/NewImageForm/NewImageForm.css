@@ -78,6 +78,7 @@ textarea {
   width: 40%;
   border: 1px solid rgb(147, 147, 147);
   background-color: rgb(35, 35, 35);
+  border-radius: 10px;
 }
 
 .preview-image-container {
