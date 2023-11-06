@@ -88,11 +88,11 @@ const AllImages = () => {
                     <div className="image-ol-likes">
                       <div className="likes-bar">
                         1009
-                        <i className="fas fa-solid  fa-heart small-icon " />
+                        <i className="fas fa-solid fa-heart small-icon" />
                       </div>
                       <div className="likes-bar">
                         1009
-                        <i className="spaced fas fa-comment small-icon  " />
+                        <i className="fas fa-comment small-icon" />
                       </div>
                     </div>
                   </div>
