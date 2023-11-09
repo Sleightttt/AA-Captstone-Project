@@ -95,10 +95,6 @@ const Profile = () => {
     (follow) => follow.follower_id == userId
   );
 
-  // let myProfileFollowers = allFollows.follows.filter(
-  //   (follow) => follow.following_id == userId
-  // );
-
   const myProfile = userId == id;
 
   if (images[0]?.length === 0) {

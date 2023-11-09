@@ -1,10 +1,6 @@
 import React from "react";
 import "./Prints.css";
 const Prints = () => {
-
-
- 
-
   return (
     <>
       <div className="prints-page-container">

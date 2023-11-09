@@ -11,7 +11,6 @@ import OpenDeleteModal from "../OpenDeleteModal";
 
 const Comments = () => {
   const dispatch = useDispatch();
-
   const comments = useSelector((state) => state.comments.SingleImagesComments);
   const imageId = useSelector((state) => state.images.singleImage.id);
   const { id } = useParams();
@@ -139,7 +138,6 @@ const Comments = () => {
                       />
                     }
                   />{" "}
-                  {/* <i className="fas fa-trash"></i> */}
                 </div>
               </>
             )}
