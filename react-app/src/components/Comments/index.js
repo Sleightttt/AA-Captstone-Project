@@ -63,11 +63,6 @@ const Comments = () => {
     }
   };
 
-  // const openMenu = () => {
-  //   if (showMenu) return;
-  //   setShowMenu(true);
-  // };
-
   const dateHandler = (date) => {
     let formatDate = new Date(date);
     let full = `${formatDate.toDateString()} `;
