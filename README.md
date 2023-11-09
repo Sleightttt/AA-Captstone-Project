@@ -4,7 +4,6 @@ This is the starter for the Flickr clone ImageSpace.
 
 <img width="1655" alt="Screen Shot 2023-05-11 at 1 13 03 PM" src="https://github.com/Sleightttt/AA-Captstone-Project/assets/108550097/3298dc77-93c1-4486-a750-da6f4c89ecb0">
 
-
 ## ImageSpace
 
 ImageSpace is a Flickr clone with 4 working CRUD features - 2 full CRUD and 2 partial CRUD
@@ -27,15 +26,13 @@ Users can upload and share photos by creating a new post. Each post includes a t
 
 <img width="1490" alt="Screen Shot 2023-05-11 at 1 14 45 PM" src="https://github.com/Sleightttt/AA-Captstone-Project/assets/108550097/0cc123be-053f-440a-b14e-b27799eb5435">
 
-
 ## Comments
 
 Users can comment on posts and engage with other users' content. Comments include the user's name, a message, and a timestamp. Users can view all comments on individual posts.
 
 <img width="1499" alt="Screen Shot 2023-05-11 at 1 17 54 PM" src="https://github.com/Sleightttt/AA-Captstone-Project/assets/108550097/1674561b-7ee5-4fa4-ace0-5acf85dcbb3b">
 
-
-### Partial Crud
+### Partial CRUD
 
 ## Likes
 
@@ -56,7 +53,6 @@ Interactive AWS display and upload
 Rich seed data
 
 Notifications
-
 
 ## Personal Links
 
