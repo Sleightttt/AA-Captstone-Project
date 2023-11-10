@@ -178,6 +178,16 @@ const CreateImage = () => {
               `${url.name}`
             )}
           </div>
+          <div className="tag-box">
+            <button className="tag-button">Preview</button>
+            <button className="tag-button">Preview</button>
+            <button className="tag-button">Prevwweweiew</button>
+            <button className="tag-button">Preview</button>
+            <button className="tag-button">Preview</button>
+            <button className="tag-button">Preview</button>
+            <button className="tag-button">Prevwweweiew</button>
+            <button className="tag-button">Preview</button>
+          </div>
         </div>
       </div>
     </div>

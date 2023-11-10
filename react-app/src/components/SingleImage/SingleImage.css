@@ -59,7 +59,6 @@
 }
 
 .single-product-name {
-  /* padding-top: 20px; */
   padding-left: 20px;
   font-size: 25px;
   font-weight: bold;
@@ -114,7 +113,6 @@
 }
 
 .likes-info {
-  /* padding-left: 50px; */
   padding-top: 5px;
   border: none;
 }
