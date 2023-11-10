@@ -179,14 +179,30 @@ const CreateImage = () => {
             )}
           </div>
           <div className="tag-box">
-            <button className="tag-button">Preview</button>
-            <button className="tag-button">Preview</button>
-            <button className="tag-button">Prevwweweiew</button>
-            <button className="tag-button">Preview</button>
-            <button className="tag-button">Preview</button>
-            <button className="tag-button">Preview</button>
-            <button className="tag-button">Prevwweweiew</button>
-            <button className="tag-button">Preview</button>
+            <button className="tag-button">
+              Preview<button className="x-button">x</button>
+            </button>
+            <button className="tag-button">
+              Preview<button className="x-button">x</button>
+            </button>
+            <button className="tag-button">
+              Preview<button className="x-button">x</button>
+            </button>
+            <button className="tag-button">
+              Preview<button className="x-button">x</button>
+            </button>
+            <button className="tag-button">
+              Preview<button className="x-button">x</button>
+            </button>
+            <button className="tag-button">
+              Preview<button className="x-button">x</button>
+            </button>
+            <button className="tag-button">
+              Preview<button className="x-button">x</button>
+            </button>
+            <button className="tag-button">
+              Preview<button className="x-button">x</button>
+            </button>
           </div>
         </div>
       </div>
