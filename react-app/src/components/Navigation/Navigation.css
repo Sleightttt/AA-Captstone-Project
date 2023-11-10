@@ -277,6 +277,10 @@ li {
   cursor: pointer;
   color: rgb(192, 192, 192);
 }
+.fa-upload:hover {
+  cursor: pointer;
+  color: rgb(192, 192, 192);
+}
 
 .profile-box > button {
   width: 40px;
