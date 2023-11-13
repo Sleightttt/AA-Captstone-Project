@@ -2,16 +2,19 @@ from app.models import db, Comment, environment, SCHEMA, User, Image
 from sqlalchemy.sql import text
 from datetime import datetime
 from random import randint
+from faker import Faker
+
+fake = Faker()
 
 
 def seed_comments():
     users = User.query.all()
     images = Image.query.all()
-    for i in range(34):
+    for i in range(122):
         comment = Comment(
             user_id=randint(1, len(users) - 1),
             image_id=randint(1, len(images) - 1),
-            comment=f"this is comment # {i}",
+            comment=f"{fake.sentence(nb_words=10, variable_nb_words=True, ext_word_list=None)}",
             created_at=datetime.utcnow(),
             updated_at=datetime.utcnow(),
         )

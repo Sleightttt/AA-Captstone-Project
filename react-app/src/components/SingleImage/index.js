@@ -202,7 +202,9 @@ const SingleImage = () => {
             </div>
             <div className="box">
               <div className="numbah">{commentArr.length}</div>
-              <div className="grey">Comments</div>
+              <div className="grey">
+                {commentArr?.length === 1 ? "Comment " : "Comments"}
+              </div>
             </div>
             <div className="taken-on">
               Taken on {dateHandler(image?.created_at)}
