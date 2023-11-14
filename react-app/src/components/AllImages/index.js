@@ -63,6 +63,7 @@ const AllImages = () => {
                       margin: "2px",
                       paddingTop: `1px`,
                       zIndex: "1",
+                      boxShadow: "0 0 3px rgba(0,0,0,0.5)",
                     }}
                     src={image.url}
                     alt={image.name}
