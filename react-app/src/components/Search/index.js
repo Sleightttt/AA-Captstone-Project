@@ -60,7 +60,7 @@ function Search() {
             ? `${arr[0].length} results for '${search}'`
             : `${arr[0].length} results for '${search}'`}
         </div>
-        <div className="images-container fade-in-container">
+        <div className="fade-in-container">
           {currentImages?.map((image, index) => (
             <div
               className="image-card"
