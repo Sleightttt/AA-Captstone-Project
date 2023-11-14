@@ -18,7 +18,6 @@ class Comment(db.Model):
     updated_at = db.Column(db.DateTime)
 
     image = db.relationship("Image", back_populates="comments")
-    # owner = db.relationship("User", back_populates="comments")
 
     def to_dict(self):
         return {

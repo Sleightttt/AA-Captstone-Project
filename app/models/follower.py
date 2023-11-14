@@ -14,8 +14,6 @@ class Follower(db.Model):
         db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False
     )
 
-    # image = db.relationship("Image", back_populates="likes")
-    # owner = db.relationship("User", back_populates="comments")
 
     def to_dict(self):
         return {

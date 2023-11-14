@@ -34,9 +34,5 @@ class Image(db.Model):
             'created_at': self.created_at,
             'updated_at': self.updated_at,
             'url': self.url,
-            # 'images': [image.to_dict() for image in self.images],
             'owner_id': self.owner_id,
-
-            # 'avg_rating':self.avg_rating(),
-            # 'num_comments':len(self.comments)
         }

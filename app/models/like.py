@@ -15,7 +15,7 @@ class Like(db.Model):
     )
 
     image = db.relationship("Image", back_populates="likes")
-    # owner = db.relationship("User", back_populates="comments")
+
 
     def to_dict(self):
         return {
