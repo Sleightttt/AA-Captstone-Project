@@ -74,7 +74,7 @@ textarea {
 }
 
 .preview-box {
-  height: 46%;
+  height: fit-content;
   width: 40%;
   border: 1px solid rgb(147, 147, 147);
   background-color: rgb(35, 35, 35);
@@ -137,9 +137,10 @@ textarea {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: 10px;
-  height: 70px;
+
+  overflow-y: auto;
 }
 
 .tag-button {
@@ -150,7 +151,7 @@ textarea {
   background-color: rgb(74, 74, 74);
   border-radius: 12px;
   padding: 2px 8px;
-  margin: 5px;
+  margin: 5px 5px;
   border: none;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   height: 25px;
@@ -168,5 +169,8 @@ textarea {
   }
   .create-image-form {
     width: 40%;
+  }
+  .preview-box {
+    height: fit-content;
   }
 }
