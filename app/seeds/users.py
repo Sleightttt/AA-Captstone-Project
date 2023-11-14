@@ -1,32 +1,32 @@
 from app.models import db, User, environment, SCHEMA
 from sqlalchemy.sql import text
+from faker import Faker
+
+fake = Faker()
 
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
+    # Adding the demo user
     demo = User(
         username='Demo', email='demo@aa.io', password='password')
-    marnie = User(
-        username='marnie', email='marnie@aa.io', password='password')
-    bobbie = User(
-        username='bobbie', email='bobbie@aa.io', password='password')
-    Alex = User(
-        username='Alex', email='alex@aa.io', password='password')
-    Juana = User(
-        username='Juana', email='Juana@aa.io', password='password')
-    Jane = User(
-        username='Jane', email='Jane@aa.io', password='password')
-    Ralph = User(
-        username='Ralph', email='Ralph@aa.io', password='password')
-
-    db.session.add(Jane)
-    db.session.add(Ralph)
-    db.session.add(Alex)
-    db.session.add(Juana)
     db.session.add(demo)
-    db.session.add(marnie)
-    db.session.add(bobbie)
+
+    # Adding 50 random users
+    for _ in range(50):
+        username = fake.user_name()
+        email = fake.email()
+        password = fake.password()
+
+        user = User(
+            username=username,
+            email=email,
+            password=password
+        )
+        db.session.add(user)
+
     db.session.commit()
+
 
 
 # Uses a raw SQL query to TRUNCATE or DELETE the users table. SQLAlchemy doesn't
