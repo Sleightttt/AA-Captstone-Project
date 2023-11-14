@@ -215,8 +215,11 @@
   }
 
   .single-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    width: 100%;
+    width: 80%;
   }
   .user-card {
     flex-direction: column;
@@ -244,5 +247,10 @@
   .profile-follows-likes {
     height: fit-content;
     padding-bottom: 10px;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
