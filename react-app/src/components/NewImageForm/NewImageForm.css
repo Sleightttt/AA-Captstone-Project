@@ -70,6 +70,7 @@ textarea {
 }
 
 .preview-container {
+  display: flex;
   width: 100%;
 }
 
@@ -113,6 +114,19 @@ textarea {
 }
 
 .preview-image2 {
+  width: 90%;
+  height: 320px;
+  object-fit: cover;
+  border-bottom: rgb(124, 124, 124) 0.5px solid;
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px, rgba(0, 0, 0, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+.preview-image22 {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
   width: 90%;
   height: 320px;
   object-fit: cover;
@@ -172,5 +186,8 @@ textarea {
   }
   .preview-box {
     height: fit-content;
+  }
+  .preview-container {
+    flex-direction: column;
   }
 }

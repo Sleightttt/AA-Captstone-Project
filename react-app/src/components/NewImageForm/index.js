@@ -205,6 +205,33 @@ const CreateImage = () => {
             </button>
           </div>
         </div>
+        <div className="preview-box">
+          <div className="preview-image-container">
+            {previewImageUrl != "" ? (
+              <img
+                src={previewImageUrl}
+                alt="Preview"
+                className="preview-image"
+              />
+            ) : (
+              <>
+                <>
+                  <div className="preview-image22">+</div>
+                </>
+              </>
+            )}
+          </div>
+          <div className="preview-image-name">
+            {url.name == undefined ? (
+              <>
+                <div></div>
+              </>
+            ) : (
+              `${url.name}`
+            )}
+          </div>
+          <div className="tag-box"></div>
+        </div>
       </div>
     </div>
   );
