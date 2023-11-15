@@ -103,7 +103,7 @@ const Profile = () => {
         <div className="profile-container">
           <div className="profile-header">
             <h1 className="profile-banner-container">
-              <div className="profile-name"> {user.username} </div>
+              <div className="profile-name"> {user.username}</div>
               <div className="follow-container">
                 <div className="profile-follow">
                   &nbsp;
@@ -174,7 +174,9 @@ const Profile = () => {
       <div className="profile-container">
         <div className="profile-header">
           <h1 className="profile-banner-container">
-            <div className="profile-name"> {user.username} </div>
+            <div className="profile-name">
+              {user.username} <button className="follow-button">Follow</button>{" "}
+            </div>
             <div className="follow-container">
               <div className="profile-follow">
                 {myProfile
