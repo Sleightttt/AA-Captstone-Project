@@ -16,11 +16,23 @@ const Profile = () => {
   const allUsers = useSelector((state) => state.session.users);
   const allFollows = useSelector((state) => state.followers.follows);
   const userId = useSelector((state) => state?.session?.user?.id);
+  const userFollows = useSelector((state) => state.followers.userFollows);
+  const userFollowsArr = Object?.values(userFollows);
   const [showModal, setShowModal] = useState(false);
   const divRef = useRef(null);
   let user;
   const history = useHistory();
   const [isFollowed, setIsFollowed] = useState(false);
+
+  const followToDelete = userFollowsArr?.find(
+    (follow) => follow.follower_id == userId && follow.following_id == id
+  );
+
+  if (followToDelete && !isFollowed)
+    followToDelete ? setIsFollowed(true) : setIsFollowed(false);
+
+  if (!followToDelete && isFollowed)
+    followToDelete ? setIsFollowed(true) : setIsFollowed(false);
 
   const handleShowModal = (imageId) => {
     setShowModal(true);
