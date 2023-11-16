@@ -3,14 +3,16 @@ from sqlalchemy.sql import text
 from datetime import datetime
 from random import randint
 from app.imgtest import imgList
+from faker import Faker
 
+fake = Faker()
 
 # Adds a demo products
 def seed_images():
     users = User.query.all()
     for i in range(60):
         image = Image(
-            name=f"Image {i+1}",
+            name=f"{fake.text(max_nb_chars=20)}",
             description=f"This is the description for Image {i+1}",
             lat=round(randint(1, 300) / 100, 2),
             lng=round(randint(1, 300) / 100, 2),
