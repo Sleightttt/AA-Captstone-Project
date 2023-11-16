@@ -125,14 +125,13 @@ export default function followerReducer(state = initialState, action) {
         (follow) => (afterImageRead2.userFollows[follow.id] = follow)
       );
 
-      // console.log("read hit", action.payload);
       return afterImageRead2;
 
     case DELETE_FOLLOW:
       let afterDelete = {
         ...state,
       };
-      // console.log(action.payload, "---");
+
       delete afterDelete["imagesFollows"][action.payload];
 
       delete afterDelete["userFollows"][action.payload];
