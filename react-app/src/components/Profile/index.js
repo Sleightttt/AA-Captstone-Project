@@ -12,7 +12,6 @@ const Profile = () => {
   const { id } = useParams();
   const [userImages, setUserImages] = useState([]);
   const [imageId, setImageId] = useState(null);
-
   const loggedInUser = useSelector((state) => state.session.user);
   const allUsers = useSelector((state) => state.session.users);
   const allFollows = useSelector((state) => state.followers.follows);
@@ -21,6 +20,7 @@ const Profile = () => {
   const divRef = useRef(null);
   let user;
   const history = useHistory();
+  const [isFollowed, setIsFollowed] = useState(false);
 
   const handleShowModal = (imageId) => {
     setShowModal(true);
@@ -94,6 +94,11 @@ const Profile = () => {
   let myProfileFollows = allFollows.follows.filter(
     (follow) => follow.follower_id == userId
   );
+
+  const followHandler = async (e) => {
+    e.preventDefault();
+    setIsFollowed(!isFollowed);
+  };
 
   const myProfile = userId == id;
 
@@ -175,7 +180,10 @@ const Profile = () => {
         <div className="profile-header">
           <h1 className="profile-banner-container">
             <div className="profile-name">
-              {user.username} <button className="follow-button">Follow</button>{" "}
+              {user.username}{" "}
+              <button className="follow-button" onClick={followHandler}>
+                {isFollowed ? "Unfollow" : "Follow"}
+              </button>{" "}
             </div>
             <div className="follow-container">
               <div className="profile-follow">
