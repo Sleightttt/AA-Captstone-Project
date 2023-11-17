@@ -71,12 +71,11 @@ export const UpdateCommentThunk = (CommentData) => async (dispatch) => {
 
 export const grabACommentThunk = (commentId) => async (dispatch) => {
   let comment = await fetch(`api/comments/${commentId}`, { method: "GET" });
-  // console.log("prethunk");
 
   if (comment.ok) {
     let res = await comment.json();
     dispatch(SingleComment(res));
-    // console.log("thunk hit", res);
+
     return res;
   }
 };
