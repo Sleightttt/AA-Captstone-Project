@@ -51,7 +51,11 @@
 }
 
 .slide-info-l {
-  background-image: linear-gradient(to left, rgb(97, 0, 132), rgb(0, 247, 255));
+  background-image: linear-gradient(
+    to left,
+    rgba(97, 0, 132, 0.242),
+    rgba(0, 247, 255, 0.315)
+  );
   height: 520px;
   display: flex;
   justify-content: center;
@@ -60,7 +64,11 @@
 }
 
 .slide-info-l-bottom {
-  background-image: linear-gradient(to left, rgb(86, 0, 117), rgb(0, 247, 255));
+  /* background-image: linear-gradient(
+    to left,
+    rgba(86, 0, 117, rgba(0, 247, 255, 0.234) 47, 255)
+  ); */
+  background-color: rgb(32, 32, 32);
   height: 520px;
   display: flex;
   flex-direction: row;
@@ -72,8 +80,8 @@
 .slide-info-l1 {
   background-image: linear-gradient(
     to right,
-    rgb(97, 0, 132),
-    rgb(0, 247, 255)
+    rgba(97, 0, 132, 0.161),
+    rgba(0, 247, 255, 0.225)
   );
   height: 520px;
   display: flex;
@@ -161,13 +169,13 @@
   width: 18%;
   background-image: linear-gradient(
     to bottom,
-    rgb(186, 186, 186),
-    rgb(79, 0, 125)
+    rgba(0, 248, 244, 0.302),
+    rgba(255, 0, 234, 0.242)
   );
   color: rgb(242, 242, 242);
   border-radius: 12px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 5px 9px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 6px -3px;
 }
 
 .feature-card:hover {
