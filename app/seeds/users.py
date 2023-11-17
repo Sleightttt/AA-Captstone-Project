@@ -14,7 +14,7 @@ def seed_users():
 
     # Adding 50 random users
     for _ in range(50):
-        username = fake.user_name()
+        username = fake.user_name() + str(fake.random_int(min=1, max=1000))
         email = fake.email()
         password = fake.password()
 
