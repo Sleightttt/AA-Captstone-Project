@@ -113,7 +113,6 @@ const Profile = () => {
   );
 
   const myProfile = userId == id;
-  console.log(isFollowed);
 
   const followButtonHandler = async () => {
     //unfollow
@@ -138,7 +137,6 @@ const Profile = () => {
 
       setIsFollowed(false);
     } else {
-      console.log("hit");
       //follow
       await dispatch(
         createFollowThunk({
