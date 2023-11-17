@@ -5,7 +5,12 @@ import { getImagesByUser } from "../../store/images";
 import DeleteImage from "../DeleteImage";
 import { getAllUsers } from "../../store/session";
 import "./Profile.css";
-import { getAllFollowsThunk } from "../../store/followers";
+import {
+  getAllFollowsThunk,
+  createFollowThunk,
+  getFollowsByUser,
+  deleteFollowThunk,
+} from "../../store/followers";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -107,12 +112,44 @@ const Profile = () => {
     (follow) => follow.follower_id == userId
   );
 
-  const followHandler = async (e) => {
-    e.preventDefault();
-    setIsFollowed(!isFollowed);
-  };
-
   const myProfile = userId == id;
+  console.log(isFollowed);
+
+  const followButtonHandler = async () => {
+    //unfollow
+    if (isFollowed) {
+      await dispatch(deleteFollowThunk(followToDelete?.id));
+
+      const fetchData = async () => {
+        const imagesByUser = await dispatch(getImagesByUser(id));
+
+        await dispatch(getAllFollowsThunk());
+
+        const users = await dispatch(getAllUsers());
+
+        setUserImages(Object.values(imagesByUser));
+
+        const user =
+          users &&
+          users[0] &&
+          users[0].find((user) => user.id === parseInt(id));
+      };
+      fetchData();
+
+      setIsFollowed(false);
+    } else {
+      console.log("hit");
+      //follow
+      await dispatch(
+        createFollowThunk({
+          follower_id: userId,
+          following_id: id,
+        })
+      );
+      await dispatch(getAllFollowsThunk());
+      setIsFollowed(true);
+    }
+  };
 
   if (images[0]?.length === 0) {
     return (
@@ -193,9 +230,24 @@ const Profile = () => {
           <h1 className="profile-banner-container">
             <div className="profile-name">
               {user.username}{" "}
-              <button className="follow-button" onClick={followHandler}>
-                {isFollowed ? "Unfollow" : "Follow"}
-              </button>{" "}
+              {isFollowed ? (
+                id !== userId ? (
+                  <button
+                    className="unfollow-button"
+                    onClick={followButtonHandler}
+                  >
+                    UNFOLLOW
+                  </button>
+                ) : (
+                  ""
+                )
+              ) : id !== userId ? (
+                <button className="follow-button" onClick={followButtonHandler}>
+                  FOLLOW
+                </button>
+              ) : (
+                ""
+              )}
             </div>
             <div className="follow-container">
               <div className="profile-follow">
