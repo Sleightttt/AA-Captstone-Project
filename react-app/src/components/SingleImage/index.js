@@ -147,19 +147,16 @@ const SingleImage = () => {
             ></img>
 
             <div className="single-product-name">{image.name}</div>
-            <div className="likes-info">
-              {/* {imageLikesArr?.length}{" "}
-              {imageLikesArr?.length === 1 ? "Like " : "Likes"} */}
-            </div>
+
             {lke ? (
-              <form onSubmit={unlikeHandler}>
+              <form className="end" onSubmit={unlikeHandler}>
                 <button className={thisOrThat}>
                   {" "}
                   <i className="fas fa-heart fa-3x"></i>
                 </button>
               </form>
             ) : (
-              <form onSubmit={likeHandler}>
+              <form className="end" onSubmit={likeHandler}>
                 <button className={thisOrThat}>
                   <i className="far fa-heart fa-3x"></i>
                 </button>

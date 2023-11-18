@@ -30,6 +30,9 @@
   text-decoration: underline;
 }
 
+.end {
+  padding-left: 50px;
+}
 .single-image {
   height: 700px;
   width: 700px;
@@ -40,14 +43,13 @@
 
 .product-info {
   border-bottom: 1px solid rgb(207, 207, 207);
-  height: 200px;
   background-color: rgb(236, 236, 236);
   padding: 5%;
   padding-bottom: 10px;
   padding-top: 40px;
   width: 50%;
+  height: auto; /* Adjusted height property */
 }
-
 .owner-link {
   color: rgb(0, 0, 0);
   font-size: 20px;
@@ -64,22 +66,33 @@
   padding: 0px 20px;
   font-size: 25px;
   font-weight: bold;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 .user-name {
   display: flex;
   align-items: center;
   text-align: center;
+
   font-family: Arial, Helvetica, sans-serif;
 }
+
 .image-desc {
-  padding-left: 85px;
-  font-family: "Source Sans Pro", sans-serif;
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  word-break: break-word;
-  overflow: scroll;
+  /* Remove or adjust the padding and left margin */
+  /* padding-left: 85px; */
+  padding-top: 10px; /* Added padding-top */
+  border-top: 0.5px solid rgb(187, 187, 187);
+}
+@media screen and (min-width: 700px) {
+  .image-desc {
+    min-height: 100px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .image-desc {
+    min-height: 100px;
+  }
 }
 
 .owner-link {
@@ -106,7 +119,7 @@
 
 .unlike {
   border: none;
-  margin-left: 10px;
+  padding: 0;
   color: rgb(0, 166, 255);
   background-color: rgb(236, 236, 236);
 }
@@ -157,20 +170,21 @@
   border: 1px solid rgb(0, 74, 113);
   color: rgb(216, 216, 216);
 }
-
 .user-card {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap; /* Add or adjust flex-wrap property */
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .profile-follows-likes {
   border-bottom: 1px solid rgb(207, 207, 207);
-  height: 200px;
+  height: auto;
   background-color: rgb(236, 236, 236);
   font-family: "Source Sans Pro", sans-serif;
   padding-bottom: 10px;
   padding-top: 40px;
-  width: 50%;
+  width: 40%;
   display: flex;
   flex-direction: column;
 }
@@ -234,7 +248,7 @@
   .product-info {
     width: 90%;
     padding-top: 10px;
-    height: 170px;
+    height: auto;
   }
 
   .profile-follows-likes {
@@ -243,8 +257,9 @@
   }
   .image-desc {
     padding-left: 0;
-    border-left: 0.5px solid rgb(186, 186, 186);
+    padding-top: 10px;
     border-top: 0.5px solid rgb(187, 187, 187);
+    min-height: 100px;
   }
   .spaced {
     display: none;
@@ -260,5 +275,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .user-name {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .end {
+    margin: 0;
+    padding: 0;
+  }
+
+  .single-product-name {
+    text-align: center;
+  }
+
+  .likes-info {
+    width: auto;
+    text-align: center;
+  }
+
+  .profile-follows-likes {
+    width: 100%;
   }
 }

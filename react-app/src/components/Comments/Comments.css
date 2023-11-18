@@ -1,6 +1,6 @@
 .comments-container {
   background-color: rgb(236, 236, 236);
-  padding-left: 10%;
+  padding-left: 5%;
   padding-top: 15px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -80,7 +80,7 @@
 
 .comments-container {
   background-color: rgb(236, 236, 236);
-  padding-left: 10%;
+  padding-left: 5%;
   padding-top: 15px;
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -106,6 +106,6 @@
     padding: 0;
   }
   .comments-container {
-    padding: 5px;
+    padding: 5%;
   }
 }
