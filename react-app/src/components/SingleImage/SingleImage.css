@@ -202,6 +202,8 @@
   padding-top: 15px;
   padding-left: 15px;
   font-family: "Source Sans Pro", sans-serif;
+  text-align: center;
+  padding-right: 5%;
 }
 .space {
   margin: 5px;
@@ -240,6 +242,8 @@
   }
   .image-desc {
     padding-left: 0;
+    border-left: 0.5px solid rgb(186, 186, 186);
+    border-top: 0.5px solid rgb(187, 187, 187);
   }
   .spaced {
     display: none;

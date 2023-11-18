@@ -229,7 +229,7 @@ const Profile = () => {
             <div className="profile-name">
               {user.username}{" "}
               {isFollowed ? (
-                id !== userId ? (
+                id !== userId && loggedInUser.id !== Number(id) ? (
                   <button
                     className="unfollow-button"
                     onClick={followButtonHandler}
@@ -239,7 +239,7 @@ const Profile = () => {
                 ) : (
                   ""
                 )
-              ) : id !== userId ? (
+              ) : id !== userId && loggedInUser.id !== Number(id) ? (
                 <button className="follow-button" onClick={followButtonHandler}>
                   FOLLOW
                 </button>
