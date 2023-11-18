@@ -9,12 +9,12 @@
   border: 1px solid black;
   box-shadow: 2px 2px 2px;
   background-color: rgb(241, 241, 241);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .edit-header {
   font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 111;
   padding: 0;
   margin-top: 10px;
@@ -23,7 +23,7 @@
 
 .edit-textarea {
   resize: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   padding: 8px;
   width: 300px;
   max-width: 300px;

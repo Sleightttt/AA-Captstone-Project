@@ -18,6 +18,7 @@
   background-color: white;
   color: black;
   resize: none;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .edit-comment-button {
@@ -69,16 +70,19 @@
   color: red;
 }
 
-h3 {
-  font-family: Arial, Helvetica, sans-serif;
+.delete-header {
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 100;
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 20px;
 }
 
 .comments-container {
   background-color: rgb(236, 236, 236);
   padding-left: 10%;
   padding-top: 15px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .comment-owner {
