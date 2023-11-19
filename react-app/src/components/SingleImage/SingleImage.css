@@ -173,7 +173,7 @@
 .user-card {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; /* Add or adjust flex-wrap property */
+  flex-wrap: wrap;
   font-family: "Source Sans Pro", sans-serif;
 }
 

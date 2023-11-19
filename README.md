@@ -50,8 +50,6 @@ Users can follow and unfollow other users to stay updated on their latest posts.
 
 Interactive AWS display and upload
 
-Rich seed data
-
 Notifications
 
 ## Personal Links
