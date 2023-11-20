@@ -6,6 +6,8 @@
 }
 
 .single-comment {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(236, 236, 236);
   border-bottom: 1px solid rgb(205, 205, 205);
   width: 40%;
@@ -48,7 +50,7 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+
   height: 60px;
   width: 100%;
   word-wrap: break-word;
@@ -95,10 +97,14 @@
   font-size: 12px;
 }
 
+.comment-name {
+  padding-bottom: 3px;
+  color: rgb(0, 166, 255);
+}
 @media (max-width: 600px) {
   .single-comment {
     width: 100%;
-    padding: 0;
+    padding: 10px;
     margin: 0;
   }
   .new-comment-text {

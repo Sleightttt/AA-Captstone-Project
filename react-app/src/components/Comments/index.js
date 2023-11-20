@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CreateCommentThunk, getCommentsByImage } from "../../store/comments";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import "./Comments.css";
 import OpenModalButton from "../OpenModalButton";
 import CommentFormModal from "../CommentFormModal";
@@ -12,6 +12,7 @@ import { getAllUsers } from "../../store/session";
 
 const Comments = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const comments = useSelector((state) => state.comments.SingleImagesComments);
   const imageId = useSelector((state) => state.images.singleImage.id);
   const { id } = useParams();
@@ -66,6 +67,10 @@ const Comments = () => {
     }
   };
 
+  const redirectProfileHandler = (id) => {
+    history.push(`/user/${id}`);
+  };
+
   const dateHandler = (date) => {
     let formatDate = new Date(date);
     let full = `${formatDate.toDateString()} `;
@@ -77,6 +82,10 @@ const Comments = () => {
   const closeMenu = () => setShowMenu(false);
 
   const commentArr = Object.values(comments).reverse();
+
+  users
+    ? console.log(users.users.find((user) => user.id == 1))
+    : console.log("no users");
 
   return (
     <>
@@ -122,7 +131,25 @@ const Comments = () => {
             <div className="comment-date">
               {dateHandler(comment.created_at)}
             </div>
-            <div className="comment-body">{comment.comment}</div>
+            <div className="comment-body">
+              <div className="comment-name">
+                {users ? (
+                  <span
+                    style={{ cursor: "pointer" }}
+                    onClick={() => redirectProfileHandler(comment.user_id)}
+                  >
+                    {
+                      users.users.find((user) => user.id == comment.user_id)
+                        .username
+                    }
+                  </span>
+                ) : (
+                  ""
+                )}
+              </div>
+
+              {comment.comment}
+            </div>
 
             {user?.id !== comment.user_id ? (
               <div></div>

@@ -17,7 +17,7 @@ const removeUser = () => ({
   type: REMOVE_USER,
 });
 
-const initialState = { user: null };
+const initialState = { user: null, users: null };
 
 export const getAllUsers = () => async (dispatch) => {
   const response = await fetch("/api/users/");
