@@ -190,11 +190,16 @@ const Profile = () => {
                         Add New Image
                       </button>
                     )}
-                    <div className="try">
-                      {" "}
-                      <i className="fas fa-angle-up fa-bounce "></i>&nbsp; Get
-                      started!
-                    </div>
+                    {id !== userId && loggedInUser.id !== Number(id) ? (
+                      ""
+                    ) : (
+                      <div className="try">
+                        {" "}
+                        <i className="fas fa-angle-up fa-bounce "></i>&nbsp; Get
+                        started!
+                      </div>
+                    )}
+
                     <div
                       className="user-images-body"
                       style={{

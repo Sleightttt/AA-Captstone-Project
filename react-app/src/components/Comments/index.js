@@ -83,10 +83,6 @@ const Comments = () => {
 
   const commentArr = Object.values(comments).reverse();
 
-  users
-    ? console.log(users.users.find((user) => user.id == 1))
-    : console.log("no users");
-
   return (
     <>
       <div className="comments-container">
