@@ -71,12 +71,13 @@ textarea {
 
 .preview-container {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
 }
 
 .preview-box {
   height: fit-content;
-  width: 40%;
+  width: 330px;
   border: 1px solid rgb(147, 147, 147);
   background-color: rgb(35, 35, 35);
   border-radius: 10px;
@@ -179,7 +180,8 @@ textarea {
 
 @media (max-width: 800px) {
   .preview-box {
-    width: 100%;
+    max-width: 330px;
+    width: 90%;
   }
   .create-image-form {
     width: 40%;
@@ -189,5 +191,6 @@ textarea {
   }
   .preview-container {
     flex-direction: column;
+    align-items: center;
   }
 }

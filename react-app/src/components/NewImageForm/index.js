@@ -179,7 +179,7 @@ const CreateImage = () => {
             )}
           </div>
           <div className="tag-box">
-            <button className="tag-button">
+            {/* <button className="tag-button">
               Preview<button className="x-button">x</button>
             </button>
             <button className="tag-button">
@@ -202,7 +202,7 @@ const CreateImage = () => {
             </button>
             <button className="tag-button">
               Preview<button className="x-button">x</button>
-            </button>
+            </button> */}
           </div>
         </div>
         <div className="preview-box">
