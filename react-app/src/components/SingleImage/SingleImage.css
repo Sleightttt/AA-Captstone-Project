@@ -96,7 +96,7 @@
 }
 
 .owner-link {
-  padding-left: 85px;
+  /* padding-left: 85px; */
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -229,6 +229,10 @@
   flex-direction: row;
 }
 
+.taken-on {
+  color: rgb(169, 169, 169);
+}
+
 @media screen and (max-width: 700px) {
   .single-product-container {
     width: 100%;
@@ -301,5 +305,15 @@
 
   .profile-follows-likes {
     width: 100%;
+  }
+
+  .owner-info-row {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 940px) {
+  .profile-follows-likes {
+    padding-top: 0;
   }
 }

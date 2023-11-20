@@ -167,7 +167,9 @@ const SingleImage = () => {
           <p className="image-desc">{image.description}</p>
           <div className="owner-info-row">
             <Link to={`/user/${image.owner?.id}`}>
-              <div className="owner-link">Owner: {image.owner?.username}</div>
+              <div className="owner-link">
+                Photographer: {image.owner?.username}
+              </div>
             </Link>
 
             {isFollowed ? (
@@ -204,7 +206,10 @@ const SingleImage = () => {
               </div>
             </div>
             <div className="taken-on">
-              Taken on {dateHandler(image?.created_at)}
+              Taken on{" "}
+              <span className="taken-on-date">
+                {dateHandler(image?.created_at)}
+              </span>
               <div>
                 <i className=" space fa fa-copyright"></i> &nbsp;All rights
                 reserved

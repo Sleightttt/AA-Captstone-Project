@@ -8,6 +8,7 @@ import CommentFormModal from "../CommentFormModal";
 import { getSingleImage } from "../../store/images";
 import CommentDeleteModal from "../CommentDeleteModal";
 import OpenDeleteModal from "../OpenDeleteModal";
+import { getAllUsers } from "../../store/session";
 
 const Comments = () => {
   const dispatch = useDispatch();
@@ -15,13 +16,16 @@ const Comments = () => {
   const imageId = useSelector((state) => state.images.singleImage.id);
   const { id } = useParams();
   const user = useSelector((state) => state.session.user);
+  const users = useSelector((state) => state.session.users);
   const [showMenu, setShowMenu] = useState(false);
   const [comment, setComment] = useState("");
   const [errors, setErrors] = useState({});
+  console.log(users);
 
   useEffect(() => {
     dispatch(getCommentsByImage(id));
     dispatch(getSingleImage(id));
+    dispatch(getAllUsers());
   }, [dispatch]);
 
   const handleNewComment = () => {
@@ -115,7 +119,9 @@ const Comments = () => {
 
         {commentArr.map((comment) => (
           <div key={comment.id} className="single-comment">
-            <div>{dateHandler(comment.created_at)}</div>
+            <div className="comment-date">
+              {dateHandler(comment.created_at)}
+            </div>
             <div className="comment-body">{comment.comment}</div>
 
             {user?.id !== comment.user_id ? (
