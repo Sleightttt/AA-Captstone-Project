@@ -87,71 +87,66 @@ const GetPro = () => {
         </div>
         <div className="slide-info-l-bottom">
           <div className="feature-card">
-            <div className="feature-header-image">
+            <div className="feature-header-image-box">
               <img
                 className="feature-header-image"
                 src="https://images.unsplash.com/photo-1614285344846-2ac84a3acd92?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
                 alt="promo"
               />
-              <div className="feture-info-container">
-                <div className="feature-title">SmugMug</div>
-                <div className="feature-info">
-                  With unlimited photo storage and website customization,
-                  SmugMug is perfect for every photographer. Take 50% off the
-                  first year for new subscriptions.
-                </div>
-              </div>
+              <div className="feture-info-container"></div>
+            </div>
+            <div className="feature-title">SmugMug</div>
+            <div className="feature-info">
+              With unlimited photo storage and website customization, SmugMug is
+              perfect for every photographer. Take 50% off the first year for
+              new subscriptions.
             </div>
           </div>
           <div className="feature-card">
-            <div className="feature-header-image">
+            <div className="feature-header-image-box">
               <img
                 className="feature-header-image"
                 src="https://images.unsplash.com/photo-1621600411688-4be93cd68504?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80"
                 alt="promo"
               />
-              <div className="feture-info-container">
-                <div className="feature-title">Blurb</div>
-                <div className="feature-info">
-                  Get $35 dollars off your Photo Book purchase up to 4 times a
-                  year. Valid for orders of $70 or more.
-                </div>
-              </div>
+              <div className="feture-info-container"></div>
+            </div>
+            <div className="feature-title">Blurb</div>
+            <div className="feature-info">
+              Get $35 dollars off your Photo Book purchase up to 4 times a year.
+              Valid for orders of $70 or more.
             </div>
           </div>
           <div className="feature-card">
-            <div className="feature-header-image">
+            <div className="feature-header-image-box">
               <img
                 className="feature-header-image"
                 src="https://images.unsplash.com/photo-1541257317361-ceec071c4b36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2673&q=80"
                 alt="promo"
               />
-              <div className="feture-info-container">
-                <div className="feature-title">PHLEARN</div>
-                <div className="feature-info">
-                  ImageSpace Pro members get 1 free month, and unlimited access
-                  to the #1 Photoshop & Lightroom course catalog in the world
-                  for 35% off.
-                </div>
-              </div>
+              <div className="feture-info-container"></div>
+            </div>
+            <div className="feature-title">PHLEARN</div>
+            <div className="feature-info">
+              ImageSpace Pro members get 1 free month, and unlimited access to
+              the #1 Photoshop & Lightroom course catalog in the world for 35%
+              off.
             </div>
           </div>
 
           <div className="feature-card">
-            <div className="feature-header-image">
+            <div className="feature-header-image-box">
               <img
                 className="feature-header-image"
                 src="https://images.unsplash.com/photo-1620674156044-52b714665d46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
                 alt="promo"
               />
-              <div className="feture-info-container">
-                <div className="feature-title">Priime</div>
-                <div className="feature-info">
-                  Get 20% off Priime’s Lightroom presets bundle, with 13
-                  presents based on film aesthetics, and more than 100 total
-                  variations.
-                </div>
-              </div>
+              <div className="feture-info-container"></div>
+            </div>
+            <div className="feature-title">Priime</div>
+            <div className="feature-info">
+              Get 20% off Priime’s Lightroom presets bundle, with 13 presents
+              based on film aesthetics, and more than 100 total variations.
             </div>
           </div>
         </div>
