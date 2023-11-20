@@ -102,6 +102,7 @@
 
 .owner-link:hover {
   color: rgb(0, 166, 255);
+  cursor: pointer;
 }
 
 .liketest {

@@ -205,7 +205,7 @@ const CreateImage = () => {
             </button> */}
           </div>
         </div>
-        <div className="preview-box">
+        {/* <div className="preview-box">
           <div className="preview-image-container">
             {previewImageUrl != "" ? (
               <img
@@ -231,7 +231,7 @@ const CreateImage = () => {
             )}
           </div>
           <div className="tag-box"></div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
