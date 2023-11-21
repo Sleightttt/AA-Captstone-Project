@@ -28,7 +28,7 @@ const AllImages = () => {
   }
 
   function randomWidth() {
-    return Math.random() * (390 - 200) + 200;
+    return Math.random() * (370 - 200) + 200;
   }
 
   // Pagination
