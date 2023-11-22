@@ -239,14 +239,14 @@ const Profile = () => {
                     className="unfollow-button"
                     onClick={followButtonHandler}
                   >
-                    UNFOLLOW
+                    Unfollow
                   </button>
                 ) : (
                   ""
                 )
               ) : id !== userId && loggedInUser.id !== Number(id) ? (
                 <button className="follow-button" onClick={followButtonHandler}>
-                  FOLLOW
+                  Follow
                 </button>
               ) : (
                 ""

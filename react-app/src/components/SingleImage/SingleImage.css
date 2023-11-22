@@ -265,6 +265,7 @@
     padding-top: 10px;
     border-top: 0.5px solid rgb(187, 187, 187);
     min-height: 100px;
+    line-height: 1.5;
   }
   .spaced {
     display: none;

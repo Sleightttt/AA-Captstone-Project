@@ -12,12 +12,12 @@ def seed_images():
     users = User.query.all()
     for i in range(60):
         fake_text = fake.text(max_nb_chars=20)
-
+        fake_description = fake.text( max_nb_chars=190)[:-1]
         name = fake_text[:-1] if fake_text.endswith('.') else fake_text
 
         image = Image(
             name=name,
-            description=f"This is the description for Image {i + 1}",
+            description=fake_description,
             lat=round(randint(1, 300) / 100, 2),
             lng=round(randint(1, 300) / 100, 2),
             created_at=datetime.utcnow(),

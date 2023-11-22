@@ -175,14 +175,14 @@ const SingleImage = () => {
             {isFollowed ? (
               image.owner_id !== userId ? (
                 <button className="unfollow-button" onClick={unfollowHandler}>
-                  UNFOLLOW
+                  Unfollow
                 </button>
               ) : (
                 ""
               )
             ) : image.owner_id !== userId ? (
               <button className="follow-button" onClick={followHandler}>
-                FOLLOW
+                Follow
               </button>
             ) : (
               ""
