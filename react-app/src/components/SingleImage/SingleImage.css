@@ -65,7 +65,7 @@
 .single-product-name {
   padding: 0px 20px;
   font-size: 25px;
-  font-weight: bold;
+  color: rgb(37, 37, 37);
   font-family: "Oswald", sans-serif;
 }
 
@@ -78,11 +78,11 @@
 }
 
 .image-desc {
-  /* Remove or adjust the padding and left margin */
-  /* padding-left: 85px; */
-  padding-top: 10px; /* Added padding-top */
+  padding-top: 10px;
   border-top: 0.5px solid rgb(187, 187, 187);
+  line-height: 1.5;
 }
+
 @media screen and (min-width: 700px) {
   .image-desc {
     min-height: 100px;

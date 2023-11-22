@@ -26,6 +26,12 @@
   color: black;
   resize: none;
   font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.5;
+}
+
+.new-comment-form {
+  display: flex;
+  flex-direction: column;
 }
 
 .edit-comment-button {
@@ -50,7 +56,7 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-
+  line-height: 1.5;
   width: 100%;
   word-wrap: break-word;
   white-space: pre-wrap;
@@ -60,7 +66,7 @@
 .new-comment-submit-button {
   padding: 2px;
   margin: 4px;
-  width: 10%;
+  width: 100px;
   color: white;
   border-radius: 4px;
   border: none;
@@ -102,15 +108,16 @@
 }
 @media (max-width: 600px) {
   .single-comment {
-    width: 100%;
+    width: 99%;
     padding: 10px;
     margin: 0;
   }
   .new-comment-text {
-    width: 90%;
+    width: 99%;
   }
   .new-comment-submit-button {
-    width: 20%;
+    width: 100px;
+    margin-left: auto;
   }
   .comment-body {
     padding: 0;

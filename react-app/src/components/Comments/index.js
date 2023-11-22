@@ -103,7 +103,7 @@ const Comments = () => {
               )}
             </div>
             <form
-              className="new-comment"
+              className="new-comment-form"
               onSubmit={() => handleNewCommentSubmit}
             >
               <textarea
