@@ -1,6 +1,7 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from sqlalchemy.orm import relationship
 
 
 class User(db.Model, UserMixin):
@@ -31,3 +32,10 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email
         }
+    followers = relationship(
+        'Follower',
+        foreign_keys='Follower.following_id',
+
+        back_populates='following_user',
+        cascade='all, delete-orphan'
+    )

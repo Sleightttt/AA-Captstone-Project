@@ -1,6 +1,7 @@
 from app.models import db, environment, SCHEMA, add_prefix_for_prod
 from datetime import datetime
 from random import randint
+from sqlalchemy.orm import relationship
 
 
 class Follower(db.Model):
@@ -13,6 +14,7 @@ class Follower(db.Model):
     following_id = db.Column(
         db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False
     )
+    following_user = relationship('User', back_populates='followers', foreign_keys=[following_id])
 
 
     def to_dict(self):
