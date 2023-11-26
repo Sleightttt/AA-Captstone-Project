@@ -10,11 +10,6 @@ const createLike = (like) => ({
   payload: like,
 });
 
-// const getAllLikes = (likes) => ({
-//   type: GET_ALL_LIKES,
-//   payload: likes,
-// });
-
 const getUserLikes = (id) => ({
   type: READ_LIKES_USER,
   payload: id,
@@ -69,14 +64,10 @@ export const getLikesByUser = (userId) => async (dispatch) => {
 };
 
 export const deleteLikeThunk = (likeId) => async (dispatch) => {
-  // console.log("INSIDE DELETE THUNK");
   let response = await fetch(`/api/likes/${likeId}`, {
     method: "DELETE",
   });
-  // console.log(response.url);
-  // console.log(response);
   if (response.ok) {
-    // console.log("RESPONSE WAS OK");
     dispatch(deleteLike(likeId));
     return response;
   }
@@ -88,8 +79,7 @@ export default function likesReducer(state = initialState, action) {
   switch (action.type) {
     case GET_ALL_LIKES:
       return { ...state, likes: action.payload };
-    // case SET_ALL_IMAGES_BY_USER:
-    //   return { ...state, allImagesByUser: action.payload };
+
     case CREATE_LIKE:
       return { ...state, userLikes: action.payload };
 
@@ -100,7 +90,7 @@ export default function likesReducer(state = initialState, action) {
       let afterImageRead = { ...state };
 
       afterImageRead.imagesLikes = {};
-      // console.log("-----", action.payload);
+
       action.payload.forEach(
         (like) => (afterImageRead.imagesLikes[like.id] = like)
       );

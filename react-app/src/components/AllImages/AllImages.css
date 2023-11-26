@@ -51,7 +51,6 @@
   font-size: 15px;
   border-radius: 7px;
   opacity: 0;
-
   text-shadow: 2px 2px 0 black;
   transition: transform 0.3s ease;
 }

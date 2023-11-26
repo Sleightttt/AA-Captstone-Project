@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllImages } from "../../store/images";
 import { useHistory } from "react-router-dom";
 import "./AllImages.css";
-import wedding from "../../icons/wedding-photos.png";
 
 const AllImages = () => {
   const dispatch = useDispatch();
