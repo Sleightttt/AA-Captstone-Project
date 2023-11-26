@@ -22,6 +22,34 @@
   align-items: center;
 }
 
+.followers-dropdown,
+.following-dropdown {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  height: 200px;
+  background-color: rgb(33, 33, 33);
+  color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  width: 200px;
+  overflow: scroll;
+  z-index: 100; /* Adjust this value as needed */
+  border-radius: 12px;
+}
+
+.followers-dropdown div,
+.following-dropdown div {
+  padding: 8px;
+  cursor: pointer;
+  /* border: 0.5px solid rgb(196, 196, 196); */
+  height: auto;
+}
+
+.followers-dropdown div:hover,
+.following-dropdown div:hover {
+}
+
 .profile-follow {
   display: flex;
   font-size: 16px;
