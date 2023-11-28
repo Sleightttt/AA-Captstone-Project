@@ -183,6 +183,10 @@ textarea {
     max-width: 330px;
     width: 90%;
   }
+
+  .preview-image2 {
+    height: 200px;
+  }
   .create-image-form {
     width: 40%;
   }

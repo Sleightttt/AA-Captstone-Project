@@ -31,7 +31,6 @@ const Profile = () => {
     useState(false);
   const [followingDropdownVisible, setFollowingDropdownVisible] =
     useState(false);
-
   const followToDelete = userFollowsArr?.find(
     (follow) => follow.follower_id == userId && follow.following_id == id
   );
@@ -167,6 +166,11 @@ const Profile = () => {
     }
   };
 
+  const divClickHandler = (e) => {
+    e.preventDefault();
+    history.push(`/users/${e}`);
+  };
+
   if (images[0]?.length === 0) {
     return (
       <>
@@ -176,59 +180,57 @@ const Profile = () => {
               <div className="profile-name"> {user.username}</div>
               <div className="follow-container">
                 <div className="profile-follow">
-                  {myProfile ? (
-                    <div onClick={toggleFollowersDropdown}>
-                      {profileFollowers?.length} Followers
-                      {followersDropdownVisible && (
-                        <div className="followers-dropdown">
-                          {/* Render the list of follower usernames here */}
-                          {profileFollowers.map((follower) => {
-                            const foundUser = users[0].find(
-                              (user) =>
-                                user.id == parseInt(follower.follower_id, 10)
-                            );
-                            return (
-                              <div key={follower.id}>
-                                {foundUser
-                                  ? foundUser.username
-                                  : "Unknown User"}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <div>{profileFollowers?.length} Followers</div>
-                  )}
+                  <div onClick={toggleFollowersDropdown}>
+                    {profileFollowers?.length} Followers
+                    {followersDropdownVisible && (
+                      <div className="followers-dropdown">
+                        {/* Render the list of follower usernames here */}
+                        {profileFollowers.map((follower) => {
+                          const foundUser = users[0].find(
+                            (user) =>
+                              user.id == parseInt(follower.follower_id, 10)
+                          );
+                          return (
+                            <div
+                              onClick={() => {
+                                history.push(`/user/${foundUser.id}`);
+                              }}
+                              key={follower.id}
+                            >
+                              {foundUser ? foundUser.username : "Unknown User"}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
                 </div>
                 &nbsp;
                 <div className="profile-following">
-                  {myProfile ? (
-                    <div onClick={toggleFollowingDropdown}>
-                      {myProfileFollows?.length} Following
-                      {followingDropdownVisible && (
-                        <div className="following-dropdown">
-                          {/* Render the list of following usernames here */}
-                          {myProfileFollows.map((follower) => {
-                            const foundUser = users[0].find(
-                              (user) =>
-                                user.id == parseInt(follower.following_id, 10)
-                            );
-                            return (
-                              <div key={follower.id}>
-                                {foundUser
-                                  ? foundUser.username
-                                  : "Unknown User"}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <div>{profileFollows?.length} Following</div>
-                  )}
+                  <div onClick={toggleFollowingDropdown}>
+                    {myProfileFollows?.length} Following
+                    {followingDropdownVisible && (
+                      <div className="following-dropdown">
+                        {/* Render the list of following usernames here */}
+                        {myProfileFollows.map((follower) => {
+                          const foundUser = users[0].find(
+                            (user) =>
+                              user.id == parseInt(follower.following_id, 10)
+                          );
+                          return (
+                            <div
+                              onClick={() => {
+                                history.push(`/user/${foundUser.id}`);
+                              }}
+                              key={follower.id}
+                            >
+                              {foundUser ? foundUser.username : "Unknown User"}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </h1>
@@ -313,55 +315,57 @@ const Profile = () => {
             </div>
             <div className="follow-container">
               <div className="profile-follow">
-                {myProfile ? (
-                  <div onClick={toggleFollowersDropdown}>
-                    {profileFollowers?.length} Followers
-                    {followersDropdownVisible && (
-                      <div className="followers-dropdown">
-                        {/* Render the list of follower usernames here */}
-                        {profileFollowers.map((follower) => {
-                          const foundUser = users[0].find(
-                            (user) =>
-                              user.id == parseInt(follower.follower_id, 10)
-                          );
-                          return (
-                            <div key={follower.id}>
-                              {foundUser ? foundUser.username : "Unknown User"}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <div>{profileFollowers?.length} Followers</div>
-                )}
+                <div onClick={toggleFollowersDropdown}>
+                  {profileFollowers?.length} Followers
+                  {followersDropdownVisible && (
+                    <div className="followers-dropdown">
+                      {/* Render the list of follower usernames here */}
+                      {profileFollowers.map((follower) => {
+                        const foundUser = users[0].find(
+                          (user) =>
+                            user.id == parseInt(follower.follower_id, 10)
+                        );
+                        return (
+                          <div
+                            onClick={() => {
+                              history.push(`/user/${foundUser.id}`);
+                            }}
+                            key={follower.id}
+                          >
+                            {foundUser ? foundUser.username : "Unknown User"}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
               </div>
               &nbsp;
               <div className="profile-following">
-                {myProfile ? (
-                  <div onClick={toggleFollowingDropdown}>
-                    {myProfileFollows?.length} Following
-                    {followingDropdownVisible && (
-                      <div className="following-dropdown">
-                        {/* Render the list of following usernames here */}
-                        {myProfileFollows.map((follower) => {
-                          const foundUser = users[0].find(
-                            (user) =>
-                              user.id == parseInt(follower.following_id, 10)
-                          );
-                          return (
-                            <div key={follower.id}>
-                              {foundUser ? foundUser.username : "Unknown User"}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <div>{profileFollows?.length} Following</div>
-                )}
+                <div onClick={toggleFollowingDropdown}>
+                  {myProfileFollows?.length} Following
+                  {followingDropdownVisible && (
+                    <div className="following-dropdown">
+                      {/* Render the list of following usernames here */}
+                      {myProfileFollows.map((follower) => {
+                        const foundUser = users[0].find(
+                          (user) =>
+                            user.id == parseInt(follower.following_id, 10)
+                        );
+                        return (
+                          <div
+                            onClick={() => {
+                              history.push(`/user/${foundUser.id}`);
+                            }}
+                            key={follower.id}
+                          >
+                            {foundUser ? foundUser.username : "Unknown User"}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </h1>

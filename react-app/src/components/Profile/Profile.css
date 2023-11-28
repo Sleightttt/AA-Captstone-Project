@@ -49,6 +49,7 @@
 
 .followers-dropdown div:hover,
 .following-dropdown div:hover {
+  color: rgb(0, 166, 255);
 }
 
 .profile-follow {
@@ -193,8 +194,7 @@
 
 .profile-image-hover {
   cursor: pointer;
-  height: 400px;
-  width: 400px;
+
   box-shadow: 0 0 2px 0 rgb(0, 0, 0);
 }
 .profile-image-hover:hover {
@@ -238,14 +238,23 @@
 } */
 @media (max-width: 700px) {
   .user-image {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
   .profile-image-hover {
-    width: 80%;
+    height: 200px;
+    width: 200px;
+    border-radius: 6px;
+  }
+
+  .user-product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 8px;
   }
   .user-images-body {
     width: 100%;
