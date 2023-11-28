@@ -1,7 +1,7 @@
 .profile-banner-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -14,9 +14,10 @@
 
 .profile-name {
   display: flex;
-  font-size: 40px;
+  font-size: 30px;
   margin-left: 13%;
   color: white;
+  text-shadow: 1px 1px 0 rgb(32, 32, 32);
   font-weight: 100;
   padding-bottom: 10px;
   align-items: center;
@@ -68,12 +69,13 @@
   font-size: 16px;
   color: white;
   font-weight: 100;
-  padding-bottom: 30px;
 }
 
 .follow-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  text-shadow: 2px 2px 0 rgb(50, 50, 50);
 }
 
 .add-image-button {
@@ -194,7 +196,9 @@
 
 .profile-image-hover {
   cursor: pointer;
-
+  height: 320px;
+  width: 320px;
+  border-radius: 3px;
   box-shadow: 0 0 2px 0 rgb(0, 0, 0);
 }
 .profile-image-hover:hover {

@@ -232,6 +232,27 @@ const Profile = () => {
                     )}
                   </div>
                 </div>
+                {isFollowed ? (
+                  id !== userId && loggedInUser.id !== Number(id) ? (
+                    <button
+                      className="unfollow-button"
+                      onClick={followButtonHandler}
+                    >
+                      Unfollow
+                    </button>
+                  ) : (
+                    ""
+                  )
+                ) : id !== userId && loggedInUser.id !== Number(id) ? (
+                  <button
+                    className="follow-button"
+                    onClick={followButtonHandler}
+                  >
+                    Follow
+                  </button>
+                ) : (
+                  ""
+                )}
               </div>
             </h1>
           </div>
@@ -292,27 +313,7 @@ const Profile = () => {
       <div className="profile-container">
         <div className="profile-header">
           <h1 className="profile-banner-container">
-            <div className="profile-name">
-              {user.username}{" "}
-              {isFollowed ? (
-                id !== userId && loggedInUser.id !== Number(id) ? (
-                  <button
-                    className="unfollow-button"
-                    onClick={followButtonHandler}
-                  >
-                    Unfollow
-                  </button>
-                ) : (
-                  ""
-                )
-              ) : id !== userId && loggedInUser.id !== Number(id) ? (
-                <button className="follow-button" onClick={followButtonHandler}>
-                  Follow
-                </button>
-              ) : (
-                ""
-              )}
-            </div>
+            <div className="profile-name">{user.username} </div>
             <div className="follow-container">
               <div className="profile-follow">
                 <div onClick={toggleFollowersDropdown}>
@@ -367,6 +368,24 @@ const Profile = () => {
                   )}
                 </div>
               </div>
+              {isFollowed ? (
+                id !== userId && loggedInUser.id !== Number(id) ? (
+                  <button
+                    className="unfollow-button"
+                    onClick={followButtonHandler}
+                  >
+                    Unfollow
+                  </button>
+                ) : (
+                  ""
+                )
+              ) : id !== userId && loggedInUser.id !== Number(id) ? (
+                <button className="follow-button" onClick={followButtonHandler}>
+                  Follow
+                </button>
+              ) : (
+                ""
+              )}
             </div>
           </h1>
         </div>

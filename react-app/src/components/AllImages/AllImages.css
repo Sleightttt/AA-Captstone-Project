@@ -160,6 +160,10 @@
     padding-left: 0;
     padding-right: 0;
   }
+
+  .profile-name {
+    font-size: 10px;
+  }
   .all-image-name {
     width: 50%;
   }
