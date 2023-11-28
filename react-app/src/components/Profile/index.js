@@ -8,7 +8,6 @@ import "./Profile.css";
 import {
   getAllFollowsThunk,
   createFollowThunk,
-  getFollowsByUser,
   deleteFollowThunk,
 } from "../../store/followers";
 
@@ -50,38 +49,49 @@ const Profile = () => {
 
   const toggleFollowersDropdown = () => {
     setFollowersDropdownVisible(!followersDropdownVisible);
+    setFollowingDropdownVisible(false); // Close the other dropdown
   };
 
   const toggleFollowingDropdown = () => {
     setFollowingDropdownVisible(!followingDropdownVisible);
+    setFollowersDropdownVisible(false); // Close the other dropdown
   };
 
   useEffect(() => {
     const fetchData = async () => {
       const imagesByUser = await dispatch(getImagesByUser(id));
-
       await dispatch(getAllFollowsThunk());
-
       const users = await dispatch(getAllUsers());
-
       setUserImages(Object.values(imagesByUser));
-
       const user =
         users && users[0] && users[0].find((user) => user.id === parseInt(id));
     };
     fetchData();
-    function handleCloseModal(event) {
+
+    const handleCloseModal = (event) => {
       if (divRef.current && !divRef.current.contains(event.target)) {
         setShowModal(false);
       }
-    }
+    };
+
+    const handleDropdownClickOutside = (event) => {
+      if (
+        !event.target.closest(".followers-dropdown") &&
+        !event.target.closest(".following-dropdown")
+      ) {
+        setFollowersDropdownVisible(false);
+        setFollowingDropdownVisible(false);
+      }
+    };
 
     document.addEventListener("mousedown", handleCloseModal);
+    document.addEventListener("mousedown", handleDropdownClickOutside);
+
     return () => {
       document.removeEventListener("mousedown", handleCloseModal);
+      document.removeEventListener("mousedown", handleDropdownClickOutside);
     };
-  }, [dispatch, id]);
-
+  }, [dispatch, id, followersDropdownVisible, followingDropdownVisible]);
   const caller = async () => {
     const users = await dispatch(getAllUsers());
     const imagesByUser = await dispatch(getImagesByUser(id));
@@ -133,13 +143,9 @@ const Profile = () => {
 
       const fetchData = async () => {
         const imagesByUser = await dispatch(getImagesByUser(id));
-
         await dispatch(getAllFollowsThunk());
-
         const users = await dispatch(getAllUsers());
-
         setUserImages(Object.values(imagesByUser));
-
         const user =
           users &&
           users[0] &&
