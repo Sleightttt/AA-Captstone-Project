@@ -313,18 +313,55 @@ const Profile = () => {
             </div>
             <div className="follow-container">
               <div className="profile-follow">
-                {myProfile
-                  ? profileFollowers?.length
-                  : profileFollowers?.length}
-                &nbsp;Followers • &nbsp;&nbsp;{" "}
+                {myProfile ? (
+                  <div onClick={toggleFollowersDropdown}>
+                    {profileFollowers?.length} Followers
+                    {followersDropdownVisible && (
+                      <div className="followers-dropdown">
+                        {/* Render the list of follower usernames here */}
+                        {profileFollowers.map((follower) => {
+                          const foundUser = users[0].find(
+                            (user) =>
+                              user.id == parseInt(follower.follower_id, 10)
+                          );
+                          return (
+                            <div key={follower.id}>
+                              {foundUser ? foundUser.username : "Unknown User"}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div>{profileFollowers?.length} Followers</div>
+                )}
               </div>
-
+              &nbsp;
               <div className="profile-following">
-                {" "}
-                {myProfile
-                  ? myProfileFollows?.length
-                  : profileFollows?.length}{" "}
-                Following
+                {myProfile ? (
+                  <div onClick={toggleFollowingDropdown}>
+                    {myProfileFollows?.length} Following
+                    {followingDropdownVisible && (
+                      <div className="following-dropdown">
+                        {/* Render the list of following usernames here */}
+                        {myProfileFollows.map((follower) => {
+                          const foundUser = users[0].find(
+                            (user) =>
+                              user.id == parseInt(follower.following_id, 10)
+                          );
+                          return (
+                            <div key={follower.id}>
+                              {foundUser ? foundUser.username : "Unknown User"}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div>{profileFollows?.length} Following</div>
+                )}
               </div>
             </div>
           </h1>

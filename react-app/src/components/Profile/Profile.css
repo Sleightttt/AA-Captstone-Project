@@ -36,6 +36,7 @@
   overflow: scroll;
   z-index: 100; /* Adjust this value as needed */
   border-radius: 12px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .followers-dropdown div,
