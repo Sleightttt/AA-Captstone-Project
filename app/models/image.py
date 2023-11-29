@@ -1,4 +1,9 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
+from sqlalchemy.sql import func
+from sqlalchemy.orm import relationship
+from .like import Like
+from .comment import Comment
+from sqlalchemy.ext.hybrid import hybrid_property
 
 
 class Image(db.Model):
@@ -23,6 +28,31 @@ class Image(db.Model):
 
     likes = db.relationship("Like", back_populates="image", cascade='all, delete')
 
+    @hybrid_property
+    def likes_count(self):
+        return len(self.likes)
+
+    @likes_count.expression
+    def likes_count(cls):
+        return (
+            db.select([func.count(Like.id)])
+            .where(Like.image_id == cls.id)
+            .label("likes_count")
+        )
+
+    @hybrid_property
+    def comments_count(self):
+        return len(self.comments)
+
+    @comments_count.expression
+    def comments_count(cls):
+        return (
+            db.select([func.count(Comment.id)])
+            .where(Comment.image_id == cls.id)
+            .label("comments_count")
+        )
+
+
 
     def to_dict(self):
         return {
@@ -35,4 +65,6 @@ class Image(db.Model):
             'updated_at': self.updated_at,
             'url': self.url,
             'owner_id': self.owner_id,
+            'likes_count': self.likes_count,
+            'comments_count': self.comments_count
         }

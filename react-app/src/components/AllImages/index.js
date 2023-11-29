@@ -88,11 +88,11 @@ const AllImages = () => {
                     <div className="all-image-name">{image.name}</div>
                     <div className="image-ol-likes">
                       <div className="likes-bar">
-                        1009
+                        {image.likes_count}
                         <i className="fas fa-solid fa-heart small-icon" />
                       </div>
                       <div className="likes-bar">
-                        1009
+                        {image.comments_count}
                         <i className="fas fa-comment small-icon" />
                       </div>
                     </div>
