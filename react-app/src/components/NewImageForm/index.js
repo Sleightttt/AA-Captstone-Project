@@ -17,6 +17,7 @@ const CreateImage = () => {
   const [url, setUrl] = useState("");
   const [errors, setErrors] = useState({});
   const [previewImageUrl, setPreviewImageUrl] = useState([]);
+  const [tags, setTags] = useState([]);
 
   if (!user) {
     history.push("/login");
@@ -30,22 +31,84 @@ const CreateImage = () => {
     url,
     userId,
   };
-  const handleImageChange = (e) => {
+  const apiKey = "acc_f59e4794d722ea0";
+  const apiSecret = "1a079b7e446233993ad3ba49d18c07d9";
+
+  const handleImageChange = async (e) => {
     const file = e.target.files[0];
 
     if (file) {
       setUrl(file);
 
       const reader = new FileReader();
-      reader.onloadend = () => {
+      reader.onloadend = async () => {
         setPreviewImageUrl(reader.result); // Set the preview image URL
+
+        try {
+          // Convert the API key and secret to base64
+          const base64Credentials = btoa(`${apiKey}:${apiSecret}`);
+
+          // Upload the image to Imagga
+          const formData = new FormData();
+          formData.append("image", file);
+
+          const uploadResponse = await fetch(
+            "https://api.imagga.com/v2/uploads",
+            {
+              method: "POST",
+              body: formData,
+              headers: {
+                Authorization: `Basic ${base64Credentials}`,
+              },
+            }
+          );
+
+          if (!uploadResponse.ok) {
+            throw new Error(
+              `Failed to upload image: ${uploadResponse.statusText}`
+            );
+          }
+
+          const uploadData = await uploadResponse.json();
+          const uploadId = uploadData.result.upload_id;
+
+          // Request tags for the uploaded image
+          const tagsResponse = await fetch(
+            `https://api.imagga.com/v2/tags?image_upload_id=${uploadId}`,
+            {
+              method: "GET",
+              headers: {
+                Authorization: `Basic ${base64Credentials}`,
+              },
+            }
+          );
+
+          if (!tagsResponse.ok) {
+            throw new Error(`Failed to fetch tags: ${tagsResponse.statusText}`);
+          }
+
+          const tagsData = await tagsResponse.json();
+          const uniqueTags = Array.from(
+            new Set(tagsData.result.tags.map((tag) => tag.tag.en))
+          );
+          const first8Tags = uniqueTags.slice(0, 8);
+
+          // Now you can set your state or perform any other actions with first8Tags
+          setTags(first8Tags);
+          console.log(tags);
+          console.log(tagsData);
+        } catch (error) {
+          console.error("Error:", error.message);
+        }
       };
+
       reader.readAsDataURL(file);
     } else {
       setUrl("");
       setPreviewImageUrl(""); // Reset the preview image URL
     }
   };
+  console.log(tags, "-----tags---");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -88,6 +151,11 @@ const CreateImage = () => {
 
       history.push(`/images/${data.id}`);
     }
+  };
+
+  const handleRemoveTag = (tagToRemove) => {
+    const updatedTags = tags.filter((tag) => tag !== tagToRemove);
+    setTags(updatedTags);
   };
 
   return (
@@ -179,30 +247,19 @@ const CreateImage = () => {
             )}
           </div>
           <div className="tag-box">
-            {/* <button className="tag-button">
-              Preview<button className="x-button">x</button>
-            </button>
-            <button className="tag-button">
-              Preview<button className="x-button">x</button>
-            </button>
-            <button className="tag-button">
-              Preview<button className="x-button">x</button>
-            </button>
-            <button className="tag-button">
-              Preview<button className="x-button">x</button>
-            </button>
-            <button className="tag-button">
-              Preview<button className="x-button">x</button>
-            </button>
-            <button className="tag-button">
-              Preview<button className="x-button">x</button>
-            </button>
-            <button className="tag-button">
-              Preview<button className="x-button">x</button>
-            </button>
-            <button className="tag-button">
-              Preview<button className="x-button">x</button>
-            </button> */}
+            {tags.length > 0
+              ? tags.map((tag) => (
+                  <div key={tag} className="tag-button">
+                    {tag}
+                    <button
+                      className="x-button"
+                      onClick={() => handleRemoveTag(tag)}
+                    >
+                      x
+                    </button>
+                  </div>
+                ))
+              : ""}
           </div>
         </div>
         {/* <div className="preview-box">
