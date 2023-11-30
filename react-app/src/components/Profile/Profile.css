@@ -60,6 +60,16 @@
   font-weight: 100;
   margin-left: 13.3%;
 }
+
+.profile-follow:hover {
+  cursor: pointer;
+  color: rgb(0, 166, 255);
+}
+
+.profile-following:hover {
+  cursor: pointer;
+  color: rgb(0, 166, 255);
+}
 .profile-body {
   background-color: rgb(232, 232, 232);
 }

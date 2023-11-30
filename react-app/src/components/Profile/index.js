@@ -208,11 +208,11 @@ const Profile = () => {
                 &nbsp;
                 <div className="profile-following">
                   <div onClick={toggleFollowingDropdown}>
-                    {myProfileFollows?.length} Following
+                    {profileFollows?.length} Following
                     {followingDropdownVisible && (
                       <div className="following-dropdown">
                         {/* Render the list of following usernames here */}
-                        {myProfileFollows.map((follower) => {
+                        {profileFollows.map((follower) => {
                           const foundUser = users[0].find(
                             (user) =>
                               user.id == parseInt(follower.following_id, 10)
@@ -344,11 +344,11 @@ const Profile = () => {
               &nbsp;
               <div className="profile-following">
                 <div onClick={toggleFollowingDropdown}>
-                  {myProfileFollows?.length} Following
+                  {profileFollows?.length} Following
                   {followingDropdownVisible && (
                     <div className="following-dropdown">
                       {/* Render the list of following usernames here */}
-                      {myProfileFollows.map((follower) => {
+                      {profileFollows.map((follower) => {
                         const foundUser = users[0].find(
                           (user) =>
                             user.id == parseInt(follower.following_id, 10)
