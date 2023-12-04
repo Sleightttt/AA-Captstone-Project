@@ -184,7 +184,6 @@ const Profile = () => {
                     {profileFollowers?.length} Followers
                     {followersDropdownVisible && (
                       <div className="followers-dropdown">
-                        {/* Render the list of follower usernames here */}
                         {profileFollowers.map((follower) => {
                           const foundUser = users[0].find(
                             (user) =>
