@@ -21,7 +21,6 @@ const Comments = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [comment, setComment] = useState("");
   const [errors, setErrors] = useState({});
-  console.log(users);
 
   useEffect(() => {
     dispatch(getCommentsByImage(id));

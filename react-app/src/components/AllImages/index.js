@@ -52,7 +52,6 @@ const AllImages = () => {
               onClick={() => history.push(`/images/${image.id}`)}
             >
               <div style={{ position: "relative" }}>
-                {console.log(image)}
                 {images.allImages.images.length > 0 ? (
                   <img
                     className="img-all"
