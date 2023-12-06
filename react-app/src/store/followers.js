@@ -25,11 +25,6 @@ const deleteFollow = (id) => ({
   payload: id,
 });
 
-// const imagesFollows = (follow) => ({
-//   type: READ_FOLLOWS_IMAGE,
-//   payload: follow,
-// });
-
 export const createFollowThunk = (follow) => async (dispatch) => {
   const { follower_id, following_id } = follow;
 
