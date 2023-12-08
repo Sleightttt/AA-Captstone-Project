@@ -100,10 +100,8 @@ export const deleteCommentThunk = (commentId) => async (dispatch) => {
   let response = await fetch(`/api/comments/${commentId}`, {
     method: "DELETE",
   });
-  // console.log(response.url);
-  // console.log(response);
+
   if (response.ok) {
-    // console.log("RESPONSE WAS OK");
     dispatch(deleteComment(commentId));
     return response;
   }
