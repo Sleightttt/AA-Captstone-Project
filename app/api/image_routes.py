@@ -20,11 +20,10 @@ def get_images():
 # Create a image /api/image/
 @image_routes.route('/', methods=['POST'])
 def create_product():
-    # print('route hit')
+
     form = ImageForm()
     if current_user.is_authenticated:
-        # print('auth hit')
-        # print('formdata',form.data)
+
         user = current_user.to_dict()
         owner_id = user['id']
         form['csrf_token'].data = request.cookies['csrf_token']
@@ -33,7 +32,7 @@ def create_product():
             izg = form.data['url']
 
             izg.filename = get_unique_filename(izg.filename)
-            # print('this is izg', izg)
+
 
             upload = upload_file_to_s3(izg)
 
@@ -71,10 +70,6 @@ def update_image(id):
 
             image.name = form.data['name']
             image.description = form.data['description']
-            # image.lat = form.data['lat']
-            # image.lng = form.data['lng']
-            # image.url = form.data['url']
-            # image.owner_id = owner_id
             image.updated_at = datetime.utcnow()
             db.session.add(image)
             db.session.commit()
