@@ -97,7 +97,6 @@ export const getCommentsByImage = (imageId) => async (dispatch) => {
 };
 
 export const deleteCommentThunk = (commentId) => async (dispatch) => {
-  // console.log("INSIDE DELETE THUNK");
   let response = await fetch(`/api/comments/${commentId}`, {
     method: "DELETE",
   });
