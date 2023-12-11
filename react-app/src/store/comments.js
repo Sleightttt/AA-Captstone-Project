@@ -144,7 +144,7 @@ const CommentsReducer = (state = initialState, action) => {
       action.payload.forEach(
         (comment) => (afterImageRead.SingleImagesComments[comment.id] = comment)
       );
-      // console.log("read hit", action.payload);
+
       return afterImageRead;
 
     case READ_COMMENT_USERS:
@@ -158,7 +158,7 @@ const CommentsReducer = (state = initialState, action) => {
       let afterDelete = {
         ...state,
       };
-      // console.log(action.payload, "---");
+
       delete afterDelete["LoggedInUsersComments"][action.payload];
       delete afterDelete["SingleImagesComments"][action.payload];
 
