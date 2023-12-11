@@ -56,14 +56,6 @@ export const getAllFollowsThunk = () => async (dispatch) => {
   }
 };
 
-// export const getFollowsByImage = (imageId) => async (dispatch) => {
-//   let response = await fetch(`/api/likes/image/${imageId}`);
-//   if (response.ok) {
-//     let data = await response.json();
-//     dispatch(imagesLikes(data));
-//   }
-// };
-
 export const getFollowsByUser = (userId) => async (dispatch) => {
   let response = await fetch(`/api/follower/user/${userId}`);
   if (response.ok) {
@@ -76,10 +68,8 @@ export const deleteFollowThunk = (followId) => async (dispatch) => {
   let response = await fetch(`/api/follower/${followId}`, {
     method: "DELETE",
   });
-  // console.log(response.url);
-  // console.log(response);
+
   if (response.ok) {
-    // console.log("RESPONSE WAS OK");
     dispatch(deleteFollow(followId));
     return response;
   }
