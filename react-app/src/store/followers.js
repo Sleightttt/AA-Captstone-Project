@@ -80,23 +80,18 @@ const initialState = { imagesFollows: {}, userFollows: {}, follows: {} };
 export default function followerReducer(state = initialState, action) {
   switch (action.type) {
     case GET_ALL_FOLLOWS:
-      // console.log("action", action.payload);
       return { ...state, follows: action.payload };
-    // case SET_ALL_IMAGES_BY_USER:
-    //   return { ...state, allImagesByUser: action.payload };
+
     case CREATE_FOLLOW:
       let newnew = { ...state };
       newnew.userFollows[action.payload.id] = action.payload;
       return newnew;
 
-    // case USER_FOLLOW:
-    //   return { ...state, userFollows: action.payload };
-
     case READ_FOLLOWS_IMAGE:
       let afterImageRead = { ...state };
 
       afterImageRead.imagesFollows = {};
-      // console.log("-----", action.payload);
+
       action.payload.forEach(
         (follow) => (afterImageRead.imagesFollows[follow.id] = follow)
       );
