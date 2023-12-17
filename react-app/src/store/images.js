@@ -91,13 +91,11 @@ export const createImage = (image) => async (dispatch) => {
 };
 
 export const deleteImage = (imageId) => async (dispatch) => {
-  // console.log("hit delete1");
   const response = await fetch(`/api/images/${imageId}`, {
     method: "DELETE",
   });
-  // console.log("hit delete2");
+
   if (response.ok) {
-    // console.log("hit delete3");
     const data = await response.json();
     dispatch(removeImage());
     return data;
