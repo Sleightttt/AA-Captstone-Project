@@ -95,8 +95,6 @@ const CreateImage = () => {
 
           // Now you can set your state or perform any other actions with first8Tags
           setTags(first8Tags);
-          console.log(tags);
-          console.log(tagsData);
         } catch (error) {
           console.error("Error:", error.message);
         }
