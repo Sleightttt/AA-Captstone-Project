@@ -42,13 +42,12 @@ export const getSingleImage = (imageId) => async (dispatch) => {
 };
 
 export const getImagesByUser = (userId) => async (dispatch) => {
-  // console.log("hittt");
   const response = await fetch(`/api/images/owner/${userId}`);
 
   if (response.ok) {
     const data = await response.json();
     dispatch(setImagesByUser(data));
-    // console.log("hit");
+
     return data;
   }
 };
@@ -56,8 +55,7 @@ export const getImagesByUser = (userId) => async (dispatch) => {
 //edit image
 export const editImage = (image) => async (dispatch) => {
   // const { id, name, description, lat, lng, userId, url } = image;
-  // console.log("THIS BE URL", url);
-  // console.log("---", image.get("url"));
+
   const response = await fetch(`/api/images/${+image.get("id")}`, {
     method: "PUT",
     body: image,
