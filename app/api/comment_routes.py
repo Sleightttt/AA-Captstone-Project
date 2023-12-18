@@ -36,8 +36,7 @@ def ProductComments(id):
 @comment_routes.route("/new", methods=["POST"])
 def leave_Comment():
     """create a new comment"""
-    # print("The current_user object is :", current_user)
-    # print("The Request", request.data)
+
     form = NewCommentForm()
     if current_user.is_authenticated:
         user = current_user.to_dict()
