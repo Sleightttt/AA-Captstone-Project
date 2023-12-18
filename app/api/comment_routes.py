@@ -62,7 +62,7 @@ def leave_Comment():
 
 @comment_routes.route("/<int:id>", methods=["GET", "PUT", "DELETE"])
 def Route(id):
-    # print("HIT ROUTE")
+
     """Edit and delete a comment"""
 
     if request.method == "PUT":
