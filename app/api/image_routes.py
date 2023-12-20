@@ -38,7 +38,7 @@ def create_product():
 
             # if "url" not in upload:
             #     return upload, 400
-            # print('upload', upload)
+
             image = Image(
                 name=form.data['name'],
                 description=form.data['description'],
