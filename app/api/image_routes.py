@@ -36,8 +36,7 @@ def create_product():
 
             upload = upload_file_to_s3(izg)
 
-            # if "url" not in upload:
-            #     return upload, 400
+
 
             image = Image(
                 name=form.data['name'],
