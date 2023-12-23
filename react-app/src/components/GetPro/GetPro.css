@@ -162,7 +162,7 @@
 
 .feature-card {
   font-family: "Source Sans Pro", sans-serif;
-  transition: transform 0.2s; /* Animation */
+  transition: transform 0.2s;
   display: flex;
   flex-direction: column;
   height: 480px;
