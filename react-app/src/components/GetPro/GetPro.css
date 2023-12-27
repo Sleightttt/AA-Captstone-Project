@@ -201,7 +201,6 @@
   font-size: 30px;
   font-weight: bold;
   letter-spacing: 1.5px;
-  /* font-family: Georgia, "Times New Roman", Times, sans-serif; */
 }
 
 .feature-info-container {
@@ -226,9 +225,6 @@
     display: flex;
     justify-content: center;
   }
-  /* .get-pro-image {
-    background-position: ;
-  } */
 
   .slide-info-l {
     width: 100%;
