@@ -24,7 +24,6 @@
 .login-formmm {
   display: flex;
   flex-direction: column;
-  /* margin-bottom: 10px; */
 }
 
 .login-form-input {
@@ -91,7 +90,6 @@
 .errorz {
   color: red;
   list-style: none;
-  /* padding-left: 50px; */
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
