@@ -1,6 +1,12 @@
 import React from "react";
 import "./GetPro.css";
+import { useInView } from "react-intersection-observer";
+
 const GetPro = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Ensures the animation happens only once
+    threshold: 0.5, // Adjust the threshold based on your needs
+  });
   return (
     <>
       <section>
@@ -31,7 +37,7 @@ const GetPro = () => {
                   </div>
                 </div>
               </div>
-              <div className="slide-info-right"></div>
+              <div className="slide-info-right" ref={ref}></div>
             </div>
           </div>
           <div className="slide-info-l1">
