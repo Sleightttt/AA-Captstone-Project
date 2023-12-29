@@ -41,7 +41,7 @@
 .image-banner-1 {
   height: 420px;
   background-image: url(https://images.unsplash.com/photo-1500051638674-ff996a0ec29e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2118&q=80);
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -151,6 +151,7 @@
     justify-content: center;
     text-align: center;
     align-items: center;
+    margin: 0px 10%;
   }
 
   .choose-desc {
@@ -167,6 +168,7 @@
     justify-content: center;
     align-items: center;
     height: fit-content;
+    /* margin: 0px 10%; */
   }
   .choose-button {
     margin: 0;
