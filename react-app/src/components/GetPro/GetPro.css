@@ -51,11 +51,6 @@
 }
 
 .slide-info-l {
-  background-image: linear-gradient(
-    to left,
-    rgba(97, 0, 132, 0.242),
-    rgba(0, 247, 255, 0.315)
-  );
   height: 520px;
   display: flex;
   justify-content: center;
@@ -64,21 +59,16 @@
 }
 
 .slide-info-l-bottom {
-  background-color: rgb(32, 32, 32);
   height: 520px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid gainsboro;
+  background-color: white;
 }
 
 .slide-info-l1 {
-  background-image: linear-gradient(
-    to right,
-    rgba(97, 0, 132, 0.161),
-    rgba(0, 247, 255, 0.225)
-  );
   height: 520px;
   display: flex;
   justify-content: center;
@@ -97,24 +87,26 @@
 .slide-info-l-container {
   display: flex;
   height: 400px;
-  width: 70%;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 .slide-info-l-container-2 {
   display: flex;
   height: 400px;
-  width: 70%;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 .slide-info-left {
   height: 400px;
-  width: 70%;
+  width: 40%;
 }
 
 .slide-info-right {
   border-radius: 2px;
   height: 400px;
-  width: 60%;
+  width: 40%;
   background-image: url(https://combo.staticflickr.com/ap/build/images/pro/flickrpro-stats-images/bg_en-us.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -136,7 +128,7 @@
 .slide-info-right2 {
   border-radius: 2px;
   height: 400px;
-  width: 70%;
+  width: 40%;
   background-image: url(https://images.unsplash.com/29/night-square.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2681&q=80);
   background-repeat: no-repeat;
   background-size: cover;
@@ -146,7 +138,7 @@
 .slide-info-right3 {
   border-radius: 2px;
   height: 400px;
-  width: 70%;
+  width: 40%;
   background-image: url(https://images.unsplash.com/photo-1629904888780-8de0c7aeed28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80);
   background-repeat: no-repeat;
   background-size: cover;
@@ -156,31 +148,25 @@
 .slide-info-right4 {
   border-radius: 2px;
   height: 400px;
-  width: 70%;
+  width: 40%;
   background-image: url(https://images.unsplash.com/photo-1626863905121-3b0c0ed7b94c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80);
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-.space-text {
-  padding-left: 70px;
-}
-
 .feature-card {
   font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
   transition: transform 0.2s;
   display: flex;
   flex-direction: column;
   height: 480px;
   width: 18%;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 248, 244, 0.302),
-    rgba(255, 0, 234, 0.242)
-  );
-  color: rgb(242, 242, 242);
+
+  color: rgb(26, 26, 26);
   border-radius: 12px;
+  border: 1px solid rgb(242, 242, 242);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 5px 9px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 6px -3px;
 }
@@ -203,7 +189,7 @@
   font-family: "Source Sans Pro", sans-serif;
   padding-top: 5px;
   display: flex;
-  justify-content: center;
+  margin: 20px;
   align-items: center;
   font-size: 30px;
   font-weight: bold;
@@ -219,7 +205,7 @@
   display: flex;
   align-items: center;
   text-align: left;
-  padding: 18px;
+  padding: 20px;
   letter-spacing: 1.5px;
   font-size: 17px;
   padding-top: 10px;
@@ -303,6 +289,7 @@
     display: flex;
     text-align: center;
     height: 100%;
+    width: 100%;
   }
 
   .space-text {
@@ -310,11 +297,12 @@
   }
   .slide-info-l-bottom {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     height: 100%;
   }
   .feature-card {
-    width: 70%;
+    width: 20%;
     margin-bottom: 30px;
     margin-top: 30px;
   }
@@ -329,6 +317,8 @@
     background-color: rgb(36, 36, 36);
     align-items: center;
     display: flex;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     flex-direction: column;
   }
 
@@ -336,10 +326,20 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 5px 10px -2px,
       rgba(0, 0, 0, 0.3) 0px 3px 6px -3px;
     border-radius: 12px;
-    width: 50%;
+    width: 100%;
     height: 180px;
 
     background-size: cover;
     background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 900px) {
+  .slide-info-l-bottom {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .feature-card {
+    width: 240px;
   }
 }
