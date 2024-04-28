@@ -66,12 +66,17 @@ function LoginFormPage() {
 
   const sign = (e) => {
     e.preventDefault();
+    setErrors("");
+    setUsername("");
+    setPassword("");
+    setEmail("");
     setSignIn(!signIn);
   };
 
   let loginSignIn = signIn
     ? "Sign up A New Account"
     : "Log In With Existing Account";
+
   let loginCreate = signIn ? "Create Account" : "Sign Up";
 
   return (

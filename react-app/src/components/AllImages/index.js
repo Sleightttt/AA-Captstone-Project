@@ -10,6 +10,7 @@ const AllImages = () => {
   const images = useSelector((state) => state.images);
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(20);
+  const [activeTab, setActiveTab] = useState(0);
   let allImg = images.allImages;
 
   useEffect(() => {
@@ -43,63 +44,84 @@ const AllImages = () => {
   return (
     <>
       <div className="all-images-container fade-in-container">
-        <div></div>
         <div className="images-container">
-          {currentImages.map((image) => (
+          <div className="image-bar">
             <div
-              className="image-card"
-              key={image.id}
-              onClick={() => history.push(`/images/${image.id}`)}
+              className={activeTab === 0 ? "bar-item active-tab" : "bar-item"}
+              onClick={() => setActiveTab(0)}
             >
-              <div style={{ position: "relative" }}>
-                {images.allImages.images.length > 0 ? (
-                  <img
-                    className="img-all"
-                    style={{
-                      width: `${randomWidth()}px`,
-                      height: `200px`,
-                      borderRadius: "7px",
-                      margin: "2px",
-                      paddingTop: `1px`,
-                      zIndex: "1",
-                      boxShadow: "0 0 3px rgba(0,0,0,0.5)",
-                    }}
-                    src={image.url}
-                    alt={image.name}
-                  />
-                ) : (
-                  <img
-                    style={{
-                      width: "300px",
-                      height: "250px",
-                      borderRadius: "7px",
-                      border: "2px solid white",
-                    }}
-                    src="https://i.imgur.com/6XK9X4u.png"
-                    alt={image.name}
-                  />
-                )}
+              Explore
+            </div>
+            <div
+              onClick={() => setActiveTab(1)}
+              className={activeTab === 1 ? "bar-item active-tab" : "bar-item"}
+            >
+              Trending
+            </div>
+            <div
+              onClick={() => setActiveTab(2)}
+              className={activeTab === 2 ? "bar-item active-tab" : "bar-item"}
+            >
+              Events
+            </div>
+          </div>
+          <div className="all-images">
+            {currentImages.map((image) => (
+              <div
+                className="image-card"
+                key={image.id}
+                onClick={() => history.push(`/images/${image.id}`)}
+              >
+                <div style={{ position: "relative" }}>
+                  {images.allImages.images.length > 0 ? (
+                    <img
+                      className="img-all"
+                      style={{
+                        width: `${randomWidth()}px`,
+                        height: `200px`,
+                        borderRadius: "7px",
+                        margin: "2px",
+                        paddingTop: `1px`,
+                        zIndex: "1",
+                        boxShadow: "0 0 3px rgba(0,0,0,0.5)",
+                      }}
+                      src={image.url}
+                      alt={image.name}
+                    />
+                  ) : (
+                    <img
+                      style={{
+                        width: "300px",
+                        height: "250px",
+                        borderRadius: "7px",
+                        border: "2px solid white",
+                      }}
+                      src="https://i.imgur.com/6XK9X4u.png"
+                      alt={image.name}
+                    />
+                  )}
 
-                <div className="image-overlay">
-                  <div className="image-ol-box"> </div>
-                  <div className="spacer"></div>
-                  <div className="image-info-ctnr">
-                    <div className="all-image-name">{image.name}</div>
-                    <div className="image-ol-likes">
-                      <div className="likes-bar">
-                        {image.likes_count}
-                        <i className="fas fa-solid fa-heart small-icon" />
-                      </div>
-                      <div className="likes-bar">
-                        {image.comments_count}
-                        <i className="fas fa-comment small-icon" />
+                  <div className="image-overlay">
+                    <div className="image-ol-box"> </div>
+                    <div className="spacer"></div>
+                    <div className="image-info-ctnr">
+                      <div className="all-image-name">{image.name}</div>
+                      <div className="image-ol-likes">
+                        <div className="likes-bar">
+                          {image.likes_count}
+                          <i className="fas fa-solid fa-heart small-icon" />
+                        </div>
+                        <div className="likes-bar">
+                          {image.comments_count}
+                          <i className="fas fa-comment small-icon" />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
       <div className="pagination">

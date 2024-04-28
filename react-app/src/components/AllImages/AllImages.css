@@ -1,6 +1,6 @@
 .images-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -9,6 +9,34 @@
   width: 100vw;
   padding-left: 5%;
   padding-right: 5%;
+}
+
+.image-bar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+  border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+.all-images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.bar-item {
+  height: 100%;
+  padding: 10px;
+
+  margin: 5px;
+  transition: 0.2s ease-in-out;
+}
+
+.active-tab {
+  border-bottom: 2px solid rgb(6, 158, 164);
 }
 .image-ol-img-name {
   display: flex;
