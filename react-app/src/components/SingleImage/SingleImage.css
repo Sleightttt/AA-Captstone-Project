@@ -20,6 +20,7 @@
   padding-top: 10px;
   padding-left: 15px;
   font-size: 15px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .back-button:hover {
@@ -33,6 +34,7 @@
 .end {
   padding-left: 50px;
 }
+
 .single-image {
   height: 700px;
   width: 700px;
@@ -62,11 +64,12 @@
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.571);
 }
 .single-product-name {
-  flex-grow: 1; /* This will make it take the remaining space in the container */
+  flex-grow: 1;
   padding: 0px 20px;
   font-size: 25px;
   color: rgb(37, 37, 37);
-  font-family: "Oswald", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
   text-align: center;
 }
 .user-name {

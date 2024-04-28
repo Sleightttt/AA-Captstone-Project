@@ -79,7 +79,7 @@
 }
 
 .new-comment-submit-button:disabled {
-  color: red;
+  color: rgb(165, 165, 165);
 }
 
 .delete-header {
