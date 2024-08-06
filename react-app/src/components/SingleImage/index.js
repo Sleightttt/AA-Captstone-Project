@@ -129,7 +129,8 @@ const SingleImage = () => {
       <div className="single-product-container">
         <div className="back-button-container">
           <button className="back-button" onClick={() => history.goBack()}>
-            <i className="fa fa-arrow-left fa-lg" aria-hidden="true"></i> &nbsp;
+            <i className=" size fa fa-arrow-left fa-lg" aria-hidden="true"></i>{" "}
+            &nbsp;&nbsp;
             <span className="underline">Back to previous</span>
           </button>
         </div>
